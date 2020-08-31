@@ -77,7 +77,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -302,21 +302,20 @@ ex ()
 alias ls="colorls"
 alias config="/usr/bin/git --git-dir=$HOME/dots/ --work-tree=$HOME"
 alias v="nvim"
-alias sudo="doas"
 alias vidoas="doas vim /etc/doas.conf"
 alias ..='cd ..' 
 alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
-alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
+alias pacsyu='doas pacman -Syyu'                 # update only standard pkgs
 alias yaysua="yay -Sua --noconfirm"              # update only AUR pkgs
 alias yaysyu="yay -Syu --noconfirm"              # update standard pkgs and AUR pkgs
 alias unlock="doas rm /var/lib/pacman/db.lck"    # remove pacman lock
 alias mirror="doas reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+alias mirrord="doas reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="doas reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="doas reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'

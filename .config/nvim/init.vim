@@ -7,10 +7,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/limelight.vim' 
-Plug 'junegunn/seoul256.vim' 
-Plug 'arcticicestudio/nord-vim'                    
-Plug 'junegunn/vim-emoji' 
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'junegunn/vim-emoji'
 Plug 'scrooloose/nerdtree'                         " Nerdtree
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
 Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
@@ -48,7 +48,7 @@ let g:lightline = {
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
       \ }
-      \ } 
+      \ }
   function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
   endfunction
@@ -87,6 +87,9 @@ let g:NERDTreeWinSize=38
 
 " Markdown
 let g:instant_markdown_browser = "surf"      " Uses surf for preview
-map <Leader>md :InstantMarkdownPreview<CR>   " Previews .md file
-map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
+map <Leader>d :InstantMarkdownPreview<CR>   " Previews .md file
+map <Leader>s :InstantMarkdownStop<CR>      " Kills the preview
 
+" Fugitive
+map <C-u> :G add -u
+map <C-p> :G push

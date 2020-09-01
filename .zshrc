@@ -300,6 +300,7 @@ ex ()
 
 # Aliases
 alias ls="colorls"
+alias cls="clear"
 alias config="/usr/bin/git --git-dir=$HOME/dots/ --work-tree=$HOME"
 alias v="nvim"
 alias vidoas="doas vim /etc/doas.conf"
@@ -335,9 +336,6 @@ alias gst='git status'
 alias gtag='git tag'
 alias newtag='git tag -a'
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
-
-# Neofetch
-neofetch 
 
 # Spaceship
 SPACESHIP_PROMPT_ADD_NEWLINE=false

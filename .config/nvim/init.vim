@@ -1,6 +1,7 @@
+
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'davidhalter/jedi-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
@@ -24,6 +25,7 @@ set wildmenu					" Display all matches when tab complete.
 set incsearch                   " Incremental search
 set hidden                      " Needed to keep multiple buffers open
 set nobackup                    " No auto backups
+set nowritebackup
 set noswapfile
 set ignorecase
 set smartcase
@@ -56,12 +58,6 @@ let g:lightline = {
   function! MyFileformat()
     return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
   endfunction
-
-  function! FugitiveHead()
-    return winwidth(0) > 70 ? (& . ' ' . gitbranch()) : ''
-  endfunction
-let g:jedi#completions_enabled = 0
-let g:jedi#use_splits_not_buffers = "right"
 
 
 let g:Hexokinase_highlighters = ['backgroundfull']

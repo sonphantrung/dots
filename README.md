@@ -1,5 +1,5 @@
 # DOTFILES
-These Are My Dotfiles(Pretty Dumb, Don't look at them!)
+These Are My Dotfiles (**Pretty Dumb, Don't look at them!**)
 ## Overview
 It contains
 - [Neovim](https://gitlab.com/phantrungson17/dots/-/tree/master/.config/nvim)

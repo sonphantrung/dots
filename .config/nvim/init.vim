@@ -44,7 +44,7 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead',
+      \   'gitbranch':  'FugitiveHead',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
       \ }
@@ -58,8 +58,11 @@ let g:lightline = {
   endfunction
 
   function! FugitiveHead()
-    return winwidth(0) > 70 ? (&gitbranch . ' ' . WebDevIconsGetGitBranchSymbol()) : ''
+    return winwidth(0) > 70 ? (& . ' ' . gitbranch()) : ''
   endfunction
+let g:jedi#completions_enabled = 0
+let g:jedi#use_splits_not_buffers = "right"
+
 
 let g:Hexokinase_highlighters = ['backgroundfull']
 
@@ -73,7 +76,7 @@ let g:Hexokinase_optInPatterns = [
 \     'colour_names'
 \ ]
 
-let g:Hexokinase_refreshEvents = ['InsertLeave']
+let g:Hexokinase_refreshEvents = ['InsertLeave', 'TextChanged']
 
 autocmd vimenter * HexokinaseTurnOn
 
@@ -86,7 +89,8 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=38
 
 " Markdown
-let g:instant_markdown_browser = "surf"      " Uses surf for preview
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_browser = "surf"     " Uses surf for preview
 map <Leader>d :InstantMarkdownPreview<CR>   " Previews .md file
 map <Leader>s :InstantMarkdownStop<CR>      " Kills the preview
 

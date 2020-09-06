@@ -37,7 +37,9 @@ set termguicolors
 colorscheme nord
 syntax enable
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
-autocmd vimenter * hi LineNR guibg=NONE ctermbg=NONE
+autocmd vimenter * hi LineNR guibg=NONE ctermbg=NONE 
+autocmd vimenter * hi CursorLineNR guibg=NONE ctermbg=NONE
+autocmd vimenter * hi Shadow guibg=NONE ctermbg=NONE
 
 let g:lightline = {
       \ 'colorscheme': 'nord',

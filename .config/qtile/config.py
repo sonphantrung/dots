@@ -212,14 +212,14 @@ def init_widgets_list():
                        text = '|',
                        padding = 0,
                        fontsize = 20,
-                       foreground = colors[3]
+                       foreground = colors[3],
                        ),
                 widget.Systray(),
                 widget.Sep(
                        linewidth = 0,
                        padding = 6,
                        foreground = colors[2],
-                       background = colors[0]
+                       background = colors[0],
                        ),
             ]
     return widgets_list

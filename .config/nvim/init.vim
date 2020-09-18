@@ -12,11 +12,14 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/vim-emoji'
-Plug 'scrooloose/nerdtree'                         " Nerdtree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
 Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
 Plug 'itchyny/lightline.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
 
 call plug#end()
 set path+=**					" Searches current directory recursively.
@@ -36,6 +39,11 @@ set clipboard+=unnamedplus       " Copy/paste between vim and other programs.
 set termguicolors
 colorscheme nord
 syntax enable
+
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+augroup END
 " Give more space for displaying messages.
 set cmdheight=2
 
@@ -203,8 +211,8 @@ let g:lightline = {
   function! MyFileformat()
     return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
   endfunction
-
-
+let g:fern#renderer = "nerdfont"
+let g:cursorhold_updatetime = 100
 let g:Hexokinase_highlighters = ['backgroundfull']
 
 let g:Hexokinase_optInPatterns = [
@@ -220,14 +228,6 @@ let g:Hexokinase_optInPatterns = [
 let g:Hexokinase_refreshEvents = ['InsertLeave', 'TextChanged']
 
 autocmd vimenter * HexokinaseTurnOn
-
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable = '►'
-let g:NERDTreeDirArrowCollapsible = '▼'
-let NERDTreeShowLineNumbers=1
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize=38
 
 " Markdown
 let g:instant_markdown_autostart = 0

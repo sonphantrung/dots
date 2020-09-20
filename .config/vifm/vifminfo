@@ -18,7 +18,7 @@
 
 # TUI:
 al
-q0
+q1
 v2
 ov
 m-1
@@ -51,8 +51,29 @@ d/home/phantrungson
 	wallpapers
 17
 d/home/phantrungson/wallpapers
-	0011.jpg
-11
+	0109.jpg
+31
+d/home/phantrungson
+	dwm-phantrungson
+14
+d/home/phantrungson/dwm-phantrungson
+	patches
+1
+d/home/phantrungson/dwm-phantrungson/patches
+	dwm-systray-6.2.diff
+8
+d/home/phantrungson/dwm-phantrungson
+	patches
+1
+d/home/phantrungson/dwm-phantrungson/patches
+	..
+0
+d/home/phantrungson/dwm-phantrungson
+	..
+0
+d/home/phantrungson
+	out3.mkv
+20
 d
 
 # Right window history (oldest to newest):
@@ -64,6 +85,7 @@ D
 # Command line history (oldest to newest):
 :set hidden
 :set show hidden
+:rm
 :q
 
 # Search history (oldest to newest):
@@ -73,10 +95,13 @@ D
 # Local filter history (oldest to newest):
 
 # Registers:
+""/home/phantrungson/.local/share/vifm/Trash/000_dwm-systray-6.2.diff
 
 # Directory stack (oldest to newest):
 
 # Trash content:
+t/home/phantrungson/.local/share/vifm/Trash/000_dwm-systray-6.2.diff
+	/home/phantrungson/dwm-phantrungson/patches/dwm-systray-6.2.diff
 
 # State:
 f

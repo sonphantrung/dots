@@ -72,8 +72,65 @@ d/home/phantrungson/dwm-phantrungson
 	..
 0
 d/home/phantrungson
-	out3.mkv
+	wallpapers
+12
+d/home/phantrungson/wallpapers
+	0109.jpg
+30
+d/home/phantrungson
+	wallpapers
+12
+d/home/phantrungson/wallpapers
+	..
+0
+d/home/phantrungson
+	oh-my-fish
+5
+d/home
+	phantrungson
+1
+d/
+	etc
+3
+d/etc
+	..
+0
+d/
+	home
+4
+d/home
+	phantrungson
+1
+d/home/phantrungson
+	Downloads
+3
+d/home/phantrungson/Downloads
+	wp5212686-demon-slayer-kimetsu-no-yaiba-minimalist-wallpapers.jpg
 20
+d/home/phantrungson
+	Pictures
+6
+d/home/phantrungson/Pictures
+	687474703a2f2f692e696d6775722e636f6d2f794b56746736652e706e67.png
+1
+d/home/phantrungson
+	lfimg
+16
+d/home/phantrungson/lfimg
+	screenshot.png
+6
+d/home/phantrungson
+	nord-xresources
+19
+d/home/phantrungson/nord-xresources
+	README.md
+4
+d/home/phantrungson
+	Downloads
+3
+d/home/phantrungson/Downloads
+	wallhaven-5we787.jpg
+17
 d
 
 # Right window history (oldest to newest):
@@ -83,9 +140,11 @@ D/home/phantrungson
 D
 
 # Command line history (oldest to newest):
-:set hidden
-:set show hidden
 :rm
+:set show hidden
+:show hidden
+:set hidden
+:help
 :q
 
 # Search history (oldest to newest):

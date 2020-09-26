@@ -22,7 +22,8 @@ Plugin 'vim-python/python-syntax'
 Plugin 'jreybert/vimagit'
 Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'ap/vim-css-color'                           " Color previews for CSS
-Plugin 'tpope/vim-surround'                         " Change surrounding marks
+Plugin 'tpope/vim-surround'                          " Change surrounding marks
+Plugin 'dylanaraps/wal.vim'
 
 call vundle#end()		" required, all plugins must appear before this line.
 
@@ -64,7 +65,7 @@ let g:rehash256 = 1
 
 " Uncomment to prevent non-normal modes showing in powerline and below powerline.
 set noshowmode
-
+set clipboard+=unnamedplus
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -37,14 +37,17 @@ source $ZSH/oh-my-zsh.sh
 
 echo "Hello There, $(whoami)"
 echo "Your OS: $(uname -o)"
+neofetch
 export LF_ICONS="\
 di=:\
+.git=:\
 fi=:\
 ln=:\
 or=:\
 ex=:\
 *.bashrc=:\
 *.zshrc=:\
+*.gitconfig=:\
 *.diff=:\
 *.vimrc=:\
 *.viminfo=:\
@@ -230,11 +233,10 @@ ex ()
 }
 
 # Aliases
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
+alias ls='lsd' # my preferred listing
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 alias y="yay"
 alias cls="clear"
 alias q="exit"

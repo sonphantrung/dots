@@ -1,4 +1,3 @@
-
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -192,6 +191,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi LineNr guibg=NONE ctermbg=NONE
+autocmd vimenter * hi CocDiagnostics guibg=NONE ctermbg=NONE
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {

@@ -45,4 +45,3 @@ case "$1" in
 		;;
 	*) highlight --out-format ansi "$1" || cat "$1";;
 esac
-

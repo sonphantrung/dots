@@ -10,6 +10,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
 Plug 'itchyny/lightline.vim'
@@ -36,7 +38,7 @@ set number relativenumber       " Display line numbers
 set noshowmode
 set clipboard+=unnamedplus       " Copy/paste between vim and other programs.
 set termguicolors
-colorscheme nord
+colorscheme onedark
 syntax enable
 
 augroup my-glyph-palette
@@ -193,16 +195,19 @@ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi LineNr guibg=NONE ctermbg=NONE
 autocmd vimenter * hi CocDiagnostics guibg=NONE ctermbg=NONE
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch':  'FugitiveHead',
+      \   'readonly': 'LightlineReadonly',
+      \   'gitbranch': 'LightlineFugitive',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
-      \ }
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
   function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
@@ -211,6 +216,18 @@ let g:lightline = {
   function! MyFileformat()
     return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
   endfunction
+
+  function! LightlineReadonly()
+    return &readonly && &filetype !=# 'help' ? '' : ''
+  endfunction
+
+  function! LightlineFugitive()
+    if exists('*FugitiveHead')
+    let branch = FugitiveHead()
+         return branch !=# '' ? ''.branch : ''
+	endif
+	return ''
+	endfunction
 let g:fern#renderer = "nerdfont"
 let g:cursorhold_updatetime = 100
 let g:Hexokinase_highlighters = ['backgroundfull']

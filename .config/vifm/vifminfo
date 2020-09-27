@@ -18,7 +18,7 @@
 
 # TUI:
 al
-q0
+q1
 v2
 ov
 m-1
@@ -132,8 +132,11 @@ d/home/phantrungson/Downloads
 	wallhaven-5we787.jpg
 18
 d/home/phantrungson
-	tint2-theme-collections
-5
+	.doom.d
+6
+d/home/phantrungson/.doom.d
+	config.el
+1
 d
 
 # Right window history (oldest to newest):

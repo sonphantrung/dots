@@ -193,7 +193,9 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi LineNr guibg=NONE ctermbg=NONE
-autocmd vimenter * hi CocDiagnostics guibg=NONE ctermbg=NONE
+
+" Lightline config
+
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ 'active': {
@@ -211,7 +213,7 @@ let g:lightline = {
       \ }
   function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-  endfunction
+  endfunction 
 
   function! MyFileformat()
     return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
@@ -224,10 +226,12 @@ let g:lightline = {
   function! LightlineFugitive()
     if exists('*FugitiveHead')
     let branch = FugitiveHead()
-         return branch !=# '' ? ''.branch : ''
-	endif
-	return ''
-	endfunction
+      return branch !=# '' ? ''.branch : ''
+     endif
+    return ''
+  endfunction
+
+
 let g:fern#renderer = "nerdfont"
 let g:cursorhold_updatetime = 100
 let g:Hexokinase_highlighters = ['backgroundfull']
@@ -251,7 +255,3 @@ let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "surf"     " Uses surf for preview
 map <Leader>md :InstantMarkdownPreview<CR>   " Previews .md file
 map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
-
-" Fugitive
-map <C-u> :G add -u
-map <C-p> :G push

@@ -33,7 +33,7 @@ run pamac-tray &
 run xfce4-power-manager &
 numlockx on &
 blueberry-tray &
-picom --config $HOME/.config/bspwm/picom.conf &
+picom --experimental-backends --config $HOME/.config/bspwm/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 run volumeicon &

@@ -287,6 +287,11 @@ alias yta-opus="youtube-dl --extract-audio --audio-format opus "
 alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 
+# The auto completion
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -320,7 +325,7 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Spaceship
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-#SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_CHAR_SYMBOL=$
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_HG_SHOW=false
@@ -350,15 +355,11 @@ SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_JOBS_SHOW=false
 
 #P10k
-#POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='%'
-#POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='%'
-#POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='%'
-#POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTENT_EXPANSION='%'
 # Default prompt symbol.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='$'
-  # Prompt symbol in command vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='$'
-  # Prompt symbol in visual vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='$'
-  # Prompt symbol in overwrite vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTENT_EXPANSION='$'
+ typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='$'
+ # Prompt symbol in command vi mode.
+ typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='$'
+ # Prompt symbol in visual vi mode.
+ typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='$'
+ # Prompt symbol in overwrite vi mode.
+ typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTENT_EXPANSION='$'

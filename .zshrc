@@ -21,7 +21,8 @@ export QT_IM_MODULE=ibus # Get Ibus To Work
 # Path to your oh-my-zsh installation.
 export ZSH="/home/phantrungson/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -35,19 +36,15 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-echo "Hello There, $(whoami)"
-echo "Your OS: $(uname -o)"
 neofetch
 export LF_ICONS="\
 di=:\
-.git=:\
 fi=:\
 ln=:\
 or=:\
 ex=:\
 *.bashrc=:\
 *.zshrc=:\
-*.gitconfig=:\
 *.diff=:\
 *.vimrc=:\
 *.viminfo=:\

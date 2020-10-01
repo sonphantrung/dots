@@ -36,7 +36,7 @@ export LESS_TERMCAP_ue=$(tput sgr0)
 # End bold, blinking, standout, underline
 export LESS_TERMCAP_me=$(tput sgr0)
 #ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="spaceship"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"

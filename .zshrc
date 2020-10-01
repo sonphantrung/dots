@@ -21,6 +21,20 @@ export QT_IM_MODULE=ibus # Get Ibus To Work
 # Path to your oh-my-zsh installation.
 export ZSH="/home/phantrungson/.oh-my-zsh"
 
+# Start blinking
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+# Start bold
+export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
+# Start stand out
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
+# End standout
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# Start underline
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
+# End Underline
+export LESS_TERMCAP_ue=$(tput sgr0)
+# End bold, blinking, standout, underline
+export LESS_TERMCAP_me=$(tput sgr0)
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="spaceship"
 
@@ -36,7 +50,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-neofetch
+neofetch --ascii_colors 6 6 6 6 6 6   --colors 6 6 6 6 6 6
 export LF_ICONS="\
 di=:\
 fi=:\

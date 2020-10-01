@@ -18,7 +18,7 @@
 
 # TUI:
 al
-q1
+q0
 v2
 ov
 m-1
@@ -137,6 +137,12 @@ d/home/phantrungson
 d/home/phantrungson/.doom.d
 	config.el
 1
+d/home/phantrungson
+	Downloads
+13
+d/home/phantrungson/Downloads
+	wallpaperflare.com_wallpaper.jpg
+25
 d
 
 # Right window history (oldest to newest):

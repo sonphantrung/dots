@@ -3,9 +3,9 @@
 NUM="$(checkupdates | wc -l)"
 ARCH=""
 
-if [ ""$NUM" = "0"" ]
+if [[ ""$NUM" == "0"" ]]
 then
-	echo "  Up to d8"
+	echo "  Up 2 d8"
 else
-	echo "  $NUM avail"
+	echo $ARCH $NUM "avail"
 fi

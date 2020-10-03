@@ -14,16 +14,9 @@ export QT_IM_MODULE=ibus
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# get current branch in git repo
-function parse_git_branch() {
-	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-	if [ ! "${BRANCH}" == "" ]
-	then
-		STAT=`parse_git_dirty`
-		echo "[${BRANCH}${STAT}]"
-	else
-		echo ""
-	fi
+function nonzero_return() {
+	RETVAL=$?
+	[ $RETVAL -ne 0 ] && echo "$RETVAL"
 }
 
 # get current branch in git repo
@@ -32,7 +25,7 @@ function parse_git_branch() {
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_dirty`
-		echo "[${BRANCH}${STAT}]"
+		echo " ${BRANCH}${STAT}"
 	else
 		echo ""
 	fi
@@ -73,7 +66,7 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[40m\]\u\[\e[m\]\[\e[40m\]@\[\e[m\]\[\e[40m\]\h\[\e[m\]\[\e[30;44m\]\[\e[m\]\[\e[44m\]\w\[\e[m\]\[\e[44m\]\`parse_git_branch\`\[\e[m\]\[\e[34m\]\[\e[m\] "
+export PS1="\[\e[33m\][\[\e[m\]\[\e[34m\]\W\[\e[m\]\[\e[32m\]\`parse_git_branch\`\[\e[m\]\[\e[31;40m\]\`nonzero_return\`\[\e[m\]\[\e[33m\]]\[\e[m\]: "
 
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"

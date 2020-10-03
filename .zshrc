@@ -1,3 +1,7 @@
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
 fi
@@ -17,10 +21,37 @@ TERM="xterm-256color"
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=dbus
 export QT_IM_MODULE=ibus # Get Ibus To Work
+# Enable colors and change prompt:
+autoload -U colors && colors
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/phantrungson/.oh-my-zsh"
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/phantrungson/.zshrc'
 
+# newline on prompt & git branch indicator
+function precmd {
+    if [[ "$NEW_LINE" = true ]] then
+		print ""
+    else
+        NEW_LINE=true
+    fi
+	vcs_info
+}
+autoload -Uz vcs_info
+alias clear='NEW_LINE=false && clear' # no preceeding newline after clear
+zstyle ':vcs_info:git:*' formats '%b '
+
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %F{cyan}${vcs_info_msg_0_}%F{blue}$ '
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 # Start blinking
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
 # Start bold
@@ -35,22 +66,18 @@ export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
 export LESS_TERMCAP_ue=$(tput sgr0)
 # End bold, blinking, standout, underline
 export LESS_TERMCAP_me=$(tput sgr0)
-ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="gentoo"
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# Basic auto/tab complete:
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
 
-#plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use)
+source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null
+source ~/cuszsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source ~/cuszsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source ~/cuszsh/git/git.zsh
 
-source $ZSH/oh-my-zsh.sh
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-neofetch --ascii_colors 6 6 6 6 6 6   --colors 6 6 6 6 6 6
 export LF_ICONS="\
 di=:\
 fi=:\
@@ -334,34 +361,3 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-# Spaceship
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_CHAR_SYMBOL=$
-SPACESHIP_CHAR_SUFFIX=" "
-SPACESHIP_HG_SHOW=false
-SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_NODE_SHOW=false
-SPACESHIP_RUBY_SHOW=false
-SPACESHIP_ELM_SHOW=false
-SPACESHIP_ELIXIR_SHOW=false
-SPACESHIP_XCODE_SHOW_LOCAL=false
-SPACESHIP_SWIFT_SHOW_LOCAL=false
-SPACESHIP_GOLANG_SHOW=false
-SPACESHIP_PHP_SHOW=false
-SPACESHIP_RUST_SHOW=false
-SPACESHIP_JULIA_SHOW=false
-SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_DOCKER_CONTEXT_SHOW=false
-SPACESHIP_AWS_SHOW=false
-SPACESHIP_CONDA_SHOW=false
-SPACESHIP_VENV_SHOW=false
-SPACESHIP_PYENV_SHOW=false
-SPACESHIP_DOTNET_SHOW=false
-SPACESHIP_EMBER_SHOW=false
-SPACESHIP_KUBECONTEXT_SHOW=false
-SPACESHIP_TERRAFORM_SHOW=false
-SPACESHIP_TERRAFORM_SHOW=false
-SPACESHIP_VI_MODE_SHOW=false
-SPACESHIP_JOBS_SHOW=false
-

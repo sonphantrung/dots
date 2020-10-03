@@ -1,4 +1,3 @@
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -49,6 +48,8 @@ zstyle ':vcs_info:git:*' formats '%b '
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %F{cyan}${vcs_info_msg_0_}%F{blue}$ '
+RPROMPT='%F{yellow}%t'
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall

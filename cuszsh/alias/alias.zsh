@@ -1,0 +1,83 @@
+
+### ARCHIVE EXTRACTION
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;      
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Aliases
+alias ls='lsd' # my preferred listing
+alias la='ls -a'
+alias lla='ls -la'
+alias ll='ls -l'
+alias lt='ls --tree'
+alias y="yay"
+alias cls="clear"
+alias q="exit"
+alias config="/usr/bin/git --git-dir=$HOME/dots/ --work-tree=$HOME"
+alias v="nvim"
+alias vidoas="doas vim /etc/doas.conf"
+alias ..='cd ..' 
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+alias pacsyu='doas pacman -Syyu'                 # update only standard pkgs
+alias yaysua="yay -Sua --noconfirm"              # update only AUR pkgs
+alias yaysyu="yay -Syu --noconfirm"              # update standard pkgs and AUR pkgs
+alias unlock="doas rm /var/lib/pacman/db.lck"    # remove pacman lock
+alias mirror="doas reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="doas reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="doas reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="doas reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+alias gaddu='git add -u'
+alias gadd='git add .'
+alias gb='git branch'
+alias gch='git checkout'
+alias gcl='git clone'
+alias gcm='git commit -m'
+alias gf='git fetch'
+alias gp='git pull origin'
+alias gpsh='git push origin'
+alias gst='git status'
+alias gtag='git tag'
+alias newtag='git tag -a'
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+alias vifm='vifmrun'
+alias wget='wget -c'
+alias merge="xrdb -merge ~/.Xresources"
+alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+alias yta-best="youtube-dl --extract-audio --audio-format best "
+alias yta-flac="youtube-dl --extract-audio --audio-format flac "
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+alias yta-opus="youtube-dl --extract-audio --audio-format opus "
+alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
+alias yta-wav="youtube-dl --extract-audio --audio-format wav "

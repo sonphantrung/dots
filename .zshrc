@@ -27,7 +27,7 @@ autoload -U colors && colors
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/phantrungson/.zshrc'
@@ -47,7 +47,7 @@ zstyle ':vcs_info:git:*' formats '%b '
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %F{cyan}${vcs_info_msg_0_}%F{blue}$ '
+PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %B%F{cyan}${vcs_info_msg_0_}%F{blue}$ %f%b'
 RPROMPT='%F{yellow}%t'
 
 autoload -Uz compinit
@@ -77,7 +77,7 @@ _comp_options+=(globdots)		# Include hidden files.
 source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null
 source ~/cuszsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source ~/cuszsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source ~/cuszsh/git/git.zsh
+source ~/cuszsh/git/git.zsh 2>/dev/null
 
 export LF_ICONS="\
 di=:\

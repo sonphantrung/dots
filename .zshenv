@@ -11,6 +11,10 @@ if [ -d "$HOME/.emacs.d/bin" ] ;
   then PATH="$HOME/.emacs.d/bin:$PATH"
 fi
 
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=dbus
+export QT_IM_MODULE=ibus # Get Ibus To Work
+
 export EDITOR="nvim"
 export TERM="xterm-256color"
 

@@ -2,11 +2,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=dbus
-export QT_IM_MODULE=ibus # Get Ibus To Work
 # Enable colors and change prompt:
 autoload -U colors && colors
 

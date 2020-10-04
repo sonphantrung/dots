@@ -28,13 +28,45 @@ function precmd {
     fi
 	vcs_info
 }
-autoload -Uz vcs_info
-alias clear='NEW_LINE=false && clear' # no preceeding newline after clear
-zstyle ':vcs_info:git:*' formats '%b '
+setup_git_prompt() {
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        unset git_prompt
+        return 0
+    fi
 
+    local git_status_dirty git_status_stash git_branch
+
+    if [ "$(git --no-optional-locks status --untracked-files='no' --porcelain)" ]; then
+        git_status_dirty='%F{green}*'
+    else
+        unset git_status_dirty
+    fi
+
+    if [ "$(git stash list)" ]; then
+        git_status_stash="%F{yellow}▲"
+    else
+        unset git_status_stash
+    fi
+
+    git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
+    git_branch="${git_branch#refs/heads/}"
+
+    if [ "${#git_branch}" -ge 24 ]; then
+        git_branch="${git_branch:0:21}..."
+    fi
+
+    git_branch="${git_branch:-no branch}"
+
+    git_prompt="${git_branch}${git_status_dirty}${git_status_stash}"
+
+}
+precmd() {
+    # Set optional git part of prompt.
+    setup_git_prompt
+}
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %B%F{cyan}${vcs_info_msg_0_}%B%F{blue}$ %f%b'
+PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %B%F{cyan}${git_prompt}%B%F{blue}$ %f%b'
 RPROMPT='%B%F{yellow}%t'
 
 autoload -Uz compinit

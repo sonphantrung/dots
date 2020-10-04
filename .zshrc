@@ -19,15 +19,7 @@ SAVEHIST=1000
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/phantrungson/.zshrc'
 
-# newline on prompt & git branch indicator
-function precmd {
-    if [[ "$NEW_LINE" = true ]] then
-		print ""
-    else
-        NEW_LINE=true
-    fi
-	vcs_info
-}
+#Git branch indicator(No vcs-info)
 setup_git_prompt() {
     if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
         unset git_prompt

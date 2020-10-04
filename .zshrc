@@ -57,7 +57,7 @@ setup_git_prompt() {
 
     git_branch="${git_branch:-no branch}"
 
-    git_prompt="${git_branch}${git_status_dirty}${git_status_stash}"
+    git_prompt="${git_branch}${git_status_dirty}${git_status_stash} "
 
 }
 precmd() {

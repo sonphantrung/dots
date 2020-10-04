@@ -47,7 +47,7 @@ zstyle ':vcs_info:git:*' formats '%b '
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %B%F{cyan}${vcs_info_msg_0_}%F{blue}$ %f%b'
+PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %B%F{cyan}${vcs_info_msg_0_}%B%F{blue}$ %f%b'
 RPROMPT='%F{yellow}%t'
 
 autoload -Uz compinit
@@ -275,6 +275,7 @@ ex ()
 alias ls='lsd' # my preferred listing
 alias la='ls -a'
 alias lla='ls -la'
+alias ll='ls -l'
 alias lt='ls --tree'
 alias y="yay"
 alias cls="clear"

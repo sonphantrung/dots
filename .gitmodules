@@ -10,3 +10,6 @@
 [submodule "cuszsh/zsh-autosuggestions"]
 	path = cuszsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule ".local/share/fonts/bitmap-font-collections"]
+	path = .local/share/fonts/bitmap-font-collections
+	url = https://github.com/addy-dclxvi/bitmap-font-collections.git

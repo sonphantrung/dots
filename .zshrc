@@ -53,29 +53,15 @@ precmd() {
 }
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%1~ %B%F{cyan}${git_prompt}%B%F{blue}$ %f%b'
-RPROMPT='%B%F{yellow}%t'
+PROMPT='%F{blue}%1~ %B%F{red}${git_prompt}%B%F{magenta}%# %f%b'
 
+# Tab completion
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-# Basic auto/tab complete:
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
-
-source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null
-source ~/cuszsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source ~/cuszsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source ~/cuszsh/git/git.zsh 
-source ~/cuszsh/alias/alias.zsh 
-
-
-# The auto completion
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)
 
 # vi mode
 bindkey -v
@@ -108,3 +94,11 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+
+source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null
+source ~/cuszsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source ~/cuszsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source ~/cuszsh/git/git.zsh 
+source ~/cuszsh/alias/alias.zsh 
+

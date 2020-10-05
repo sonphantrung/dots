@@ -137,7 +137,7 @@ layouts = [
 colors = [["#010205", "#010205"], # panel background
           ["#1D2330", "#1D2330"], # background for current screen tab
           ["#ffffff", "#ffffff"], # font color for group names
-          ["#7C0707", "#7C0707"], # border line color for current tab
+          ["#589090", "#589090"], # border line color for current tab
           ["#4D775C", "#4D775C"], # border line color for other tab and odd widgets
           ["#345252", "#345252"], # color for the even widgets
           ["#AB8A61", "#AB8A61"]] # window name
@@ -146,7 +146,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 
 widget_defaults = dict(
-    font='Mononoki Nerd Font',
+    font='mono',
     fontsize=14,
     padding=3,
     background=colors[0],

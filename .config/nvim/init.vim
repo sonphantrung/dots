@@ -15,7 +15,7 @@ set number relativenumber       " Display line numbers
 set noshowmode
 set clipboard+=unnamedplus       " Copy/paste between vim and other programs.
 set termguicolors
-colorscheme onedark
+colorscheme nord
 syntax enable
 
 augroup my-glyph-palette

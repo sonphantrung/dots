@@ -13,3 +13,6 @@
 [submodule ".local/share/fonts/bitmap-font-collections"]
 	path = .local/share/fonts/bitmap-font-collections
 	url = https://github.com/addy-dclxvi/bitmap-font-collections.git
+[submodule "wall"]
+	path = wall
+	url = https://gitlab.com/dwt1/wallpapers.git

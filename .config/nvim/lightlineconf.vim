@@ -12,7 +12,6 @@ let g:lightline = {
       \   'gitbranch': 'LightlineFugitive',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
-      \   'cocstatus': 'coc#status'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
@@ -37,5 +36,3 @@ let g:lightline = {
     return ''
   endfunction
 
-  " Use auocmd to force lightline update.
-  autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()

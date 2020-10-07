@@ -18,16 +18,9 @@ set termguicolors
 colorscheme nord
 syntax enable
 
-augroup my-glyph-palette
-  autocmd! *
-  autocmd FileType fern call glyph_palette#apply()
-augroup END
-
 source ~/.config/nvim/coconf.vim
 source ~/.config/nvim/lightlineconf.vim
 
-let g:fern#renderer = "nerdfont"
-let g:cursorhold_updatetime = 100
 let g:Hexokinase_highlighters = ['backgroundfull']
 
 let g:Hexokinase_optInPatterns = [

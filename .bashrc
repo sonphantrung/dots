@@ -425,5 +425,5 @@ ex=:\
 
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 printf '\033[5 q\r'
-source ~/.bash-preexec.sh
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+preexec() { printf '\033[5 q\r' ;} # Use beam shape cursor for each new prompt.

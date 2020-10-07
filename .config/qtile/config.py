@@ -58,12 +58,8 @@ keys = [
     # Swap panes of split stack
     Key([mod, "shift"], "space", lazy.layout.rotate(),
         desc="Swap panes of split stack"),
-    Key([mod], "j", lazy.layout.down()),
-    Key([mod], "k", lazy.layout.up()),
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
     Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
     Key([mod, "mod1"], "j", lazy.layout.flip_down()),

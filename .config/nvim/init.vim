@@ -20,6 +20,7 @@ syntax enable
 
 source ~/.config/nvim/coconf.vim
 source ~/.config/nvim/lightlineconf.vim
+source ~/.config/nvim/vimfzf.vim
 
 let g:Hexokinase_highlighters = ['backgroundfull']
 

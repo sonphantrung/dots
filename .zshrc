@@ -118,4 +118,3 @@ source ~/cuszsh/alias/alias.zsh
 source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null
 source ~/cuszsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source ~/cuszsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-

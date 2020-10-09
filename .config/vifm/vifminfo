@@ -18,7 +18,7 @@
 
 # TUI:
 al
-q0
+q1
 v2
 ov
 m-1
@@ -144,8 +144,11 @@ d/home/phantrungson/Downloads
 	wp5244984-demon-slayer-kimetsu-no-yaiba-uhd-wallpapers.jpg
 33
 d/home/phantrungson
-	Templates
-18
+	dwm2
+24
+d/home/phantrungson/dwm2
+	.git
+1
 d
 
 # Right window history (oldest to newest):

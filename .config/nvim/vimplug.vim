@@ -9,7 +9,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'

@@ -1,8 +1,8 @@
-git clone --bare --recursive git@gitlab.org:phantrungson17/dots
-git clone git@gitlab.org:phantrungson17/st-phantrungson
-git clone git@gitlab.org:phantrungson17/dmenu-phantrungson
-git clone git@gitlab.org:phantrungson17/Slstatus
-git clone git@gitlab.org:phantrungson17/dwm-phantrungson
+git clone --bare --recursive git@gitlab.org:phantrungson17/dots.git
+git clone git@gitlab.org:phantrungson17/st-phantrungson.git
+git clone git@gitlab.org:phantrungson17/dmenu-phantrungson.git
+git clone git@gitlab.org:phantrungson17/Slstatus.git
+git clone git@gitlab.org:phantrungson17/dwm-phantrungson.git
 function config {
    /usr/bin/git --git-dir=$HOME/dots/ --work-tree=$HOME $@
 }

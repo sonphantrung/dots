@@ -10,8 +10,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()		" required, all plugins must appear after this line.
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'gmarik/Vundle.vim'							" Vundle
-Plugin 'itchyny/lightline.vim'                      " Lightline statusbar
 Plugin 'vifm/vifm.vim'
 Plugin 'vimwiki/vimwiki'                            " Vim wiki
 Plugin 'scrooloose/nerdtree'						" added nerdtree
@@ -45,16 +46,11 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Remap ESC to ii
 :imap ii <Esc>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Powerline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
-
-" Always show statusline
-set laststatus=2
+" Airline
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256

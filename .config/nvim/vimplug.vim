@@ -14,7 +14,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/vim-emoji'
-Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
+Plug 'ryanoasis/vim-devicons'                      
 Plug 'itchyny/lightline.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 

@@ -7,7 +7,8 @@
 	],
 	"explorer.width": 30,
 	"explorer.icon.enableNerdfont": true,
-	"explorer.previewAction.onHover": false,
+	"explorer.previewAction.onHover": true,
+	"explorer.file.showHiddenFiles": true,
 	"explorer.keyMappings": {
 		"<cr>": [
 			"expandable?",

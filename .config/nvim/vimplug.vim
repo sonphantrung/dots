@@ -17,5 +17,7 @@ Plug 'junegunn/vim-emoji'
 Plug 'ryanoasis/vim-devicons'                      
 Plug 'itchyny/lightline.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'antoinemadec/FixCursorHold.nvim'
 
 call plug#end()
+let g:cursorhold_updatetime = 100

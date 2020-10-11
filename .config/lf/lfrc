@@ -25,3 +25,51 @@ cmd mkfile ${{
   read ans
   $EDITOR $ans
 }}
+
+cmd dragon %dragon-drag-and-drop -a -x $fx
+cmd dragon-stay %dragon-drag-and-drop -a $fx
+cmd dragon-individual %dragon-drag-and-drop $fx
+cmd cpdragon %cpdragon
+cmd mvdragon %mvdragon
+
+# Bindings
+# Remove some defaults
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map c
+map e
+map f
+
+# Basic Functions
+map . set hidden!
+map DD delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map mf mkfile
+map mr sudomkfile
+map md mkdir
+map ms $mkscript
+map ch chmod
+map bg setwallpaper
+map o open_config
+map br $vimv $fx
+map r rename
+map H top
+map L bottom
+map R reload
+map C clear
+map U unselect
+
+# Dragon Mapping
+map dr dragon
+map ds dragon-stay
+map di dragon-individual
+map dm mvdragon
+map dc cpdragon
+map dl dlfile

@@ -5,11 +5,12 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'gitstatus', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
       \   'gitbranch': 'LightlineFugitive',
+      \   'gitstatus': 'GitStatus',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
       \ },
@@ -27,6 +28,11 @@ let g:lightline = {
   function! LightlineReadonly()
     return &readonly && &filetype !=# 'help' ? '' : ''
   endfunction
+
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
 
   function! LightlineFugitive()
     if exists('*FugitiveHead')

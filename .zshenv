@@ -6,7 +6,7 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
-
+PROMPT='%F{red}%1~ %B%F{cyan}${git_prompt}%B%F{magenta}%# %f%b'
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=dbus
 export QT_IM_MODULE=ibus # Get Ibus To Work

@@ -53,7 +53,6 @@ precmd() {
 }
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%F{red}%1~ %B%F{cyan}${git_prompt}%B%F{magenta}%# %f%b'
 
 # Tab completion
 autoload -Uz compinit

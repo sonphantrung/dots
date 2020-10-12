@@ -16,3 +16,51 @@
 [submodule "wall"]
 	path = wall
 	url = https://gitlab.com/dwt1/wallpapers.git
+[submodule ".config/nvim/pack/plugins/start/auto-pairs"]
+	path = .config/nvim/pack/plugins/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule ".config/nvim/pack/plugins/start/coc.nvim"]
+	path = .config/nvim/pack/plugins/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".config/nvim/pack/plugins/start/FixCursorHold.nvim"]
+	path = .config/nvim/pack/plugins/start/FixCursorHold.nvim
+	url = https://github.com/antoinemadec/FixCursorHold.nvim.git
+[submodule ".config/nvim/pack/plugins/start/fzf.vim"]
+	path = .config/nvim/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule ".config/nvim/pack/plugins/start/goyo.vim"]
+	path = .config/nvim/pack/plugins/start/goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule ".config/nvim/pack/plugins/start/lightline.vim"]
+	path = .config/nvim/pack/plugins/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule ".config/nvim/pack/plugins/start/limelight.vim"]
+	path = .config/nvim/pack/plugins/start/limelight.vim
+	url = https://github.com/junegunn/limelight.vim.git
+[submodule ".config/nvim/pack/plugins/start/nord-vim"]
+	path = .config/nvim/pack/plugins/start/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git
+[submodule ".config/nvim/pack/plugins/start/vim-devicons"]
+	path = .config/nvim/pack/plugins/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule ".config/nvim/pack/plugins/start/vim-fugitive"]
+	path = .config/nvim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".config/nvim/pack/plugins/start/vim-emoji"]
+	path = .config/nvim/pack/plugins/start/vim-emoji
+	url = https://github.com/junegunn/vim-emoji.git
+[submodule ".config/nvim/pack/plugins/start/vim-gitgutter"]
+	path = .config/nvim/pack/plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule ".config/nvim/pack/plugins/start/vim-hexokinase"]
+	path = .config/nvim/pack/plugins/start/vim-hexokinase
+	url = https://github.com/RRethy/vim-hexokinase.git
+[submodule ".config/nvim/pack/plugins/start/vim-surround"]
+	path = .config/nvim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".config/nvim/pack/plugins/start/vim-rainbow"]
+	path = .config/nvim/pack/plugins/start/vim-rainbow
+	url = https://github.com/frazrepo/vim-rainbow.git
+[submodule ".config/nvim/pack/plugins/start/vim-instant-markdown"]
+	path = .config/nvim/pack/plugins/start/vim-instant-markdown
+	url = https://github.com/suan/vim-instant-markdown.git

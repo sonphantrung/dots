@@ -5,17 +5,14 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'gitstatus', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'gitstatus', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
       \   'gitbranch': 'LightlineFugitive',
-      \   'gitstatus': 'GitStatus',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
   function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
@@ -28,11 +25,6 @@ let g:lightline = {
   function! LightlineReadonly()
     return &readonly && &filetype !=# 'help' ? '' : ''
   endfunction
-
-function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
 
   function! LightlineFugitive()
     if exists('*FugitiveHead')

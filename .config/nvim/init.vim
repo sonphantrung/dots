@@ -1,5 +1,3 @@
-source ~/.config/nvim/vimplug.vim
-
 set path+=**					" Searches current directory recursively.
 set mouse=a
 set wildmenu					" Display all matches when tab complete.

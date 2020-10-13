@@ -18,19 +18,8 @@ syntax enable
 source ~/.config/nvim/coconf.vim
 source ~/.config/nvim/vimfzf.vim
 source ~/.config/nvim/gut.vim
+source ~/.config/nvim/stt.vim 
 
-set statusline+=%R                        " readonly flag
-set statusline+=%M                        " modified [+] flag
-set statusline+=%#Cursor#               " colour
-set statusline+=%#CursorLine#     " colour
-set statusline+=\ %t\                   " short file name
-set statusline+=%=                          " right align
-set statusline+=%#CursorLine#   " colour
-set statusline+=\ %Y\                   " file type
-set statusline+=%#CursorIM#     " colour
-set statusline+=\ %3l:%-2c\         " line + column
-set statusline+=%#Cursor#       " colour
-set statusline+=\ %3p%%\                " percentage
 let g:Hexokinase_highlighters = ['backgroundfull']
 
 let g:Hexokinase_optInPatterns = [

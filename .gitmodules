@@ -31,9 +31,6 @@
 [submodule ".config/nvim/pack/plugins/start/goyo.vim"]
 	path = .config/nvim/pack/plugins/start/goyo.vim
 	url = https://github.com/junegunn/goyo.vim.git
-[submodule ".config/nvim/pack/plugins/start/lightline.vim"]
-	path = .config/nvim/pack/plugins/start/lightline.vim
-	url = https://github.com/itchyny/lightline.vim.git
 [submodule ".config/nvim/pack/plugins/start/limelight.vim"]
 	path = .config/nvim/pack/plugins/start/limelight.vim
 	url = https://github.com/junegunn/limelight.vim.git

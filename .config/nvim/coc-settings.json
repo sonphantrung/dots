@@ -6,7 +6,6 @@
 		"~/.config/nvim/utils/snips"
 	],
 	"explorer.width": 30,
-	"explorer.icon.enableNerdfont": true,
 	"explorer.previewAction.onHover": true,
 	"explorer.file.showHiddenFiles": true,
 	"explorer.keyMappings": {

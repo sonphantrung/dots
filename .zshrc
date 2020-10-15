@@ -109,9 +109,8 @@ bindkey -s '^o' 'lfcd\n'
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-#Aliases
-source ~/cuszsh/git/git.zsh 
-source ~/cuszsh/alias/alias.zsh 
+# Aliases
+for f in ~/.config/shellconfig/*; do source "$f"; done
 
 #Plugs
 source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null

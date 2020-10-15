@@ -27,7 +27,7 @@ ex ()
 }
 
 # Aliases
-alias ls='lsd' # my preferred listing
+alias ls='exa' # my preferred listing
 alias la='ls -a'
 alias lla='ls -la'
 alias ll='ls -l'

@@ -1,11 +1,6 @@
 
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
+PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
 PROMPT='%F{red}%1~ %B%F{cyan}${git_prompt}%B%F{magenta}%# %f%b'
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=dbus

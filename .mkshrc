@@ -1,0 +1,5 @@
+PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
+
+PS1='$(curdir) $(tput sgr 0)% '
+
+source ~/.config/shellconfig/*

@@ -1,4 +1,5 @@
 set path+=**					" Searches current directory recursively.
+set guicursor=
 set mouse=a
 set wildmenu					" Display all matches when tab complete.
 set incsearch                   " Incremental search

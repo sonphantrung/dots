@@ -1,6 +1,3 @@
-[submodule "/home/phantrungson/.config/ranger/plugins/ranger_devicons"]
-	path = /home/phantrungson/.config/ranger/plugins/ranger_devicons
-	url = https://github.com/alexanderjeurissen/ranger_devicons.git
 [submodule "cuszsh/you-should-use"]
 	path = cuszsh/you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use.git

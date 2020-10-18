@@ -58,8 +58,6 @@ alias fgrep='fgrep --color=auto'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
-alias gp='git pull origin'
-alias gpsh='git push origin'
 alias gaddu='git add -u'
 alias gadd='git add .'
 alias gb='git branch'

@@ -19,7 +19,7 @@ ex ()
       *.7z)        7z x $1      ;;
       *.deb)       ar x $1      ;;
       *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;      
+      *.tar.zst)   unzstd $1    ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
   else
@@ -36,10 +36,10 @@ alias lt='ls --tree'
 alias y="yay"
 alias cls="clear"
 alias q="exit"
-alias config="/usr/bin/git --git-dir=$HOME/dots/ --work-tree=$HOME"
+alias config="/usr/bin/git --git-dir=$HOME/dots.git/ --work-tree=$HOME"
 alias v="nvim"
 alias vidoas="doas vim /etc/doas.conf"
-alias ..='cd ..' 
+alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'

@@ -424,6 +424,5 @@ ex=:\
 #in there. They will not be overwritten by skel.
 
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
-printf '\033[5 q\r'
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 preexec() { printf '\033[5 q\r' ;} # Use beam shape cursor for each new prompt.

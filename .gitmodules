@@ -16,15 +16,9 @@
 [submodule ".config/nvim/pack/plugins/start/auto-pairs"]
 	path = .config/nvim/pack/plugins/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule ".config/nvim/pack/plugins/start/coc.nvim"]
-	path = .config/nvim/pack/plugins/start/coc.nvim
-	url = https://github.com/neoclide/coc.nvim.git
 [submodule ".config/nvim/pack/plugins/start/FixCursorHold.nvim"]
 	path = .config/nvim/pack/plugins/start/FixCursorHold.nvim
 	url = https://github.com/antoinemadec/FixCursorHold.nvim.git
-[submodule ".config/nvim/pack/plugins/start/fzf.vim"]
-	path = .config/nvim/pack/plugins/start/fzf.vim
-	url = https://github.com/junegunn/fzf.vim.git
 [submodule ".config/nvim/pack/plugins/start/goyo.vim"]
 	path = .config/nvim/pack/plugins/start/goyo.vim
 	url = https://github.com/junegunn/goyo.vim.git

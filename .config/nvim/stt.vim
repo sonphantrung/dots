@@ -1,4 +1,3 @@
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set statusline+=\ %t\                   " short file name
 set statusline+=%R                        " readonly flag
 set statusline+=%M                        " modified [+] flag

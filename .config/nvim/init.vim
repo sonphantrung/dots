@@ -1,5 +1,4 @@
 set path+=**					" Searches current directory recursively.
-set guicursor=
 set mouse=a
 set wildmenu					" Display all matches when tab complete.
 set incsearch                   " Incremental search
@@ -16,10 +15,9 @@ set termguicolors
 colorscheme nord
 syntax enable
 
-source ~/.config/nvim/coconf.vim
 source ~/.config/nvim/vimfzf.vim
 source ~/.config/nvim/gut.vim
-source ~/.config/nvim/stt.vim 
+source ~/.config/nvim/stt.vim
 
 let g:Hexokinase_highlighters = ['backgroundfull']
 

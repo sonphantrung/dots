@@ -9,6 +9,6 @@ function run {
 
 xsetroot -cursor_name left_ptr &
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
-i3status | lemonbar -p -B "#68674B" &
+i3status | lemonbar -p -B "#68674B" -f "JetBrains Mono"-10 &
 nitrogen --restore &
 picom &

@@ -1,5 +1,5 @@
 
-PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
+PATH="$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
 
 PROMPT='%F{red}%1~ %B%F{cyan}${git_prompt}%B%F{magenta}%# %f%b'
 export GTK_IM_MODULE=ibus

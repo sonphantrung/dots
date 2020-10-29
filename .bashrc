@@ -76,6 +76,10 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.scs" ] ;
+  then PATH="$HOME/.scs:$PATH"
+fi
+
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 

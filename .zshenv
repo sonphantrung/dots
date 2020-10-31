@@ -8,6 +8,7 @@ export QT_IM_MODULE=ibus # Get Ibus To Work
 
 export EDITOR="nvim"
 export TERM="xterm-256color"
+export TERMINAL="st"
 
 # Start blinking
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green

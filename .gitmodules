@@ -43,9 +43,6 @@
 [submodule ".config/nvim/pack/plugins/start/vim-surround"]
 	path = .config/nvim/pack/plugins/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule ".config/nvim/pack/plugins/start/vim-rainbow"]
-	path = .config/nvim/pack/plugins/start/vim-rainbow
-	url = https://github.com/frazrepo/vim-rainbow.git
 [submodule ".config/nvim/pack/plugins/start/vim-instant-markdown"]
 	path = .config/nvim/pack/plugins/start/vim-instant-markdown
 	url = https://github.com/suan/vim-instant-markdown.git

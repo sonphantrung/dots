@@ -1,7 +1,7 @@
 #!/bin/sh
 
 picom &
-nitrogen --restore &
+xwallpaper --zoom Pictures/wallhaven-2em38y.jpg &
 dunst &
 mpd &
 dwmblocks &

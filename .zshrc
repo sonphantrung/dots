@@ -9,6 +9,8 @@ autoload -U colors && colors
 HISTFILE=~/.cache/histfile
 HISTSIZE=1000
 SAVEHIST=1000
+setopt autocd		# Automatically cd into typed directory.
+stty stop undef		# Disable ctrl-s to freeze terminal.
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall

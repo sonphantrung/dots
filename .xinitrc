@@ -1,7 +1,7 @@
 #!/bin/sh
 
 picom &
-xwallpaper --zoom Pictures/wallhaven-2em38y.jpg &
+xwallpaper --zoom .local/share/bg/wall.jpg &
 dunst &
 mpd &
 dwmblocks &

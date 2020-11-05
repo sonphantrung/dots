@@ -1,7 +1,7 @@
 
 PATH="$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
 
-PROMPT='%F{yellow}[%F{blue}%1~%F{yellow}]%B%F{magenta}: %f%b'
+PROMPT='%F{yellow}[%F{blue}%1~%F{yellow}]%B%F{magenta}:%f%b'
 RPROMPT='%B%F{cyan}${git_prompt} %t'
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=dbus

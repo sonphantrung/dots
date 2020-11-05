@@ -49,6 +49,16 @@ setup_git_prompt() {
     git_prompt="${git_branch}${git_status_dirty}${git_status_stash}"
 
 }
+
+function check_last_exit_code() {
+  local LAST_EXIT_CODE=$?
+  if [[ $LAST_EXIT_CODE -ne 0 ]]; then
+    local EXIT_CODE_PROMPT=' '
+    EXIT_CODE_PROMPT+="%{$fg_bold[red]%}$LAST_EXIT_CODE%{$reset_color%}"
+    echo "$EXIT_CODE_PROMPT"
+  fi
+}
+
 precmd() {
     # Set optional git part of prompt.
     setup_git_prompt

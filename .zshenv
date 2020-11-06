@@ -2,7 +2,7 @@
 PATH="$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
 
 PROMPT='%F{yellow}[%F{blue}%1~%F{yellow}]%B%F{magenta}:%f%b'
-RPROMPT='$(check_last_exit_code) %F{cyan}${git_prompt} %t'
+RPROMPT='$(check_last_exit_code) %F{cyan}${git_prompt} $(date +"%H:%M")'
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=dbus
 export QT_IM_MODULE=ibus # Get Ibus To Work

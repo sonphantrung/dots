@@ -1,5 +1,4 @@
 #!/bin/sh
-
 for f in ~/.config/shellconfig/*; do source "$f"; done
 
 # get current branch in git repo
@@ -55,9 +54,9 @@ HISTSIZE=1000
 RED='\033[0;31m'
 CYAN='\033[0;36m'
 PURPLE='\033[0;35m'
-PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
+PATH="$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
 
-PS1='$(whoami)@$(cat /etc/hostname):$(basename $PWD)$(parse_git_branch)% '
+PS1='$(whoami)@$(cat /etc/hostname):$([ $(basename $PWD) == "$(whoami)" ] && echo "~" || basename $PWD)$(parse_git_branch)$ '
 
 
 export EDITOR="nvim"

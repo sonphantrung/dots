@@ -56,8 +56,7 @@ CYAN='\033[0;36m'
 PURPLE='\033[0;35m'
 PATH="$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
 
-PS1='$(whoami)@$(cat /etc/hostname):$([ $(basename $PWD) == "$(whoami)" ] && echo "~" || basename $PWD)$(parse_git_branch)$ '
-
+PS1='$(tput setaf 2)$(whoami)$(tput sgr0)@$(tput setaf 2)$(cat /etc/hostname)$(tput sgr0):$(tput setaf 6)$([ $(basename $PWD) == "$(whoami)" ] && echo "~" || basename $PWD)$(tput sgr0)$(parse_git_branch)$ '
 
 export EDITOR="nvim"
 export TERM="xterm-256color"

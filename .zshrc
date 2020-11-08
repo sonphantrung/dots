@@ -59,6 +59,15 @@ function check_last_exit_code() {
   fi
 }
 
+
+function color_last_exit_code() {
+  if [[ $? == 0 ]]; then
+	  echo "%F{green}"
+  else
+	  echo "%F{red}"
+  fi
+}
+
 precmd() {
     # Set optional git part of prompt.
     setup_git_prompt

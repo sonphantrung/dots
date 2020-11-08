@@ -8,7 +8,7 @@ function parse_git_branch() {
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_dirty`
-		echo "[${BRANCH}${STAT}]"
+		echo ":[${BRANCH}${STAT}]"
 	else
 		echo ""
 	fi
@@ -57,7 +57,7 @@ CYAN='\033[0;36m'
 PURPLE='\033[0;35m'
 PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
-PS1='$(echo -e "${RED}$PWD ${CYAN}$(parse_git_branch) \n${PURPLE}%$(tput sgr 0)") '
+PS1='$(whoami)@$(cat /etc/hostname):$(basename $PWD)$(parse_git_branch)% '
 
 
 export EDITOR="nvim"

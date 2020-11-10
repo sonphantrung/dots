@@ -29,6 +29,7 @@ ex ()
 
 # Aliases
 alias dr='dragon-drag-and-drop -a -x' # Neva Use Any GuiFm to do drag & drop anymore
+alias d='devour' # Swallowin'
 alias ls='lsd' # my preferred listing
 alias la='ls -a'
 alias lla='ls -la'

@@ -76,8 +76,6 @@ URxvt*background:       nord0
 !URxvt*background:       [70]#3F424A
 !URxvt*background:        [80]#282A36
 URxvt*foreground:        nord4
-URxvt*underlineColor:    #4682B4
-URxvt*highlightColor:    #4682B4
 URxvt*throughColor:      Blue
 URxvt*cursorColor:       nord4
 URxvt*scrollBar:         false

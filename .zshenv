@@ -1,6 +1,6 @@
 PATH="$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
 
-PROMPT=$'$(color_last_exit_code)┌──%F{yellow}[%F{green}%n%f@%F{magenta}%m%f%F{yellow}]<>%F{yellow}[%F{red}%1~%F{yellow}]\n$(color_last_exit_code)└──$ %f%b'
+PROMPT=$'$(color_last_exit_code)┌──%F{yellow}[%F{green}%n%f@%F{magenta}%m%f%F{yellow}]<>%F{yellow}[%F{red}%1~%F{yellow}]\n$(color_last_exit_code)└──╼ %f%b'
 RPROMPT='$(check_last_exit_code) %F{cyan}${git_prompt} $(date +"%H:%M")'
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=dbus

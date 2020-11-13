@@ -1,7 +1,7 @@
 #!/bin/sh
 
 picom &
-xwallpaper --zoom .local/share/bg/wall.jpg &
+hsetroot -solid '#2e3440' &
 mpd &
 clipmenud &
 dwmblocks &

@@ -15,6 +15,3 @@ set termguicolors
 colorscheme codedark
 syntax enable
 
-autocmd vimenter * hi Normal ctermbg=NONE guibg=NONE
-autocmd vimenter * hi NonText ctermbg=NONE guibg=NONE
-

@@ -12,5 +12,9 @@ set encoding=utf-8
 set number relativenumber       " Display line numbers
 set clipboard+=unnamedplus       " Copy/paste between vim and other programs.
 set termguicolors
-colorscheme nord
+colorscheme codedark
 syntax enable
+
+autocmd vimenter * hi Normal ctermbg=NONE guibg=NONE
+autocmd vimenter * hi NonText ctermbg=NONE guibg=NONE
+

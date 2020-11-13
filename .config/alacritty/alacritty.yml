@@ -116,34 +116,35 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# Colors (Nord)
+# Colors (Custom)
+
 colors:
-   # Default colors
-   primary:
-     background: '#2E3440'
-     foreground: '#D8DEE9'
+  # Default colors
+  primary:
+    background: '#131111'
+    foreground: '0xd0ddd4'
 
-   # Normal colors
-   normal:
-     black:   '#3B4252'
-     red:     '#BF616A'
-     green:   '#A3BE8C'
-     yellow:  '#EBCB8B'
-     blue:    '#81A1C1'
-     magenta: '#B48EAD'
-     cyan:    '#88C0D0'
-     white:   '#E5E9F0'
+  # Normal colors
+  normal:
+    black:   '0x1f222a'
+    red:     '0x822a2a'
+    green:   '0x646a2f'
+    yellow:  '0xc97941'
+    blue:    '0x495c6d'
+    magenta: '0x6d4f77'
+    cyan:    '0x5e8d87'
+    white:   '0x5d636a'
 
-   # Bright colors
-   bright:
-     black:   '#4C566A'
-     red:     '#BF616A'
-     green:   '#A3BE8C'
-     yellow:  '#EBCB8B'
-     blue:    '#81A1C1'
-     magenta: '#B48EAD'
-     cyan:    '#8FBCBB'
-     white:   '#ECEFF4'
+  # Bright colors
+  bright:
+    black:   '0x24282d'
+    red:     '0xac7070'
+    green:   '0x7a813a'
+    yellow:  '0xe8c581'
+    blue:    '0x6892b6'
+    magenta: '0xb062c7'
+    cyan:    '0x8abeb7'
+    white:   '0xd7dcd9'
 
   # Indexed Colors
   #

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+search=$(echo "" | dmenu -p 'Search:')
+case $search in 
+	*)  xdg-open https://wiki.archlinux.org/index.php/"$search" ;;
+esac

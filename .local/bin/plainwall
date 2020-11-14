@@ -1,0 +1,4 @@
+#!/bin/sh
+
+hsetroot -solid #2e3440
+

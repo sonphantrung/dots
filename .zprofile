@@ -1,3 +1,3 @@
 if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep dwm || startx
+	pgrep $(awk '/exec/ {print $2}' .xinitrc) || startx
 fi

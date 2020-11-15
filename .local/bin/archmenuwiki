@@ -1,6 +1,6 @@
 #!/bin/sh
 
-search=$(echo "" | dmenu -p 'Search:')
+search=$(echo "" | dmenu -p 'Search:' | sed -e 's/\s^*/_/g')
 case $search in 
 	*)  xdg-open https://wiki.archlinux.org/index.php/"$search" ;;
 esac

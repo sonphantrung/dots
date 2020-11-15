@@ -4,6 +4,6 @@ picom --experimental-backends &
 xwallpaper --zoom .local/share/bg/wall.jpg &
 mpd &
 clipmenud &
-#dwmblocks &
-tint2 &
-exec openbox
+dwmblocks &
+#tint2 &
+exec dwm

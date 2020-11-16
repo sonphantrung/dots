@@ -1,0 +1,6 @@
+#!/bin/sh
+
+search=$(echo "" | dmenu -p 'Search DDG:' | sed -e 's/\s^*/+/g')
+case $search in 
+	*)  xdg-open https://duckduckgo.com/?q="$search" ;;
+esac

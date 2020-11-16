@@ -1,4 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
-let g:netrw_dirhist_2='/home/phantrungson/.config'
-let g:netrw_dirhist_1='/home/phantrungson/.local/share/nvim/plugged/nord-vim/autoload/lightline'
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/son'
+let g:netrw_dirhist_4='/home/son/.moc'
+let g:netrw_dirhist_3='/home/son/.config/nvim'
+let g:netrw_dirhist_2='/home/son/.config'
+let g:netrw_dirhist_1='/home/son'
+let g:netrw_dirhist_0='/home/son/.moc'
+let g:netrw_dirhist_9='/home/son/.config/cmus'
+let g:netrw_dirhist_8='/home/son/.local/share/Trash/files'
+let g:netrw_dirhist_7='/home/son/.local/share/Trash'
+let g:netrw_dirhist_6='/home/son/.local/share'

@@ -109,11 +109,11 @@ URxvt*color15: nord6
 
 ! fonts
 URxvt*letterSpace: 	    		-2
-URxvt*font:                 	xft:JetBrainsMono Nerd Font:regular:size=12
-URxvt*imFont:               	xft:JetBrainsMono Nerd Font:regular:size=12
-URxvt*boldFont:             	xft:JetBrainsMono Nerd Font:bold:size=12
-URxvt*italicFont:           	xft:JetBrainsMono Nerd Font:italic:size=12
-URxvt*boldItalicFont:     		xft:JetBrainsMono Nerd Font:regular:size=12
+URxvt*font:                 	xft:JetBrainsMono :regular:size=12
+URxvt*imFont:               	xft:JetBrainsMono :regular:size=12
+URxvt*boldFont:             	xft:JetBrainsMono :bold:size=12
+URxvt*italicFont:           	xft:JetBrainsMono :italic:size=12
+URxvt*boldItalicFont:     		xft:JetBrainsMono :regular:size=12
 ! run :.!fc-list | grep <font-name>
 
 ! perl extensions
@@ -161,7 +161,7 @@ UXTerm*termName: xterm-256color
 
 UXTerm*cursorColor:        white
 UXTerm*VT100.geometry:     90x30
-UXTerm*font:               Jetbrains Mono Nerd Font
+UXTerm*font:               Jetbrains Mono 
 UXTerm*faceSize:		   12
 UXTerm*dynamicColors:      true
 UXTerm*utf8:               2
@@ -201,4 +201,4 @@ UXTerm*colorBD: rgb:3f/3f/3f
 !sxiv
 Sxiv*background: #2e3440
 Sxiv*foreground: #d8dee9
-Sxiv*font: JetBrainsMono Nerd Font
+Sxiv*font: JetBrainsMono 

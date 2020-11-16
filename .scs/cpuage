@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+
+import psutil
+
+print (f'{psutil.cpu_percent(interval=1)}%')

@@ -55,3 +55,4 @@ PATH="$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
 
 PS1='$(tput setaf 2)$(whoami)$(tput sgr0)@$(tput setaf 2)$(cat /etc/hostname)$(tput sgr0):$(tput setaf 6)$([ $(basename $PWD) == "$(whoami)" ] && echo "~" || basename $PWD)$(tput sgr0)$(parse_git_branch)$ '
 
+/opt/shell-color-scripts/colorscript.sh -r

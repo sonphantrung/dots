@@ -133,7 +133,7 @@ bindkey '^e' edit-command-line
 for f in ~/.config/shellconfig/*; do source "$f"; done
 
 #Plugs
-[ -f /etc/profile.d/autojump.zsh ] && source /etc/profile.d/autojump.zsh
+source /etc/profile.d/autojump.zsh 2>/dev/null
 source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null
 source ~/cuszsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source ~/cuszsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

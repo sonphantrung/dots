@@ -14,7 +14,6 @@ set clipboard+=unnamedplus       " Copy/paste between vim and other programs.
 set termguicolors
 colorscheme codedark
 syntax enable
-autocmd vimenter * Lexplore
 com!  -nargs=* -bar -bang -complete=dir  Lexplore  call netrw#Lexplore(<q-args>, <bang>0)
 
 

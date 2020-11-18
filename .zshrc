@@ -130,7 +130,6 @@ bindkey -s '^o' 'lfcd\n'
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-/opt/shell-color-scripts/colorscript.sh -r
 # Aliases
 for f in ~/.config/shellconfig/*; do source "$f"; done
 

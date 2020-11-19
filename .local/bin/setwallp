@@ -1,0 +1,3 @@
+#!/bin/sh
+
+[ -f $1 ] && xwallpaper --zoom $1 && echo "$1" > ~/.config/.lastwallpdir || xwallpaper --zoom $(cat ~/.config/.lastwallpdir)

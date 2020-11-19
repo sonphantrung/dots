@@ -1,7 +1,7 @@
 #!/bin/sh
 
 picom --experimental-backends &
-xwallpaper --zoom .local/share/bg/wall8.jpg &
+setwallp &
 mpd &
 clipmenud &
 dwmstatusgen &

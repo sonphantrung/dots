@@ -2,6 +2,12 @@
 <openbox_menu>
     <menu id="root-menu" label="OpenBox 3">
         <menu id="1" label="Development">
+            <item label="CMake"> <action name="Execute">
+                <execute>cmake-gui</execute>
+            </action> </item>
+            <item label="CMake curses GUI (ccmake)"> <action name="Execute">
+                <execute>st -e ccmake</execute>
+            </action> </item>
             <item label="IDLE (Python IDE)"> <action name="Execute">
                 <execute>idle</execute>
             </action> </item>
@@ -36,6 +42,9 @@
             </menu>
         </menu>
         <menu id="6" label="Graphics">
+            <item label="Flameshot"> <action name="Execute">
+                <execute>flameshot</execute>
+            </action> </item>
             <item label="FontForge"> <action name="Execute">
                 <execute>fontforge</execute>
             </action> </item>
@@ -49,6 +58,9 @@
         <menu id="7" label="Multimedia">
             <item label="ALSA mixer"> <action name="Execute">
                 <execute>st -e alsamixer</execute>
+            </action> </item>
+            <item label="moc"> <action name="Execute">
+                <execute>st -e mocp</execute>
             </action> </item>
             <item label="Mopidy"> <action name="Execute">
                 <execute>st -e mopidy</execute>
@@ -79,11 +91,11 @@
             <item label="FireFox"> <action name="Execute">
                 <execute>firefox</execute>
             </action> </item>
+            <item label="qutebrowser"> <action name="Execute">
+                <execute>qutebrowser</execute>
+            </action> </item>
             <item label="TkVNC"> <action name="Execute">
                 <execute>xterm -e tkvnc</execute>
-            </action> </item>
-            <item label="Vivaldi"> <action name="Execute">
-                <execute>vivaldi-stable</execute>
             </action> </item>
             <item label="W3m"> <action name="Execute">
                 <execute>st -e w3m</execute>

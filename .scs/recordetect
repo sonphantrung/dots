@@ -1,0 +1,4 @@
+#!/bin/sh
+
+STAT=$(ps ax -o cmd,%t | awk '/ffmpeg/ {print $5}' | head -n 1)
+pgrep -x ffmpeg >/dev/null && echo " $STAT" || echo ''

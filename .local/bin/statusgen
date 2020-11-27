@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do
+	echo " $(mpc current)|%{u}﬙ $(cpuage)%{-u}|$(volume)|$(timedate)"
+  sleep 2
+done

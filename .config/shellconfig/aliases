@@ -30,7 +30,7 @@ ex ()
 # Aliases
 alias dr='dragon-drag-and-drop -a -x' # Neva Use Any GuiFm to do drag & drop anymore
 alias d='devour' # Swallowin'
-alias ls='exa' # my preferred listing
+alias ls='ls --color=auto' # my preferred listing
 alias la='ls -a'
 alias lla='ls -la'
 alias ll='ls -l'
@@ -60,16 +60,6 @@ alias fgrep='fgrep --color=auto'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
-alias gaddu='git add -u'
-alias gadd='git add .'
-alias gb='git branch'
-alias gch='git checkout'
-alias gcl='git clone'
-alias gcm='git commit -m'
-alias gf='git fetch'
-alias gst='git status'
-alias gtag='git tag'
-alias newtag='git tag -a'
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias vifm='vifmrun'
 alias wget='wget -c'

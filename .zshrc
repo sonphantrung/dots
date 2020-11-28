@@ -138,3 +138,8 @@ source /etc/profile.d/autojump.zsh 2>/dev/null
 source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null
 source ~/cuszsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source ~/cuszsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+

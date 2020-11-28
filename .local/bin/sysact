@@ -1,0 +1,11 @@
+#!/bin/sh
+
+choice=$(echo -e "shutdown\nreboot\nlock\nexit dwm" | dmenu -p 'Choose:' -l 4)
+
+case $choice in
+	'shutdown') poweroff ;;
+	'reboot') reboot ;;
+	'lock') xset dpms force off && slock ;;
+	'exit dwm') killall Xorg ;;
+	*) herbe "Invalid"
+esac

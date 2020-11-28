@@ -135,9 +135,8 @@ for f in ~/.config/shellconfig/*; do source "$f"; done
 
 #Plugs
 source /etc/profile.d/autojump.zsh 2>/dev/null
-source ~/cuszsh/you-should-use/you-should-use.plugin.zsh 2>/dev/null
-source ~/cuszsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source ~/cuszsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

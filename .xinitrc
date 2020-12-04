@@ -1,6 +1,7 @@
 #!/bin/sh
 
 picom --experimental-backends &
+unclutter &
 setwallp &
 mpd &
 clipmenud &

@@ -3,7 +3,6 @@
 picom --experimental-backends &
 unclutter &
 setwallp &
-emacs --daemon &
 mpd &
 clipmenud &
 dwmstatusgen &

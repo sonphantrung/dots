@@ -16,65 +16,6 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/phantrungson/.zshrc'
 
-#Git branch indicator(No vcs-info)
-setup_git_prompt() {
-    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-        unset git_prompt
-        return 0
-    fi
-
-    local git_status_dirty git_status_stash git_branch
-
-    if [ "$(git --no-optional-locks status --untracked-files='no' --porcelain)" ]; then
-        git_status_dirty='%F{green}*'
-    else
-        unset git_status_dirty
-    fi
-
-    if [ "$(git stash list)" ]; then
-        git_status_stash="%F{yellow}▲"
-    else
-        unset git_status_stash
-    fi
-
-    git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
-    git_branch="${git_branch#refs/heads/}"
-
-    if [ "${#git_branch}" -ge 24 ]; then
-        git_branch="${git_branch:0:21}..."
-    fi
-
-    git_branch="${git_branch:-no branch}"
-
-    git_prompt="${git_branch}${git_status_dirty}${git_status_stash}"
-
-}
-
-function check_last_exit_code() {
-  local LAST_EXIT_CODE=$?
-  if [[ $LAST_EXIT_CODE -ne 0 ]]; then
-    local EXIT_CODE_PROMPT=' '
-    EXIT_CODE_PROMPT+="%{$fg_bold[red]%}$LAST_EXIT_CODE%{$reset_color%}"
-    echo "$EXIT_CODE_PROMPT"
-  fi
-}
-
-
-function color_last_exit_code() {
-  if [[ $? == 0 ]]; then
-	  echo "%F{green}"
-  else
-	  echo "%F{red}"
-  fi
-}
-
-precmd() {
-    # Set optional git part of prompt.
-    setup_git_prompt
-}
-# Set up the prompt (with git branch name)
-setopt PROMPT_SUBST
-
 # Tab completion
 autoload -Uz compinit
 compinit

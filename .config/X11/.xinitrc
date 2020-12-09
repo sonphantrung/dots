@@ -5,6 +5,6 @@ unclutter &
 setwallp &
 mpd &
 clipmenud &
-dwmstatusgen &
+#dwmstatusgen &
 #tint2 &
-exec dwm
+exec startxfce4

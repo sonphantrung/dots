@@ -40,3 +40,6 @@
 [submodule ".config/nvim/pack/plugins/start/vim-code-dark"]
 	path = .config/nvim/pack/plugins/start/vim-code-dark
 	url = https://github.com/tomasiser/vim-code-dark
+[submodule ".config/nvim/pack/plugins/start/i3-vim-syntax"]
+	path = .config/nvim/pack/plugins/start/i3-vim-syntax
+	url = https://github.com/PotatoesMaster/i3-vim-syntax

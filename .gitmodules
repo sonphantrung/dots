@@ -16,9 +16,6 @@
 [submodule ".config/nvim/pack/plugins/start/nord-vim"]
 	path = .config/nvim/pack/plugins/start/nord-vim
 	url = https://github.com/arcticicestudio/nord-vim.git
-[submodule ".config/nvim/pack/plugins/start/vim-devicons"]
-	path = .config/nvim/pack/plugins/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
 [submodule ".config/nvim/pack/plugins/start/vim-fugitive"]
 	path = .config/nvim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git

@@ -3,11 +3,14 @@ set mouse=a
 set wildmenu					" Display all matches when tab complete.
 set incsearch                   " Incremental search
 set hidden                      " Needed to keep multiple buffers open
+set numberwidth=2 " Thinner 
+set noshowmode  " I have a statusline, no need to show anymore 
 set nobackup                    " No auto backups
 set nowritebackup
 set noswapfile
 set ignorecase
 set smartcase
+set background=dark
 set encoding=utf-8
 set number relativenumber       " Display line numbers
 set clipboard+=unnamedplus       " Copy/paste between vim and other programs.

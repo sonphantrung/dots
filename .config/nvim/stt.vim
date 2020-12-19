@@ -8,10 +8,12 @@ set statusline+=%#Visual#       " colour
 set statusline+=%#CursorIM#     " colour
 set statusline+=%R                        " readonly flag
 set statusline+=%M                        " modified [+] flag
+set statusline+=%#Normal#     " colour
+set statusline+=\ %{GitStatus()}
 set statusline+=%#Cursor#               " colour
 set statusline+=%#CursorLine#     " colour
 set statusline+=\ %t\                   " short file name
-set statusline+=\ %{Fugitive()}\                   " file type
+set statusline+=\ %{Fugitive()}\                   " Git branch
 set statusline+=%=                          " right align
 set statusline+=%#CursorLine#   " colour
 set statusline+=\ %y\                   " file type
@@ -27,3 +29,8 @@ set statusline+=\ %3p%%\                " percentage
      endif
     return ''
   endfunction
+
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction

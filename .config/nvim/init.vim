@@ -1,4 +1,5 @@
 source ~/.config/nvim/basic.vim
+source ~/.config/nvim/moreconfig/netrw.vim
 source ~/.config/nvim/vimfzf.vim
 source ~/.config/nvim/gut.vim
 source ~/.config/nvim/stt.vim

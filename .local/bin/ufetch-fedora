@@ -1,15 +1,15 @@
 #!/bin/sh
 #
-# ufetch-artix - tiny system info for artix
+# ufetch-fedora - tiny system info for fedora
 
 ## INFO
 
 # user is already defined
 host="$(hostname)"
-os='Artix Linux'
+os="$(cat /etc/fedora-release)"
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
-packages="$(pacman -Q | wc -l)"
+packages="$(dnf list installed | sed '1d' | wc -l)"
 shell="$(basename "${SHELL}")"
 
 ## UI DETECTION
@@ -66,18 +66,19 @@ fi
 lc="${reset}${bold}${blue}"         # labels
 nc="${reset}${bold}${blue}"         # user and hostname
 ic="${reset}"                       # info
-c0="${reset}${blue}"                # first color
+c0="${reset}${white}"               # first color
+c1="${reset}${blue}"                # second color
 
 ## OUTPUT
 
 cat <<EOF
-
-${c0}        /\\        ${nc}${USER}${ic}@${nc}${host}${reset}
-${c0}       /  \\       ${lc}OS:        ${ic}${os}${reset}
-${c0}      /\`'.,\\      ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}     /     ',     ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}    /      ,\`\\    ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0}   /   ,.'\`.  \\   ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}  /.,'\`     \`'.\\  ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}        _____
+${c0}       /   __)${c1}\\   ${nc}${USER}${ic}@${nc}${host}${reset}
+${c0}       |  /  ${c1}\\ \\  ${lc}OS:        ${ic}${os}${reset}
+${c1}    __${c0}_|  |_${c1}_/ /  ${lc}KERNEL:    ${ic}${kernel}${reset}
+${c1}   / ${c0}(_    _)${c1}_/   ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c1}  / /  ${c0}|  |       ${lc}PACKAGES:  ${ic}${packages}${reset}
+${c1}  \\ \\${c0}__/  |       ${lc}SHELL:     ${ic}${shell}${reset}
+${c1}   \\${c0}(_____/       ${lc}${uitype}:        ${ic}${ui}${reset}
 
 EOF

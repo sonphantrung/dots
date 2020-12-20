@@ -1,15 +1,15 @@
 #!/bin/sh
 #
-# ufetch-artix - tiny system info for artix
+# ufetch-gnewsense - tiny system info for gnewsense
 
 ## INFO
 
 # user is already defined
 host="$(hostname)"
-os='Artix Linux'
+os='gNewSense'
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
-packages="$(pacman -Q | wc -l)"
+packages="$(dpkg -l | wc -l)"
 shell="$(basename "${SHELL}")"
 
 ## UI DETECTION
@@ -67,17 +67,18 @@ lc="${reset}${bold}${blue}"         # labels
 nc="${reset}${bold}${blue}"         # user and hostname
 ic="${reset}"                       # info
 c0="${reset}${blue}"                # first color
+c1="${reset}${white}"               # first color
 
 ## OUTPUT
 
 cat <<EOF
 
-${c0}        /\\        ${nc}${USER}${ic}@${nc}${host}${reset}
-${c0}       /  \\       ${lc}OS:        ${ic}${os}${reset}
-${c0}      /\`'.,\\      ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}     /     ',     ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}    /      ,\`\\    ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0}   /   ,.'\`.  \\   ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}  /.,'\`     \`'.\\  ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}     ________      ${nc}${USER}${ic}@${nc}${host}${reset}    
+${c0}   .\`__.---.__\`.   ${lc}OS:        ${ic}${os}${reset}
+${c0}  / /  |  ${c1}*${c0}|  \ \\  ${lc}KERNEL:    ${ic}${kernel}${reset}
+${c0}  | |  \\___/  | |  ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c0}  \\ \\         / /  ${lc}PACKAGES:  ${ic}${packages}${reset}
+${c0}   \`.\`       \`.\`   ${lc}SHELL:     ${ic}${shell}${reset}
+${c0}                   ${lc}${uitype}:        ${ic}${ui}${reset}
 
 EOF

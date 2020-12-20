@@ -1,15 +1,15 @@
 #!/bin/sh
-#
-# ufetch-artix - tiny system info for artix
+
+# ufetch-centos - tiny system info for centos
 
 ## INFO
 
 # user is already defined
 host="$(hostname)"
-os='Artix Linux'
+os="$(cat /etc/centos-release | sed 's/release //')"
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
-packages="$(pacman -Q | wc -l)"
+packages="$(yum list installed | wc -l)"
 shell="$(basename "${SHELL}")"
 
 ## UI DETECTION
@@ -66,18 +66,21 @@ fi
 lc="${reset}${bold}${blue}"         # labels
 nc="${reset}${bold}${blue}"         # user and hostname
 ic="${reset}"                       # info
-c0="${reset}${blue}"                # first color
+c0="${reset}${green}"               # first color
+c1="${reset}${yellow}"              # second color
+c2="${reset}${magenta}"             # third color
+c3="${reset}${blue}"                # fourth color
 
 ## OUTPUT
 
 cat <<EOF
 
-${c0}        /\\        ${nc}${USER}${ic}@${nc}${host}${reset}
-${c0}       /  \\       ${lc}OS:        ${ic}${os}${reset}
-${c0}      /\`'.,\\      ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}     /     ',     ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}    /      ,\`\\    ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0}   /   ,.'\`.  \\   ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}  /.,'\`     \`'.\\  ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}   ____${c1}^${c2}____   ${nc}${USER}${ic}@${nc}${host}${reset}
+${c0}   |\\  ${c1}|${c2}  /|   ${lc}OS:        ${ic}${os}${reset}
+${c0}   | \\ ${c1}|${c2} / |   ${lc}KERNEL:    ${ic}${kernel}${reset}
+${c2}  <---- ${c3}---->  ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c3}   | / ${c0}|${c1} \\ |   ${lc}PACKAGES:  ${ic}${packages}${reset}
+${c3}   |/__${c0}|${c1}__\\|   ${lc}SHELL:     ${ic}${shell}${reset}
+${c0}       v       ${lc}${uitype}:        ${ic}${ui}${reset}
 
 EOF

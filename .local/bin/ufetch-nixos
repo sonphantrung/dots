@@ -1,15 +1,15 @@
 #!/bin/sh
 #
-# ufetch-artix - tiny system info for artix
+# ufetch-nixos - tiny system info for nixos
 
 ## INFO
 
 # user is already defined
 host="$(hostname)"
-os='Artix Linux'
+os="$(nixos-version)"
 kernel="$(uname -sr)"
-uptime="$(uptime -p | sed 's/up //')"
-packages="$(pacman -Q | wc -l)"
+uptime="$(uptime | awk -F, '{sub(".*up ",x,$1);print $1}' | sed -e 's/^[ \t]*//')"
+packages="$(ls -d -1 /nix/store/*/ | wc -l)"
 shell="$(basename "${SHELL}")"
 
 ## UI DETECTION
@@ -67,17 +67,18 @@ lc="${reset}${bold}${blue}"         # labels
 nc="${reset}${bold}${blue}"         # user and hostname
 ic="${reset}"                       # info
 c0="${reset}${blue}"                # first color
+c1="${reset}${bold}${blue}"         # second color
 
 ## OUTPUT
 
-cat <<EOF
+sed 's/\\/\\\\/g' <<EOF
 
-${c0}        /\\        ${nc}${USER}${ic}@${nc}${host}${reset}
-${c0}       /  \\       ${lc}OS:        ${ic}${os}${reset}
-${c0}      /\`'.,\\      ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}     /     ',     ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}    /      ,\`\\    ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0}   /   ,.'\`.  \\   ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}  /.,'\`     \`'.\\  ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}    \\   ${c1}\\ //    ${nc}${USER}${ic}@${nc}${host}${reset}
+${c0}   ==\\___${c1}\\/ ${c0}//  ${lc}OS:        ${ic}${os}${reset}
+${c1}     //    \\${c0}//   ${lc}KERNEL:    ${ic}${kernel}${reset}
+${c1}  ==//      ${c0}//==  ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c1}   //${c0}\\${c1}____${c0}//     ${lc}PACKAGES:  ${ic}${packages}${reset}
+${c1}  // ${c0}/\\   ${c1}\\==   ${lc}SHELL:     ${ic}${shell}${reset}
+${c0}    // \\   ${c1}\\    ${lc}${uitype}:        ${ic}${ui}${reset}
 
 EOF

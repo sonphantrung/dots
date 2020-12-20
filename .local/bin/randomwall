@@ -1,0 +1,8 @@
+#!/bin/sh
+
+bgloc="$HOME/.config/bg"
+while true; do
+[ -d "$1" ] && ln -sf "$(find "$(readlink -f "$1")" -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | shuf -n 1)" "$bgloc" && notify-send -i "$bgloc" "Random Wallpaper chosen."
+xwallpaper --zoom "$bgloc"
+sleep 20m
+done

@@ -1,15 +1,15 @@
 #!/bin/sh
 #
-# ufetch-artix - tiny system info for artix
+# ufetch-crux - tiny system info for crux
 
 ## INFO
 
 # user is already defined
 host="$(hostname)"
-os='Artix Linux'
+os="$(crux)"
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
-packages="$(pacman -Q | wc -l)"
+packages="$(pkginfo -i | wc -l)"
 shell="$(basename "${SHELL}")"
 
 ## UI DETECTION
@@ -63,21 +63,23 @@ if [ -x "$(command -v tput)" ]; then
 fi
 
 # you can change these
-lc="${reset}${bold}${blue}"         # labels
-nc="${reset}${bold}${blue}"         # user and hostname
+lc="${reset}${bold}${cyan}"         # labels
+nc="${reset}${bold}${cyan}"         # user and hostname
 ic="${reset}"                       # info
-c0="${reset}${blue}"                # first color
+c0="${reset}${cyan}"                # first color
+c1="${reset}${white}"               # second color
+c2="${reset}${yellow}"              # third color
 
 ## OUTPUT
 
 cat <<EOF
 
-${c0}        /\\        ${nc}${USER}${ic}@${nc}${host}${reset}
-${c0}       /  \\       ${lc}OS:        ${ic}${os}${reset}
-${c0}      /\`'.,\\      ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}     /     ',     ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}    /      ,\`\\    ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0}   /   ,.'\`.  \\   ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}  /.,'\`     \`'.\\  ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}      ___     ${nc}${USER}${ic}@${nc}${host}${reset}
+${c0}     (${c1}.· ${c0}|    ${lc}OS:        ${ic}${os}${reset}
+${c0}     (${c2}<> ${c0}|    ${lc}KERNEL:    ${ic}${kernel}${reset}
+${c0}    / ${c1}__  ${c0}\\   ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c0}   ( ${c1}/  \\ ${c0}/|  ${lc}PACKAGES:  ${ic}${packages}${reset}
+${c2}  _${c0}/\\ ${c1}__)${c0}/${c2}_${c0})  ${lc}SHELL:     ${ic}${shell}${reset}
+${c2}  \/${c0}-____${c2}\/   ${lc}${uitype}:        ${ic}${ui}${reset}
 
 EOF

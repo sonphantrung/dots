@@ -1,15 +1,15 @@
 #!/bin/sh
 #
-# ufetch-artix - tiny system info for artix
+# ufetch-slackware - tiny system info for slackware
 
 ## INFO
 
 # user is already defined
 host="$(hostname)"
-os='Artix Linux'
+os="$(cat /etc/slackware-version)"
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
-packages="$(pacman -Q | wc -l)"
+packages="$(ls /var/log/packages | wc -l)"
 shell="$(basename "${SHELL}")"
 
 ## UI DETECTION
@@ -63,21 +63,19 @@ if [ -x "$(command -v tput)" ]; then
 fi
 
 # you can change these
-lc="${reset}${bold}${blue}"         # labels
-nc="${reset}${bold}${blue}"         # user and hostname
+lc="${reset}${bold}${blue}"      # labels
+nc="${reset}${bold}${blue}"      # user and hostname
 ic="${reset}"                       # info
 c0="${reset}${blue}"                # first color
 
-## OUTPUT
-
 cat <<EOF
 
-${c0}        /\\        ${nc}${USER}${ic}@${nc}${host}${reset}
-${c0}       /  \\       ${lc}OS:        ${ic}${os}${reset}
-${c0}      /\`'.,\\      ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}     /     ',     ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}    /      ,\`\\    ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0}   /   ,.'\`.  \\   ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}  /.,'\`     \`'.\\  ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}     ________    ${nc}${USER}${ic}@${nc}${host}${reset}
+${c0}    /  ______|   ${lc}OS:        ${ic}${os}${reset}
+${c0}    | |______    ${lc}KERNEL:    ${ic}${kernel}${reset}
+${c0}    \\______  \\   ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c0}     ______| |   ${lc}PACKAGES:  ${ic}${packages}${reset}
+${c0}  | |________/   ${lc}SHELL:     ${ic}${shell}${reset}
+${c0}  |____________  ${lc}${uitype}:        ${ic}${ui}${reset}
 
 EOF

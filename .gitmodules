@@ -1,9 +1,6 @@
 [submodule ".local/share/fonts/bitmap-font-collections"]
 	path = .local/share/fonts/bitmap-font-collections
 	url = https://github.com/addy-dclxvi/bitmap-font-collections.git
-[submodule ".config/nvim/pack/plugins/start/auto-pairs"]
-	path = .config/nvim/pack/plugins/start/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule ".config/nvim/pack/plugins/start/FixCursorHold.nvim"]
 	path = .config/nvim/pack/plugins/start/FixCursorHold.nvim
 	url = https://github.com/antoinemadec/FixCursorHold.nvim.git

@@ -10,7 +10,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export EDITOR="nvim"
 export TERM="xterm-256color"
-
+export MOZ_WEBRENDER=1
 export TERMINAL="st"
 export ZDOTDIR='/home/son/.config/zsh'
 export XINITRC="/home/son/.config/X11/.xinitrc"

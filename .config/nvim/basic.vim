@@ -17,7 +17,10 @@ set tabstop=4                   " One tab == four spaces.
 set smartindent
 set smartcase
 set background=dark
+set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
 set encoding=utf-8
+set undofile
+set undodir=/tmp
 set number relativenumber       " Display line numbers
 set clipboard+=unnamedplus       " Copy/paste between vim and other programs.
 set termguicolors

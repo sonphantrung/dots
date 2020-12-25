@@ -24,5 +24,7 @@ set undodir=/tmp
 set number relativenumber       " Display line numbers
 set clipboard+=unnamedplus       " Copy/paste between vim and other programs.
 set termguicolors
-colorscheme codedark
+colorscheme gruvbox
 syntax enable
+hi Normal guibg=none
+hi LineNr guibg=none

@@ -37,3 +37,6 @@
 [submodule ".config/nvim/pack/plugins/start/i3-vim-syntax"]
 	path = .config/nvim/pack/plugins/start/i3-vim-syntax
 	url = https://github.com/PotatoesMaster/i3-vim-syntax
+[submodule ".config/nvim/pack/plugins/start/gruvbox"]
+	path = .config/nvim/pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

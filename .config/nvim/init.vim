@@ -1,9 +1,10 @@
 source ~/.config/nvim/basic.vim
+source ~/.config/nvim/stt.vim
 source ~/.config/nvim/moreconfig/netrw.vim
 source ~/.config/nvim/moreconfig/snips.vim
-source ~/.config/nvim/moreconfig/autopairs.vim
-source ~/.config/nvim/gut.vim
 source ~/.config/nvim/stt.vim
+source ~/.config/nvim/moreconfig/autopairs.vim
+source ~/.config/nvim/moreconfig/filetypes.vim
+source ~/.config/nvim/gut.vim
 source ~/.config/nvim/hexo.vim
 source ~/.config/nvim/md.vim
-

@@ -1,6 +1,5 @@
 set icons true
 set hidden true
-set drawbox true
 set icons true
 set ignorecase true
 set previewer ~/.config/lf/preview

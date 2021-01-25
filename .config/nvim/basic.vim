@@ -1,4 +1,5 @@
 map <F8> :setlocal spell! spelllang=en_gb<CR>
+map <F7> :Goyo<CR>
 map <F12> :set bg=light \| hi Normal LineNr guibg=none<CR>
 map <F11> :set bg=dark \| hi Normal LineNr guibg=none<CR>
 set path+=**                    " Searches current directory recursively.

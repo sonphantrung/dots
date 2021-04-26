@@ -81,8 +81,48 @@ for f in ~/.config/shellconfig/*; do source "$f"; done
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+setup_git_prompt() {
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        unset git_prompt
+        return 0
+    fi
+
+    local git_status_dirty git_status_stash git_branch
+
+    if [ "$(git --no-optional-locks status --untracked-files='no' --porcelain)" ]; then
+        git_status_dirty='%F{green}*'
+    else
+        unset git_status_dirty
+    fi
+
+    if [ "$(git stash list)" ]; then
+        git_status_stash="%F{yellow}▲"
+    else
+        unset git_status_stash
+    fi
+
+    git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
+    git_branch="${git_branch#refs/heads/}"
+
+    if [ "${#git_branch}" -ge 24 ]; then
+        git_branch="${git_branch:0:21}..."
+    fi
+
+    git_branch="${git_branch:-no branch}"
+
+    git_prompt=" %F{blue}[%F{253}${git_branch}${git_status_dirty}${git_status_stash}%F{blue}]"
+
+}
+
+precmd() {
+    # Set terminal title.
+    termtitle precmd
+
+    # Set optional git part of prompt.
+    setup_git_prompt
+}
+
+# Prompt
+PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f ${git_prompt} %# '
 

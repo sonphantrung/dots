@@ -116,9 +116,6 @@ setup_git_prompt() {
 }
 
 precmd() {
-    # Set terminal title.
-    termtitle precmd
-
     # Set optional git part of prompt.
     setup_git_prompt
 }

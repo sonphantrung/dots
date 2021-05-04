@@ -3,7 +3,7 @@
 [[ $- != *i* ]] && return
 
 # The ufetch script
-ufetch-arch
+ufetch-void
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -80,7 +80,7 @@ for f in ~/.config/shellconfig/*; do source "$f"; done
 #Plugs
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 
 setup_git_prompt() {
     if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -111,7 +111,7 @@ setup_git_prompt() {
 
     git_branch="${git_branch:-no branch}"
 
-    git_prompt=" %F{blue}[%F{253}${git_branch}${git_status_dirty}${git_status_stash}%F{blue}]"
+    git_prompt=" %F{blue}[%F{253}${git_branch}${git_status_dirty}${git_status_stash}%F{blue}]%f"
 
 }
 
@@ -121,5 +121,6 @@ precmd() {
 }
 
 # Prompt
-PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f ${git_prompt} %# '
+setopt prompt_subst
+PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f ${git_prompt}%# '
 

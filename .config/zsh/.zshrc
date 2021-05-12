@@ -3,7 +3,7 @@
 [[ $- != *i* ]] && return
 
 # The ufetch script
-ufetch-void
+ufetch-debian
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -79,8 +79,8 @@ for f in ~/.config/shellconfig/*; do source "$f"; done
 
 #Plugs
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setup_git_prompt() {
     if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then

@@ -1,4 +1,4 @@
-PATH="$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
+PATH="/snap/bin:$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=dbus

@@ -1,6 +1,3 @@
-[submodule ".local/share/fonts/bitmap-font-collections"]
-	path = .local/share/fonts/bitmap-font-collections
-	url = https://github.com/addy-dclxvi/bitmap-font-collections.git
 [submodule ".config/nvim/pack/plugins/start/FixCursorHold.nvim"]
 	path = .config/nvim/pack/plugins/start/FixCursorHold.nvim
 	url = https://github.com/antoinemadec/FixCursorHold.nvim.git
@@ -10,9 +7,6 @@
 [submodule ".config/nvim/pack/plugins/start/limelight.vim"]
 	path = .config/nvim/pack/plugins/start/limelight.vim
 	url = https://github.com/junegunn/limelight.vim.git
-[submodule ".config/nvim/pack/plugins/start/nord-vim"]
-	path = .config/nvim/pack/plugins/start/nord-vim
-	url = https://github.com/arcticicestudio/nord-vim.git
 [submodule ".config/nvim/pack/plugins/start/vim-fugitive"]
 	path = .config/nvim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git

@@ -72,7 +72,7 @@ super + c
 
 #Htop
 super + h
-    alacritty -e htop
+    st -e htop
 
 #arcolinux-logout
 super + x
@@ -96,7 +96,7 @@ super + m
 
 #Termite
 super + Return
-    alacritty
+    st
 
 #Xkill
 super + Escape
@@ -122,7 +122,7 @@ super + shift + Return
 
 #dmenu
 super + shift + d
-	dmenu_run  
+	dmenu_run -h 30
 
 #reload sxhkd:
 super + shift + s

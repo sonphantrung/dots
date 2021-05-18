@@ -38,7 +38,7 @@ alias lt='ls --tree'
 alias y="yay"
 alias cls="clear"
 alias q="exit"
-alias config="/usr/bin/git --git-dir=$HOME/dots.git/ --work-tree=$HOME"
+alias config="/usr/bin/git --git-dir=$HOME/.local/share/repos/dots.git/ --work-tree=$HOME"
 alias v="nvim"
 alias vidoas="doas vim /etc/doas.conf"
 alias ..='cd ..'

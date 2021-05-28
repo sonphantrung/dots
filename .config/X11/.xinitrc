@@ -5,7 +5,7 @@ unclutter &
 setwallp &
 mpd &
 clipmenud &
-dwmstatusgen &
+dwmblocks &
 #tint2 &
 # Caps lock sucks, disable it
 xmodmap -e "keysym Caps_Lock = "

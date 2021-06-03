@@ -1,0 +1,27 @@
+#!/bin/sh
+BATT="$(cat /sys/class/power_supply/BAT1/capacity)"
+CHARGING="$(cat /sys/class/power_supply/BAT1/status)"
+if [ $CHARGING = "Charging" ]; then
+    BATICON="^c#0BEF38^ ^d^"
+elif [ $BATT = "100" ]; then
+    BATICON="^c#0BEF38^ ^d^"
+elif [$BATT -gt "90"]; then
+    BATICON="^c#0BEF38^ ^d^"
+elif [$BATT -gt "80"]; then
+    BATICON="^c#0BEF38^ ^d^"
+elif [$BATT -gt "70"]; then
+    BATICON="^c#EAC90D^ ^d^"
+elif [$BATT -gt "60"]; then
+    BATICON="^c#EAC90D^ ^d^"
+elif [$BATT -gt "50"]; then
+    BATICON="^c#EAC90D^ ^d^"
+elif [$BATT -gt "40"]; then
+    BATICON="^c#EC0C0C^ ^d^"
+elif [$BATT -gt "30"]; then
+    BATICON="^c#EC0C0C^ ^d^"
+elif [$BATT -gt "20"]; then
+    BATICON="^c#EC0C0C^ ^d^"
+else
+    BATICON="^c#EC0C0C^ ^d^"
+fi
+echo "$BATICON $BATT%"

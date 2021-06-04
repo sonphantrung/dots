@@ -2,4 +2,4 @@
 
 SSID="$(nmcli -t -f name connection show --active)"
 
-[ -z $SSID ] && echo "Disconnected" || echo $SSID
+[ -z $SSID ] && echo "^c#ce3d3d^ ^d^ Disconnected" || echo "^c#2CD651^ﯱ ^d^ $SSID"

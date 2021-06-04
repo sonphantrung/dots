@@ -1,7 +1,7 @@
 #!/bin/sh
 DIR=$HOME/.local/share/bg
 WALL=$(find $DIR -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | dmenu -l 5 -p "Choose wall: ")
-OPTS=$(printf "Preview\nSet As Wall\n" | dmenu -l 2 -p "Action: ")
+[ -z $WALL ] && OPTS="" || OPTS=$(printf "Preview\nSet As Wall\n" | dmenu -l 2 -p "Action: ")
 
 confirm () {
     CHOICE=$(printf "Yes\nNo" | dmenu -l 2 -p "Set as wall?")
@@ -14,4 +14,5 @@ confirm () {
 case $OPTS in
     "Set As Wall") setwallp $WALL;;
     "Preview") sxiv $WALL && confirm;;
+    *) exit 1;;
 esac

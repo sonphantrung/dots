@@ -1,4 +1,4 @@
-PATH="/snap/bin:$HOME/.scs:$HOME/.local/bin:$HOME/.bin:$PATH"
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=dbus

@@ -1,18 +1,19 @@
 #!/bin/sh
 DIR=$HOME/.local/share/bg
-WALL=$(find $DIR -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | dmenu -l 5 -p "Choose wall: ")
-[ -z $WALL ] && OPTS="" || OPTS=$(printf "Preview\nSet As Wall\n" | dmenu -l 2 -p "Action: ")
+NUM=$(($(echo $(echo "$DIR" | sed 's/\//\\n/g') | wc -l) + 1 ))
+WALL=$(find "$DIR" -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | cut -d '/' -f"$NUM" | dmenu -l 5 -p "Choose wall: ")
+[ -z "$WALL" ] && OPTS="" || OPTS=$(printf "Preview\nSet As Wall\n" | dmenu -l 2 -p "Action: ")
 
 confirm () {
     CHOICE=$(printf "Yes\nNo" | dmenu -l 2 -p "Set as wall?")
     case $CHOICE in
-        "Yes") setwallp $WALL;;
+        "Yes") setwallp "$DIR"/"$WALL";;
         "No") wallsetter;;
     esac
 }
 
 case $OPTS in
-    "Set As Wall") setwallp $WALL;;
-    "Preview") sxiv $WALL && confirm;;
+    "Set As Wall") setwallp "$DIR"/"$WALL";;
+    "Preview") sxiv "$DIR"/"$WALL" && confirm;;
     *) exit 1;;
 esac

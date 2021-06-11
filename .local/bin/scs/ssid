@@ -1,5 +1,6 @@
 #!/bin/sh
 
 SSID="$(nmcli -t -f name connection show --active)"
+[ "$($SSID | cut -d ' ' -f1)" = "Wired" ] && NETICON="^c#2CD651^ﯱ ^d^" || NETICON="^c#2CD651^直 ^d^"
 
-[ -z $SSID ] && echo "^c#ce3d3d^ ^d^ Disconnected" || echo "^c#2CD651^ﯱ ^d^ $SSID"
+[ -z "$SSID" ] && echo "^c#ce3d3d^ ^d^ Disconnected" || echo "$NETICON $SSID"

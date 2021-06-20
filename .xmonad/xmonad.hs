@@ -13,7 +13,7 @@ main :: IO ()
 main = do
   xmonad $ docks $ ewmh def {
         terminal           = "st"
-        , borderWidth        = 1
+        , borderWidth        = 0
         , modMask            = mod4Mask
         , workspaces         = ["1","2","3","4","5"]
         , normalBorderColor  = "#dddddd"
@@ -25,11 +25,6 @@ main = do
         , handleEventHook    = myEventHook
         , logHook            = myLogHook
     }
-
--- Width of the window border in pixels.
---
-myBorderWidth :: Dimension
-myBorderWidth   = 1
 
 -- Layouts:
 --

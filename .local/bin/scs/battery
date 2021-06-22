@@ -4,21 +4,21 @@ CHARGING="$(cat /sys/class/power_supply/BAT1/status)"
 if [ "$CHARGING" = "Charging" ]; then
     BATICON="^c#0BEF38^ ^d^"
 elif [ "$BATT" = "100" ]; then
-    BATICON="^c#0BEF38^ ^d^"
+    BATICON=" "
 elif [ "$BATT" -gt "90" ]; then
-    BATICON="^c#0BEF38^ ^d^"
+    BATICON=" "
 elif [ "$BATT" -gt "80" ]; then
-    BATICON="^c#0BEF38^ ^d^"
+    BATICON=" "
 elif [ "$BATT" -gt "70" ]; then
-    BATICON="^c#EAC90D^ ^d^"
+    BATICON=" "
 elif [ "$BATT" -gt "60" ]; then
-    BATICON="^c#EAC90D^ ^d^"
+    BATICON=" "
 elif [ "$BATT" -gt "50" ]; then
-    BATICON="^c#EAC90D^ ^d^"
+    BATICON=" "
 elif [ "$BATT" -gt "40" ]; then
-    BATICON="^c#EC0C0C^ ^d^"
+    BATICON=" "
 elif [ "$BATT" -gt "30" ]; then
-    BATICON="^c#EC0C0C^ ^d^"
+    BATICON=" "
 elif [ "$BATT" -gt "20" ]; then
     BATICON="^c#EC0C0C^ ^d^"
 else

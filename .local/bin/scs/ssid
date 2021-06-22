@@ -1,5 +1,9 @@
 #!/bin/sh
 
+case $BUTTON in
+    1) st -e nmtui;;
+esac
+
 SSID="$(nmcli -t -f name connection show --active)"
 [ "$($SSID | cut -d ' ' -f1)" = "Wired" ] && NETICON="^c#2CD651^ﯱ ^d^" || NETICON="^c#2CD651^直 ^d^"
 

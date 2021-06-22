@@ -1,5 +1,9 @@
 #!/bin/sh
 
+case $BUTTON in
+    1) setsid -f st -e pulsemixer;;
+esac
+
 volstat="$(pactl list sinks)"
 # volstat="$(amixer get Master)" # ALSA only equivalent.
 

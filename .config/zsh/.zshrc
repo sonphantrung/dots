@@ -123,4 +123,3 @@ precmd() {
 # Prompt
 setopt prompt_subst
 PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f ${git_prompt}%# '
-

@@ -1,7 +1,5 @@
 map <F8> :setlocal spell! spelllang=en_gb<CR>
 map <F7> :Goyo<CR>
-map <F12> :set bg=light \| hi Normal LineNr guibg=none<CR>
-map <F11> :set bg=dark \| hi Normal LineNr guibg=none<CR>
 set path+=**                    " Searches current directory recursively.
 set mouse=a
 set wildmenu                    " Display all matches when tab complete.
@@ -29,5 +27,11 @@ set clipboard+=unnamedplus       " Copy/paste between Vim and other programs.
 set termguicolors
 colorscheme gruvbox
 syntax enable
+hi SignColumn guibg=none
 hi Normal guibg=none
 hi LineNr guibg=none
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType startify call glyph_palette#apply()
+augroup END

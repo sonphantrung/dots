@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case $BUTTON in
+    1) $TERMINAL -e ncmpcpp;;
+    3) notify-send "Mpd module" "Shows current song in mpd.
+- Click to open ncmpcpp." ;;
+esac
+
+mpc current

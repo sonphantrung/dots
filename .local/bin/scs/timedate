@@ -1,4 +1,11 @@
 #!/bin/sh
 
+
+case $BUTTON in
+    1) $TERMINAL -e calcurse;;
+    3) notify-send "Date and time module" "Shows current time and date.
+- Click to open calcurse." ;;
+esac
+
 echo " $(date +"%d/%m/%y (%a) %H:%M")"
 

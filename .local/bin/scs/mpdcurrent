@@ -2,8 +2,11 @@
 
 case $BUTTON in
     1) $TERMINAL -e ncmpcpp;;
-    3) notify-send "Mpd module" "Shows current song in mpd.
-- Click to open ncmpcpp." ;;
+    2) mpc stop ;;
+    3) notify-send " Mpd module" "Shows current song in mpd.
+- Click to open ncmpcpp.
+- Middle click to stop
+Current Song:$(mpc current)" ;;
 esac
 
 mpc current

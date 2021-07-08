@@ -25,36 +25,15 @@
 [submodule ".config/nvim/pack/plugins/start/vim-instant-markdown"]
 	path = .config/nvim/pack/plugins/start/vim-instant-markdown
 	url = https://github.com/suan/vim-instant-markdown.git
-[submodule ".config/nvim/pack/plugins/start/vim-code-dark"]
-	path = .config/nvim/pack/plugins/start/vim-code-dark
-	url = https://github.com/tomasiser/vim-code-dark
 [submodule ".config/nvim/pack/plugins/start/i3-vim-syntax"]
 	path = .config/nvim/pack/plugins/start/i3-vim-syntax
 	url = https://github.com/PotatoesMaster/i3-vim-syntax
-[submodule ".config/nvim/pack/plugins/start/gruvbox"]
-	path = .config/nvim/pack/plugins/start/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
-[submodule ".config/nvim/pack/plugins/start/vim-startify"]
-	path = .config/nvim/pack/plugins/start/vim-startify
-	url = https://github.com/mhinz/vim-startify
-[submodule ".config/nvim/pack/plugins/start/glyph-palette.vim"]
-	path = .config/nvim/pack/plugins/start/glyph-palette.vim
-	url = https://github.com/lambdalisue/glyph-palette.vim
-[submodule ".config/nvim/pack/plugins/start/fern-renderer-nerdfont.vim"]
-	path = .config/nvim/pack/plugins/start/fern-renderer-nerdfont.vim
-	url = https://github.com/lambdalisue/fern-renderer-nerdfont.vim
-[submodule ".config/nvim/pack/plugins/start/fern.vim"]
-	path = .config/nvim/pack/plugins/start/fern.vim
-	url = https://github.com/lambdalisue/fern.vim
-[submodule ".config/nvim/pack/plugins/start/nerdfont.vim"]
-	path = .config/nvim/pack/plugins/start/nerdfont.vim
-	url = https://github.com/lambdalisue/nerdfont.vim
-[submodule ".config/nvim/pack/plugins/start/vim-devicons"]
-	path = .config/nvim/pack/plugins/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
-[submodule ".config/nvim/pack/plugins/start/vim-airline"]
-	path = .config/nvim/pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule ".config/nvim/pack/plugins/start/vim-airline-themes"]
-	path = .config/nvim/pack/plugins/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
+[submodule ".config/nvim/pack/plugins/start/nvim-colorizer.lua"]
+	path = .config/nvim/pack/plugins/start/nvim-colorizer.lua
+	url = https://github.com/norcalli/nvim-colorizer.lua
+[submodule ".config/nvim/pack/plugins/start/nvcode-color-schemes.vim"]
+	path = .config/nvim/pack/plugins/start/nvcode-color-schemes.vim
+	url = https://github.com/ChristianChiarulli/nvcode-color-schemes.vim
+[submodule ".config/nvim/pack/plugins/start/nvim-treesitter"]
+	path = .config/nvim/pack/plugins/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter

@@ -82,6 +82,15 @@ source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/de
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
+last_exit_code() {
+    exit_code="$?"
+    if [ "$exit_code" != 0 ]; then
+        exit_code_prompt="%F{red}$exit_code%f"
+    else
+        unset exit_code_prompt
+    fi
+    }
+
 setup_git_prompt() {
     if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
         unset git_prompt
@@ -116,10 +125,14 @@ setup_git_prompt() {
 }
 
 precmd() {
+    # Checks the last exit code
+    last_exit_code
     # Set optional git part of prompt.
     setup_git_prompt
 }
 
 # Prompt
 setopt prompt_subst
-PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f ${git_prompt}%# '
+PROMPT='%F{green}%n%f@%F{magenta}%m%f:%F{blue}%B%~%b%f${git_prompt}
+%(?:%F{green}%B%#%b%f:%F{red}%B%#%b%f) '
+RPROMPT='$exit_code_prompt'

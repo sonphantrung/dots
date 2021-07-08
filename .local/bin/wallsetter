@@ -1,7 +1,6 @@
 #!/bin/sh
 DIR=$HOME/.local/share/bg
-NUM=$(($(echo $(echo "$DIR" | sed 's/\//\\n/g') | wc -l) + 1 ))
-WALL=$(find "$DIR" -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | cut -d '/' -f"$NUM" | dmenu -l 5 -p "Choose wall: ")
+WALL=$(fd . --base-directory "$DIR" -e jpg -e png -e jpeg -e gif | dmenu -l 5 -p "Choose wall: ")
 [ -z "$WALL" ] && OPTS="" || OPTS=$(printf "Preview\nSet As Wall\n" | dmenu -l 2 -p "Action: ")
 
 confirm () {

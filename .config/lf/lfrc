@@ -3,6 +3,7 @@ set hidden true
 set icons true
 set ignorecase true
 set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
 
 # Custom Functions
 cmd open ${{

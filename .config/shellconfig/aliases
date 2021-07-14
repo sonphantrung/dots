@@ -35,6 +35,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias ll='ls -l'
 alias lt='ls --tree'
+alias lf='lf-ueberzug'
 alias p="paru"
 alias cls="clear"
 alias q="exit"

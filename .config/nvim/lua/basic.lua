@@ -3,7 +3,9 @@ local wo = vim.wo
 local bo = vim.bo
 local cmd = vim.cmd
 -- Global options
+o.dir = '/tmp'
 o.path = '**'                    --  Searches current directory recursively.
+o.cursorline = true
 o.mouse = 'a'
 o.wildmenu = true                  --  Display all matches when tab complete.
 o.incsearch = true                  --  Incremental search
@@ -27,8 +29,6 @@ o.number = true
 o.relativenumber = true      --  Display line numbers
 o.clipboard = 'unnamedplus'       --  Copy/paste between Vim and other programs.
 o.termguicolors = true
-
--- Window-only options
-wo.numberwidth = 2 -- Thinner 
+o.numberwidth = 2 -- Thinner 
 
 cmd('colorscheme nvcode')

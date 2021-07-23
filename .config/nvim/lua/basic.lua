@@ -21,7 +21,8 @@ o.shiftwidth = 4                -- One tab == four spaces.
 o.tabstop = 4                   -- One tab == four spaces.
 o.smartindent = true
 o.smartcase = true
-o.listchars='nbsp:¬,tab:»·,trail:·,extends:>,precedes:<'
+o.listchars='tab:│ ,nbsp:␣,space:␣,trail:·,extends:>,precedes:<,eol:⏎'
+o.list = true
 o.encoding = 'utf-8'
 o.undofile = true
 o.undodir = '/tmp'
@@ -30,5 +31,17 @@ o.relativenumber = true      --  Display line numbers
 o.clipboard = 'unnamedplus'       --  Copy/paste between Vim and other programs.
 o.termguicolors = true
 o.numberwidth = 2 -- Thinner 
+o.wildignore = [[
+.git,.hg,.svn
+*.aux,*.out,*.toc
+*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
+*.mp3,*.oga,*.ogg,*.wav,*.flac
+*.eot,*.otf,*.ttf,*.woff
+*.doc,*.pdf,*.cbr,*.cbz
+*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
+*.swp,.lock,.DS_Store,._*
+]]
 
 cmd('colorscheme nvcode')

@@ -105,30 +105,30 @@ draw_bold_text_with_bright_colors: false
 colors:
   # Default colors
   primary:
-    background: '#131111'
+    background: '#151515'
     foreground: '#d0ddd4'
 
   # Normal colors
   normal:
-    black:   "#24282d"
-    red:     "#822a2a"
-    green:   "#646a2f"
-    yellow:  "#c97941"
-    blue:    "#495c6d"
-    magenta: "#6d4f77"
-    cyan:    "#5e8d87"
-    white:   "#d7dcd9"
+    black:   '#080808'
+    red:     '#c13434'
+    green:   '#646a2f'
+    yellow:  '#c97941'
+    blue:    '#495c6d'
+    magenta: '#6d4f77'
+    cyan:    '#5e8d87'
+    white:   '#d7dcd9'
 
   # Bright colors
   bright:
-    black:   "#282a2e"
-    red:     "#ac7070"
-    green:   "#7a813a"
-    yellow:  "#e8c581"
-    blue:    "#6892b6"
-    magenta: "#b062c7"
-    cyan:    "#8abeb7"
-    white:   "#dae1ea"
+    black:   '#0e0e0e'
+    red:     '#c13939'
+    green:   '#73813a'
+    yellow:  '#c28a59'
+    blue:    '#6892b6'
+    magenta: '#b062c7'
+    cyan:    '#8abeb7'
+    white:   '#dae1ea'
 
   # Indexed Colors
   #

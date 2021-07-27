@@ -1,6 +1,7 @@
 #!/bin/sh
 
-picom --experimental-backends &
+#picom --experimental-backends &
+xcompmgr &
 unclutter &
 setwallp &
 mpd &

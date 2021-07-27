@@ -44,4 +44,4 @@ o.wildignore = [[
 *.swp,.lock,.DS_Store,._*
 ]]
 
-cmd('colorscheme nvcode')
+cmd('source ~/.config/nvim/colorscheme.vim')

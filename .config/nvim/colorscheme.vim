@@ -44,7 +44,7 @@ hi ColorColumn guifg=NONE ctermfg=NONE guibg=#534444 ctermbg=239 gui=NONE cterm=
 hi CursorLineNr guifg=#736868 ctermfg=242 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi SignColumn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=233 gui=NONE cterm=NONE
 hi Conceal guifg=#645353 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi CursorColumn guifg=NONE ctermfg=NONE guibg=#282a2e ctermbg=235 gui=NONE cterm=NONE
+hi CursorColumn guifg=NONE ctermfg=NONE guibg=#3a2f2f ctermbg=236 gui=NONE cterm=NONE
 hi CursorLine guifg=NONE ctermfg=NONE guibg=#2b2323 ctermbg=235 gui=NONE cterm=NONE
 hi Directory guifg=#6892b6 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiffAdd guifg=#151515 ctermfg=233 guibg=#c97941 ctermbg=173 gui=NONE cterm=NONE
@@ -52,14 +52,14 @@ hi DiffChange guifg=#c97941 ctermfg=173 guibg=NONE ctermbg=NONE gui=underline ct
 hi DiffDelete guifg=#151515 ctermfg=233 guibg=#c13434 ctermbg=131 gui=NONE cterm=NONE
 hi DiffText guifg=#151515 ctermfg=233 guibg=#c97941 ctermbg=173 gui=NONE cterm=NONE
 hi ErrorMsg guifg=#c13939 ctermfg=131 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi VertSplit guifg=#3a2f2f ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi VertSplit guifg=#382a2e ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Folded guifg=#645353 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi FoldColumn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi IncSearch guifg=#5e8d87 ctermfg=66 guibg=#645353 ctermbg=240 gui=NONE cterm=NONE
 hi LineNr guifg=#534444 ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi MatchParen guifg=#495c6d ctermfg=240 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 hi NonText guifg=#645353 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Pmenu guifg=#d0ddd4 ctermfg=188 guibg=#3a2f2f ctermbg=236 gui=NONE cterm=NONE
+hi Pmenu guifg=#d0ddd4 ctermfg=188 guibg=#382a2e ctermbg=236 gui=NONE cterm=NONE
 hi PmenuSel guifg=#151515 ctermfg=233 guibg=#495c6d ctermbg=240 gui=NONE cterm=NONE
 hi PmenuSbar guifg=NONE ctermfg=NONE guibg=#645353 ctermbg=240 gui=NONE cterm=NONE
 hi PmenuThumb guifg=NONE ctermfg=NONE guibg=#d0ddd4 ctermbg=188 gui=NONE cterm=NONE

@@ -22,7 +22,7 @@ browser linkhandler
 macro , open-in-browser
 macro t set browser "qndl" ; open-in-browser ; set browser linkhandler
 macro a set browser "ts youtube-dl --add-metadata -xic -f bestaudio/best" ; open-in-browser ; set browser linkhandler
-macro v set browser "devour mpv --hwdec=auto" ; open-in-browser ; set browser linkhandler
+macro v set browser "mpv --hwdec=auto" ; open-in-browser ; set browser linkhandler
 macro p set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
 macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
 macro c set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler

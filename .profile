@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export ENV=$HOME/.kshrc
+export ENV=$HOME/.config/ksh/.kshrc
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
 
 export GTK_IM_MODULE=ibus
@@ -15,22 +15,32 @@ export EDITOR="nvim"
 export TERM="xterm-256color"
 export MOZ_WEBRENDER=1
 export TERMINAL="st"
-export ZDOTDIR='/home/son/.config/zsh'
-export XINITRC="/home/son/.config/X11/.xinitrc"
-# Start blinking
-export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
-# Start bold
-export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
-# Start stand out
-export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
-# End standout
-export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
-# Start underline
-export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
-# End Underline
-export LESS_TERMCAP_ue=$(tput sgr0)
-# End bold, blinking, standout, underline
-export LESS_TERMCAP_me=$(tput sgr0)
+
+# Cleanup
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
+export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
+export LESSHISTFILE="-"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/X11/.xinitrc"
+export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
+export KODI_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/kodi"
+export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
+export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
+export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
+export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
+export ELECTRUMDIR="${XDG_DATA_HOME:-$HOME/.local/share}/electrum"
+
+# Using Neovim as a manpager
+export MANPAGER='nvim +Man!'
 
 # This is the list for lf icons:
 export LF_ICONS="\

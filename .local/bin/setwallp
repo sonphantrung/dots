@@ -2,4 +2,13 @@
 
 # Muh wall setter script
 
-[ -f $1 ] && xwallpaper --zoom $1 2>/dev/null && echo "$(readlink -f "$1")" > ~/.config/.lastwalldir || xwallpaper --zoom "$(cat ~/.config/.lastwalldir)"
+wallfile=$1
+
+[ -f "$wallfile" ] && [ -n "$wallfile" ] && readlink -f "$wallfile" > ~/.config/.lastwalldir || break
+
+# If pywal is installed, use it.
+command -v wal >/dev/null 2>&1 &&
+	wal -i "$(cat ~/.config/.lastwalldir)" -o "${XDG_CONFIG_HOME:-$HOME/.config}/wal/postrun" >/dev/null 2>&1 &&
+	pidof dwm >/dev/null && xdotool key super+F12
+
+xwallpaper --zoom "$(cat ~/.config/.lastwalldir)"

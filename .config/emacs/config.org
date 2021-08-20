@@ -51,22 +51,6 @@
 ;; to skip the mtime checks on every *.elc file.
 (setq load-prefer-newer noninteractive)
  #+end_src
-** Following window splits
-#+BEGIN_SRC emacs-lisp
-  (defun split-and-follow-horizontally ()
-    (interactive)
-    (split-window-below)
-    (balance-windows)
-    (other-window 1))
-  (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
-
-  (defun split-and-follow-vertically ()
-    (interactive)
-    (split-window-right)
-    (balance-windows)
-    (other-window 1))
-  (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
-#+END_SRC
 ** Display line numbers
 #+begin_src emacs-lisp
 (use-package linum-relative
@@ -77,47 +61,8 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 #+end_src
-** Improved kill-word
-Why on earth does a function called =kill-word= not .. kill a word.
-It instead deletes characters from your cursors position to the end of the word,
-let's make a quick fix and bind it properly.
-#+BEGIN_SRC emacs-lisp
-  (defun phantrungson17/kill-inner-word ()
-    "Kills the entire word your cursor is in. Equivalent to 'ciw' in vim."
-    (interactive)
-    (forward-char 1)
-    (backward-word)
-    (kill-word 1))
-  (global-set-key (kbd "C-c w k") 'phantrungson17/kill-inner-word)
-#+END_SRC
-** Improved copy-word
-And again, the same as above but we make sure to not delete the source word.
-#+BEGIN_SRC emacs-lisp
-  (defun phantrungson17/copy-whole-word ()
-    (interactive)
-    (save-excursion
-      (forward-char 1)
-      (backward-word)
-      (kill-word 1)
-      (yank)))
-  (global-set-key (kbd "C-c w c") 'phantrungson17/copy-whole-word)
-#+END_SRC
-** Copy a line
-Regardless of where your cursor is, this quickly copies a line.
-#+BEGIN_SRC emacs-lisp
-  (defun phantrungson17/copy-whole-line ()
-    "Copies a line without regard for cursor position."
-    (interactive)
-    (save-excursion
-      (kill-new
-       (buffer-substring
-        (point-at-bol)
-        (point-at-eol)))))
-  (global-set-key (kbd "C-c l c") 'phantrungson17/copy-whole-line)
-#+END_SRC
 ** SCROLLING
 Emacs' default scrolling is annoying because of the sudden half-page jumps.  Also, I wanted to adjust the scrolling speed.
-
 #+begin_src emacs-lisp
 (setq scroll-conservatively 101) ;; value greater than 100 gets rid of half page jumping
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ;; how many lines at a time
@@ -208,6 +153,25 @@ And this quickly deletes a line.
     (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
 #+end_src
 * Packages
+** Evil mode
+#+begin_src emacs-lisp
+(use-package evil
+  :ensure t
+  :init      ;; tweak evil's configuration before loading it
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (evil-mode))
+(use-package evil-collection
+  :ensure t
+  :after evil
+  :config
+  (setq evil-collection-mode-list '(dashboard dired ibuffer))
+  (evil-collection-init))
+(use-package evil-tutor
+  :ensure t)
+#+end_src
 ** Which Key
  #+BEGIN_SRC emacs-lisp
    (use-package which-key
@@ -280,20 +244,6 @@ And this quickly deletes a line.
   :bind
     ("M-s" . avy-goto-char))
 #+end_src
-** switch-window
-#+BEGIN_SRC emacs-lisp
-(use-package switch-window
-  :ensure t
-  :config
-    (setq switch-window-input-style 'minibuffer)
-    (setq switch-window-increase 4)
-    (setq switch-window-threshold 2)
-    (setq switch-window-shortcut-style 'qwerty)
-    (setq switch-window-qwerty-shortcuts
-        '("a" "s" "d" "f" "j" "k" "l" "i" "o"))
-  :bind
-    ([remap other-window] . switch-window))
-#+END_SRC
 ** Auto-Complete
 #+begin_src emacs-lisp
 (use-package auto-complete
@@ -301,6 +251,19 @@ And this quickly deletes a line.
   :config 
   (ac-config-default)
 )
+#+end_src
+** Ewal
+#+begin_src emacs-lisp
+(use-package ewal
+  :ensure t
+  :init (setq ewal-use-built-in-always-p nil
+              ewal-use-built-in-on-failure-p t
+              ewal-built-in-palette "sexy-material"))
+(use-package ewal-doom-themes
+  :ensure t
+  :config (progn
+            (load-theme 'ewal-doom-one t)
+            (enable-theme 'ewal-doom-one)))
 #+end_src
 ** EMOJIFY
 Emojify is an Emacs extension to display emojis. It can display github style emojis like :smile: or plain ascii ones like :). 
@@ -382,6 +345,10 @@ Emojify is an Emacs extension to display emojis. It can display github style emo
     :after (treemacs magit)
     :ensure t)
 
+(use-package treemacs-evil
+  :after treemacs evil
+  :ensure t)
+
   (use-package treemacs-projectile
     :after treemacs projectile
     :ensure t)
@@ -443,6 +410,19 @@ Emojify is an Emacs extension to display emojis. It can display github style emo
 (setq org-src-preserve-indentation nil
       org-src-tab-acts-natively t
       org-edit-src-content-indentation 0)
+#+end_src
+** Evil Mode
+#+begin_src emacs-lisp
+(use-package evil-org
+  :ensure t
+  :after (evil org)
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme '(navigation insert textobjects additional calendar))))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 #+end_src
 ** Source Code Block Syntax Highlighting
 #+begin_src emacs-lisp

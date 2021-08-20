@@ -43,5 +43,3 @@ o.wildignore = [[
 *.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 *.swp,.lock,.DS_Store,._*
 ]]
-
-cmd('source ~/.config/nvim/colorscheme.vim')

@@ -3,7 +3,8 @@
 picom --experimental-backends &
 #xcompmgr &
 unclutter &
-setwallp &
+dunst &
+setwallp
 mpd &
 clipmenud &
 #dwmblocks &

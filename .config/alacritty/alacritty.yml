@@ -69,16 +69,16 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: Hack Nerd Font
+    family: monospace
     style: Regular
   bold:
-   family: Hack Nerd Font
+   family: monospace
    style: Bold
   italic:
-    family: Hack Nerd Font
+    family: monospace
     style: Italic
   bold_italic:
-    family: Hack Nerd Font
+    family: monospace
     style: Bold Italic
 
   # Point size

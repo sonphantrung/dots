@@ -21,6 +21,7 @@ o.shiftwidth = 4                -- One tab == four spaces.
 o.tabstop = 4                   -- One tab == four spaces.
 o.smartindent = true
 o.smartcase = true
+o.showmode = false
 o.listchars='tab:│ ,nbsp:␣,space:␣,trail:·,extends:>,precedes:<,eol:⏎'
 o.list = true
 o.encoding = 'utf-8'
@@ -43,3 +44,4 @@ o.wildignore = [[
 *.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 *.swp,.lock,.DS_Store,._*
 ]]
+cmd('colo everforest')

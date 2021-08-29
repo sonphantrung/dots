@@ -5,7 +5,7 @@ export XMODIFIERS=@im=dbus
 export QT_IM_MODULE=ibus # Get Ibus To Work
 
 export EDITOR="nvim"
-export TERM="xterm-256color"
+export TERM="st-256color"
 export MOZ_WEBRENDER=1
 export TERMINAL="st"
 

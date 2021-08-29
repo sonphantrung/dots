@@ -1,10 +1,11 @@
 #!/bin/sh
 
 picom --experimental-backends &
+xrdb ~/.config/X11/.xinitrc &
 #xcompmgr &
 unclutter &
 dunst &
-setwallp
+setwallp &
 mpd &
 clipmenud &
 #dwmblocks &
@@ -14,5 +15,5 @@ xsetroot -cursor_name left_ptr
 xmodmap -e "keysym Caps_Lock = "
 xset r rate "300" "50"
 while :; do
-        ssh-agent dwm
+    ssh-agent dwm && break || continue
 done

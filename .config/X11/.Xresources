@@ -1,36 +1,64 @@
+! Muh custom colorscheme
+!! special
+!*.foreground:   #d0ddd4
+!*.background:   #151515
+!
+!! black
+!*.color0:       #080808
+!*.color8:       #0e0e0e
+!
+!! red
+!*.color1:       #c13434
+!*.color9:       #c13939
+!
+!! green
+!*.color2:       #646a2f
+!*.color10:      #73813a
+!
+!! yellow
+!*.color3:       #c97941
+!*.color11:      #c28a59
+!
+!! blue
+!*.color4:       #495c6d
+!*.color12:      #6892b6
+!
+!! magenta
+!*.color5:       #6d4f77
+!*.color13:      #b062c7
+!
+!! cyan
+!*.color6:       #5e8d87
+!*.color14:      #8abeb7
+!
+!! white
+!*.color7:       #d7dcd9
+!*.color15:      #dae1ea
+! everforest
 ! special
-*.foreground:   #d0ddd4
-*.background:   #151515
-*.cursorColor:  #d0ddd4
+*.foreground:   #d8caac
+*.background:   #323d43
+*.cursorColor:  #d8caac
 
 ! black
-*.color0:       #080808
-*.color8:       #0e0e0e
+*.color0:       #868d80
+*.color8:       #868d80
 
 ! red
-*.color1:       #c13434
-*.color9:       #c13939
+*.color1:       #e68183
+*.color9:       #e68183
 
 ! green
-*.color2:       #646a2f
-*.color10:      #73813a
+*.color2:       #a7c080
+*.color10:      #a7c080
 
 ! yellow
-*.color3:       #c97941
-*.color11:      #c28a59
+*.color3:       #d9bb80
+*.color11:      #d9bb80
 
 ! blue
-*.color4:       #495c6d
-*.color12:      #6892b6
+*.color4:       #89beba
+*.color12:      #89beba
 
 ! magenta
-*.color5:       #6d4f77
-*.color13:      #b062c7
-
-! cyan
-*.color6:       #5e8d87
-*.color14:      #8abeb7
-
-! white
-*.color7:       #d7dcd9
-*.color15:      #dae1ea
+*.color5:       #d3a0bc

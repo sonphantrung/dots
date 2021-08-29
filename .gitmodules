@@ -37,3 +37,51 @@
 [submodule ".config/nvim/pack/plugins/start/nvim-treesitter"]
 	path = .config/nvim/pack/plugins/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule ".config/nvim/pack/plugins/start/nvim-web-devicons"]
+	path = .config/nvim/pack/plugins/start/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons.git
+[submodule ".config/nvim/pack/plugins/start/lualine.nvim"]
+	path = .config/nvim/pack/plugins/start/lualine.nvim
+	url = https://github.com/hoob3rt/lualine.nvim.git
+[submodule ".config/nvim/pack/plugins/start/barbar.nvim"]
+	path = .config/nvim/pack/plugins/start/barbar.nvim
+	url = https://github.com/romgrk/barbar.nvim
+[submodule ".config/nvim/pack/plugins/start/nvim-tree.lua"]
+	path = .config/nvim/pack/plugins/start/nvim-tree.lua
+	url = https://github.com/kyazdani42/nvim-tree.lua
+[submodule ".config/nvim/pack/plugins/start/nvim-lspconfig"]
+	path = .config/nvim/pack/plugins/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule ".config/nvim/pack/plugins/start/lspkind-nvim"]
+	path = .config/nvim/pack/plugins/start/lspkind-nvim
+	url = https://github.com/onsails/lspkind-nvim.git
+[submodule ".config/nvim/pack/plugins/start/vim-vsnip"]
+	path = .config/nvim/pack/plugins/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip.git
+[submodule ".config/nvim/pack/plugins/start/friendly-snippets"]
+	path = .config/nvim/pack/plugins/start/friendly-snippets
+	url = https://github.com/rafamadriz/friendly-snippets.git
+[submodule ".config/nvim/pack/plugins/start/nvim-compe"]
+	path = .config/nvim/pack/plugins/start/nvim-compe
+	url = https://github.com/hrsh7th/nvim-compe
+[submodule ".config/nvim/pack/plugins/start/everforest"]
+	path = .config/nvim/pack/plugins/start/everforest
+	url = https://github.com/sainnhe/everforest.git
+[submodule ".config/nvim/pack/plugins/start/telescope-media-files.nvim"]
+	path = .config/nvim/pack/plugins/start/telescope-media-files.nvim
+	url = https://github.com/nvim-telescope/telescope-media-files.nvim
+[submodule ".config/nvim/pack/plugins/start/telescope.nvim"]
+	path = .config/nvim/pack/plugins/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule ".config/nvim/pack/plugins/start/telescope-fzf-native.nvim"]
+	path = .config/nvim/pack/plugins/start/telescope-fzf-native.nvim
+	url = https://github.com/nvim-telescope/telescope-fzf-native.nvim
+[submodule ".config/nvim/pack/plugins/start/plenary.nvim"]
+	path = .config/nvim/pack/plugins/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule ".config/nvim/pack/plugins/start/vim-which-key"]
+	path = .config/nvim/pack/plugins/start/vim-which-key
+	url = https://github.com/liuchengxu/vim-which-key.git
+[submodule ".config/nvim/pack/plugins/start/nvim-whichkey-setup.lua"]
+	path = .config/nvim/pack/plugins/start/nvim-whichkey-setup.lua
+	url = https://github.com/AckslD/nvim-whichkey-setup.lua

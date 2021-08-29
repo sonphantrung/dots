@@ -2,7 +2,7 @@
 BATT="$(cat /sys/class/power_supply/BAT1/capacity)"
 CHARGING="$(cat /sys/class/power_supply/BAT1/status)"
 if [ "$CHARGING" = "Charging" ]; then
-    BATICON="^c#0BEF38^ ^d^"
+    BATICON="^C2^ ^d^"
 elif [ "$BATT" = "100" ]; then
     BATICON=" "
 elif [ "$BATT" -gt "90" ]; then
@@ -20,8 +20,8 @@ elif [ "$BATT" -gt "40" ]; then
 elif [ "$BATT" -gt "30" ]; then
     BATICON=" "
 elif [ "$BATT" -gt "20" ]; then
-    BATICON="^c#EC0C0C^ ^d^"
+    BATICON="^C1^ ^d^"
 else
-    BATICON="^c#EC0C0C^ ^d^"
+    BATICON="^C1^ ^d^"
 fi
 echo "$BATICON $BATT%"

@@ -222,7 +222,7 @@ function xresources.load_syntax()
       MatchParen = {fg=xresources.red,bg=xresources.none};
       Normal = {fg = xresources.fg,bg=xresources.none};
       NormalFloat = {fg=xresources.fg,bg=xresources.grey};
-      NonText = {fg=xresources.grey};
+      NonText = {fg=xresources.black};
       Pmenu = {fg=xresources.fg,bg=xresources.grey};
       PmenuSel = {fg=xresources.grey,bg=xresources.blue};
       PmenuSelBold = {fg=xresources.grey,g=xresources.blue};
@@ -239,8 +239,8 @@ function xresources.load_syntax()
       SignColumn = {fg=xresources.fg,bg=xresources.none};
       Search = {fg=xresources.bg,bg=xresources.yellow};
       SpecialKey = {fg=xresources.grey};
-      TabLine = {bg=xresources.none};
-      TabLineSel = {bg=xresources.grey};
+      TabLineSel = {bg=xresources.none};
+      TabLine = {bg=xresources.grey};
       Title = {fg=xresources.green,style='bold'};
       Terminal = {fg = xresources.fg,bg=xresources.none};
       TabLineFill = {style=xresources.none};

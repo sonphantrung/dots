@@ -5,6 +5,6 @@ case $BUTTON in
 esac
 
 SSID="$(nmcli -t -f name connection show --active)"
-[ "$($SSID | cut -d ' ' -f1)" = "Wired" ] && NETICON="^c#2CD651^ﯱ ^d^" || NETICON="^c#2CD651^直 ^d^"
+[ "$(echo $SSID | cut -d ' ' -f1)" = "Wired" ] && NETICON="^C2^ﯱ ^d^" || NETICON="^C2^直 ^d^"
 
-[ -z "$SSID" ] && echo "^c#ce3d3d^ ^d^ Disconnected" || echo "$NETICON $SSID"
+[ -z "$SSID" ] && echo "^C1^ ^d^ Disconnected" || echo "$NETICON $SSID"

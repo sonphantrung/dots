@@ -30,11 +30,10 @@ ex ()
 # Aliases
 alias dr='dragon-drag-and-drop -a -x' # Neva Use Any GuiFm to do drag & drop anymore
 alias d='devour' # Swallowin'
-alias ls='exa' # my preferred listing
+alias ls='logo-ls' # my preferred listing
 alias la='ls -a'
 alias lla='ls -la'
 alias ll='ls -l'
-alias lt='ls --tree'
 alias lf='lf-ueberzug'
 alias p="paru"
 alias cls="clear"
@@ -64,7 +63,7 @@ alias rm='rm -i'
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias vifm='vifmrun'
 alias wget='wget -c'
-alias merge="xrdb -merge ~/.Xresources"
+alias merge="xrdb -merge ~/.config/X11/.Xresources"
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
 alias yta-best="youtube-dl --extract-audio --audio-format best "
 alias yta-flac="youtube-dl --extract-audio --audio-format flac "

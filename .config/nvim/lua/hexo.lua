@@ -10,7 +10,9 @@ vim.g.Hexokinase_optInPatterns = {
      'colour_names',
  }
 
-vim.g.Hexokinase_refreshEvents = {'InsertLeave', 
-'TextChanged',}
+vim.g.Hexokinase_refreshEvents = {
+    'InsertLeave',
+    'TextChanged',
+}
 
 vim.cmd('autocmd vimenter * HexokinaseTurnOn')

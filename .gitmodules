@@ -40,9 +40,6 @@
 [submodule ".config/nvim/pack/plugins/start/nvim-web-devicons"]
 	path = .config/nvim/pack/plugins/start/nvim-web-devicons
 	url = https://github.com/kyazdani42/nvim-web-devicons.git
-[submodule ".config/nvim/pack/plugins/start/lualine.nvim"]
-	path = .config/nvim/pack/plugins/start/lualine.nvim
-	url = https://github.com/hoob3rt/lualine.nvim.git
 [submodule ".config/nvim/pack/plugins/start/barbar.nvim"]
 	path = .config/nvim/pack/plugins/start/barbar.nvim
 	url = https://github.com/romgrk/barbar.nvim
@@ -85,3 +82,6 @@
 [submodule ".config/nvim/pack/plugins/start/nvim-whichkey-setup.lua"]
 	path = .config/nvim/pack/plugins/start/nvim-whichkey-setup.lua
 	url = https://github.com/AckslD/nvim-whichkey-setup.lua
+[submodule ".config/nvim/pack/plugins/start/dashboard-nvim"]
+	path = .config/nvim/pack/plugins/start/dashboard-nvim
+	url = https://github.com/glepnir/dashboard-nvim.git

@@ -15,12 +15,20 @@ map('n', ') <Plug>', ':GitGutterNextHunk', options)
 map('n', '( <Plug>', ':GitGutterPrevHunk', options)
 map('n', '<Leader>md', ':InstantMarkdownPreview<CR>', options) -- Previews .md file
 map('n', '<Leader>ms', ':InstantMarkdownStop<CR>', options) -- Kills the preview
+map('n', '<Leader>ss', ':<C-u>SessionSave<CR>', options)
+map('n', '<Leader>sl', ':<C-u>SessionLoad<CR>', options)
 -- Telescope
-map('n', '<Leader>ff', ':Telescope find_files<CR>', options)
+map('n', '<Leader>ff', ':DashboardFindFile<CR>', options)
 map('n', '<Leader>fm', ':Telescope media_files<CR>', options)
-map('n', '<Leader>fg', ':Telescope live_grep<CR>', options)
+map('n', '<Leader>fg', ':DashboardFindWord<CR>', options)
 map('n', '<Leader>fb', ':Telescope buffers<CR>', options)
-map('n', '<Leader>fh', ':Telescope help_tags<CR>', options)
+map('n', '<Leader>f?', ':Telescope help_tags<CR>', options)
+map('n', '<Leader>fh', ':DashboardFindHistory<CR>', options)
+map('n', '<Leader>tc', ':DashboardChangeColorscheme<CR>', options)
+map('n', '<Leader>ta', ':Telescope help_tags<CR>', options)
+map('n', '<Leader>fk', ':DashboardJumpMark<CR>', options)
+map('n', '<Leader>bm', ':Telescope marks<CR>', options)
+map('n', '<Leader>cn', ':DashboardNewFile<CR>', options)
 
 -- lspconfig
 function M.on_attach(client, bufnr)
@@ -29,6 +37,13 @@ function M.on_attach(client, bufnr)
 
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', options)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', options)
+    vim.lsp.handlers['textDocument/publishDiagnostics'] =
+      vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+          virtual_text = true,
+          signs = true,
+          underline = true,
+          update_in_insert = true,
+      })
 end
 
 vim.o.completeopt = "menuone,noselect"

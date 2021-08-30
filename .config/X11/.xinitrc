@@ -1,7 +1,7 @@
 #!/bin/sh
 
 picom --experimental-backends &
-xrdb ~/.config/X11/.xinitrc &
+xrdb ~/.config/X11/.Xresources &
 #xcompmgr &
 unclutter &
 dunst &

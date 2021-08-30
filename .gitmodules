@@ -85,3 +85,6 @@
 [submodule ".config/nvim/pack/plugins/start/dashboard-nvim"]
 	path = .config/nvim/pack/plugins/start/dashboard-nvim
 	url = https://github.com/glepnir/dashboard-nvim.git
+[submodule ".config/nvim/pack/plugins/start/lualine.nvim"]
+	path = .config/nvim/pack/plugins/start/lualine.nvim
+	url = https://github.com/shadmansaleh/lualine.nvim.git

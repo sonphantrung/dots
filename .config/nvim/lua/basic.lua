@@ -1,6 +1,4 @@
 local o = vim.o
-local wo = vim.wo
-local bo = vim.bo
 local cmd = vim.cmd
 -- Global options
 o.dir = '/tmp'
@@ -24,6 +22,8 @@ o.smartcase = true
 o.showmode = false
 o.listchars='tab:│ ,nbsp:␣,space:␣,trail:·,extends:>,precedes:<,eol:⏎'
 o.list = true
+o.timeout = true
+o.timeoutlen = 30
 o.encoding = 'utf-8'
 o.undofile = true
 o.undodir = '/tmp'
@@ -31,7 +31,7 @@ o.number = true
 o.relativenumber = true      --  Display line numbers
 o.clipboard = 'unnamedplus'       --  Copy/paste between Vim and other programs.
 o.termguicolors = true
-o.numberwidth = 2 -- Thinner 
+o.numberwidth = 2 -- Thinner
 o.wildignore = [[
 .git,.hg,.svn
 *.aux,*.out,*.toc

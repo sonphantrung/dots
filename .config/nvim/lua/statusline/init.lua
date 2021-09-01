@@ -12,31 +12,30 @@ require'lualine'.setup {
         'branch',
         {
         'diff',
-        color_added = '#a7c080', -- changes diff's added foreground color
-        color_modified = '#d9bb80', -- changes diff's modified foreground color
-        color_removed = '#e68183', -- changes diff's removed foreground color
+        color_added = { fg = '#a7c080' }, -- changes diff's added foreground color
+        color_modified = { fg ='#d9bb80' }, -- changes diff's modified foreground color
+        color_removed = { fg ='#e68183' }, -- changes diff's removed foreground color
         symbols = {added = ' ', modified = '柳 ', removed = ' '},
         },
     {
       'diagnostics',
+      update_in_insert = true, -- Update diagnostics while typing
       -- table of diagnostic sources, available sources:
       -- nvim_lsp, coc, ale, vim_lsp
       sources = {'nvim_lsp'},
       -- displays diagnostics from defined severity
       sections = {'error', 'warn', 'info', 'hint'},
       -- all colors are in format #rrggbb
-      color_error = '#e68183', -- changes diagnostic's error foreground color
-      color_warn = '#d9bb80', -- changes diagnostic's warn foreground color
+      color_error = { fg ='#e68183' }, -- changes diagnostic's error foreground color
+      color_warn = { fg ='#d9bb80' }, -- changes diagnostic's warn foreground color
       color_info = nil, -- Changes diagnostic's info foreground color
       color_hint = nil, -- Changes diagnostic's hint foreground color
       symbols = { error = " ", warning = " ", hint = " ", information = " " }
     },
 },
+
     lualine_c = {
         'filename',
-    {
-    function() return '%=' end
-    },
     {
   function()
     local msg = 'No Active Lsp'

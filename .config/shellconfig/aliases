@@ -30,10 +30,11 @@ ex ()
 # Aliases
 alias dr='dragon-drag-and-drop -a -x' # Neva Use Any GuiFm to do drag & drop anymore
 alias d='devour' # Swallowin'
-alias ls='logo-ls' # my preferred listing
+alias ls='exa' # my preferred listing
 alias la='ls -a'
 alias lla='ls -la'
 alias ll='ls -l'
+alias lt='ls --tree'
 alias lf='lf-ueberzug'
 alias p="paru"
 alias cls="clear"

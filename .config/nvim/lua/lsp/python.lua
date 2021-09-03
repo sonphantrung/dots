@@ -1,1 +1,2 @@
-require('lspconfig').pyright.setup{ on_attach = require('maps').on_attach }
+local coq = require('coq')
+require('lspconfig').pyright.setup(coq.lsp_ensure_capabilities{ on_attach = require('maps').on_attach })

@@ -1,11 +1,12 @@
 -- Btw, I use Arch
-util = require('lspconfig.util')
+local coq = require('coq')
+UTIL = require('lspconfig.util')
 
-sumneko_root_path = "/usr/share/lua-language-server"
-sumneko_binary = "/usr/bin/lua-language-server"
+SUMNEKO_ROOT_PATH = "/usr/share/lua-language-server"
+SUMNEKO_BINARY = "/usr/bin/lua-language-server"
 
-require'lspconfig'.sumneko_lua.setup {
-  cmd = { sumneko_binary, "-E", sumneko_root_path .. '/main.lua' },
+require'lspconfig'.sumneko_lua.setup (coq.lsp_ensure_capabilities{
+  cmd = { SUMNEKO_BINARY, "-E", SUMNEKO_ROOT_PATH .. '/main.lua' },
   settings = {
     Lua = {
       runtime = {
@@ -27,4 +28,4 @@ require'lspconfig'.sumneko_lua.setup {
     },
   },
   on_attach = require('maps').on_attach,
-}
+})

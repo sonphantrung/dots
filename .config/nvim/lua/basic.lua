@@ -1,6 +1,7 @@
 local o = vim.o
 local cmd = vim.cmd
 -- Global options
+
 o.dir = '/tmp'
 o.path = '**'                    --  Searches current directory recursively.
 o.cursorline = true
@@ -13,7 +14,6 @@ o.backup = false                   -- No auto backups
 o.writebackup = false
 o.swapfile = false
 o.ignorecase = true
-o.expandtab = true                  -- Use spaces instead of tabs.
 o.smarttab = true                   -- Be smart using tabs ;)
 o.shiftwidth = 4                -- One tab == four spaces.
 o.tabstop = 4                   -- One tab == four spaces.
@@ -45,3 +45,6 @@ o.wildignore = [[
 *.swp,.lock,.DS_Store,._*
 ]]
 cmd('colo everforest')
+
+-- coq.nvim
+vim.g.coq_settings = { auto_start = 'shut-up' }

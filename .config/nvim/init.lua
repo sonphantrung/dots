@@ -1,3 +1,4 @@
+require('plugs')
 require('basic')
 require('hexo')
 require('utils')

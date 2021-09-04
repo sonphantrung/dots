@@ -1,4 +1,4 @@
-#files: 766	version: 5.8
+#files: 761	version: 5.8
 
 _comps=(
 '-' '_precommand'
@@ -106,7 +106,6 @@ _comps=(
 'add-zle-hook-widget' '_add-zle-hook-widget'
 'add-zsh-hook' '_add-zsh-hook'
 'admin' '_sccs'
-'alacritty' '_alacritty'
 'ali' '_mh'
 'alias' '_alias'
 'amaya' '_webbrowser'
@@ -203,7 +202,6 @@ _comps=(
 'builtin' '_builtin'
 'bunzip2' '_bzip2'
 'burst' '_mh'
-'bwrap' '_bwrap'
 'bzcat' '_bzip2'
 'bzegrep' '_grep'
 'bzfgrep' '_grep'
@@ -670,7 +668,6 @@ _comps=(
 'iftop' '_iftop'
 'ifup' '_net_interfaces'
 'ijoin' '_ispell'
-'img2sixel' '_img2sixel'
 'import' '_imagemagick'
 'inc' '_mh'
 'includeres' '_psutils'
@@ -819,6 +816,7 @@ _comps=(
 'mencal' '_mencal'
 'mere' '_mere'
 'merge' '_rcs'
+'meson' '_meson'
 'metaflac' '_flac'
 'mformat' '_mtools'
 'mgv' '_pspdf'
@@ -915,13 +913,13 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
+'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
 'nmap' '_nmap'
 'nmblookup' '_samba'
 'nmcli' '_networkmanager'
-'nnn' '_nnn'
 'nocorrect' '_precommand'
 'noglob' '_precommand'
 'nohup' '_precommand'
@@ -1081,7 +1079,6 @@ _comps=(
 'pyhtmlizer' '_twisted'
 'qdbus' '_qdbus'
 'qiv' '_qiv'
-'qpdf' '_qpdf'
 'quilt' '_quilt'
 'r' '_fc'
 'rake' '_rake'
@@ -1406,7 +1403,6 @@ _comps=(
 'wipefs' '_wipefs'
 'wodim' '_cdrecord'
 'wpa_cli' '_wpa_cli'
-'wpg' '_wpg'
 'write' '_users_on'
 'www' '_webbrowser'
 'xargs' '_xargs'
@@ -1477,7 +1473,6 @@ _comps=(
 'ypxfr' '_yp'
 'ytalk' '_other_accounts'
 'zargs' '_zargs'
-'zathura' '_zathura'
 'zcalc' '_zcalc'
 'zcat' '_zcat'
 'zcompile' '_zcompile'
@@ -1651,11 +1646,10 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _alacritty _archinstallscripts _asp _bat _bwrap \
-            _curl _devtools _exa _fd _hg \
-            _img2sixel _libinput _loginctl _mkinitcpio _mpv \
-            _nnn _pacman _paru _pulseaudio _qpdf \
-            _rg _wpg _xwallpaper _youtube-dl _zathura \
+autoload -Uz _archinstallscripts _asp _bat _curl _devtools \
+            _exa _fd _hg _libinput _loginctl \
+            _meson _mkinitcpio _mpv _ninja _pacman \
+            _paru _pulseaudio _rg _xwallpaper _youtube-dl \
             _cdr _all_labels _all_matches _alternative _approximate \
             _arg_compile _arguments _bash_completions _cache_invalid _call_function \
             _combination _comp_locale _complete _complete_debug _complete_help \

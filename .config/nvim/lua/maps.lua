@@ -20,7 +20,7 @@ map('n', '<Leader>sl', ':<C-u>SessionLoad<CR>', options)
 -- Telescope
 map('n', '<Leader>ff', ':DashboardFindFile<CR>', options)
 map('n', '<Leader>fm', ':Telescope media_files<CR>', options)
-map('n', '<Leader>fg', ':DashboardFindWord<CR>', options)
+map('n', '<Leader>fw', ':DashboardFindWord<CR>', options)
 map('n', '<Leader>fb', ':Telescope buffers<CR>', options)
 map('n', '<Leader>f?', ':Telescope help_tags<CR>', options)
 map('n', '<Leader>fh', ':DashboardFindHistory<CR>', options)
@@ -37,6 +37,8 @@ function M.on_attach(client, bufnr)
 
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', options)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', options)
+  buf_set_keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', options)
+  buf_set_keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', options)
     vim.lsp.handlers['textDocument/publishDiagnostics'] =
       vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
           virtual_text = true,

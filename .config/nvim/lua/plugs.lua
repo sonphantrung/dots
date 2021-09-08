@@ -1,12 +1,12 @@
 local fn = vim.fn
 
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/paq-nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', '--depth=1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-return require('packer').startup(function()
+return require('packer').startup({function(use)
 	use "wbthomason/packer.nvim";
 	use "antoinemadec/FixCursorHold.nvim";
 	use "junegunn/goyo.vim";
@@ -23,10 +23,11 @@ return require('packer').startup(function()
 	use "romgrk/barbar.nvim";
 	use "kyazdani42/nvim-tree.lua";
 	use "neovim/nvim-lspconfig";
-	use { 'ms-jpq/coq_nvim', branch = 'coq' };
+	use { 'ms-jpq/coq_nvim', branch = 'coq', run = ':COQdeps' };
 	use { 'ms-jpq/coq.artifacts', branch = 'artifacts' };
 	use "ChristianChiarulli/nvcode-color-schemes.vim";
 	use "sainnhe/everforest";
+	use "folke/tokyonight.nvim"
 	use "nvim-telescope/telescope-media-files.nvim";
 	use "nvim-telescope/telescope.nvim";
 	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' };
@@ -35,4 +36,11 @@ return require('packer').startup(function()
 	use "AckslD/nvim-whichkey-setup.lua";
 	use "glepnir/dashboard-nvim";
 	use "shadmansaleh/lualine.nvim";
-end)
+end,
+config = {
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end
+  }
+}})

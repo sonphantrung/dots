@@ -14,6 +14,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
+setopt correct # AutoCorrection
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -88,59 +89,62 @@ bindkey '^x^e' edit-command-line
 # Aliases
 for f in ~/.config/shellconfig/*; do source "$f"; done
 
-last_exit_code() {
-    exit_code="$?"
-    if [ "$exit_code" != 0 ]; then
-        exit_code_prompt="%F{red}$exit_code%f"
-    else
-        unset exit_code_prompt
-    fi
-    }
+# Old prompt
+#last_exit_code() {
+#    exit_code="$?"
+#    if [ "$exit_code" != 0 ]; then
+#        exit_code_prompt="%F{red}$exit_code%f"
+#    else
+#        unset exit_code_prompt
+#    fi
+#    }
+#
+#setup_git_prompt() {
+#    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+#        unset git_prompt
+#        return 0
+#    fi
+#
+#    local git_status_dirty git_status_stash git_branch
+#
+#    if [ "$(git --no-optional-locks status --untracked-files='no' --porcelain)" ]; then
+#        git_status_dirty='%F{green}*'
+#    else
+#        unset git_status_dirty
+#    fi
+#
+#    if [ "$(git stash list)" ]; then
+#        git_status_stash="%F{yellow}▲"
+#    else
+#        unset git_status_stash
+#    fi
+#
+#    git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
+#    git_branch="${git_branch#refs/heads/}"
+#
+#    if [ "${#git_branch}" -ge 24 ]; then
+#        git_branch="${git_branch:0:21}..."
+#    fi
+#
+#    git_branch="${git_branch:-no branch}"
+#
+#    git_prompt=" %F{blue}[%F{253}${git_branch}${git_status_dirty}${git_status_stash}%F{blue}]%f"
+#
+#}
+#
+#precmd() {
+#    # Checks the last exit code
+#    last_exit_code
+#    # Set optional git part of prompt.
+#    setup_git_prompt
+#}
+#
+## Prompt
+#setopt prompt_subst
+#PROMPT='%F{green}%n%f@%F{magenta}%m%f:%F{blue}%B%1~%b%f${git_prompt} %(?:%F{green}%B%#%b%f:%F{red}%B%#%b%f) '
+#RPROMPT='$exit_code_prompt'
 
-setup_git_prompt() {
-    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-        unset git_prompt
-        return 0
-    fi
-
-    local git_status_dirty git_status_stash git_branch
-
-    if [ "$(git --no-optional-locks status --untracked-files='no' --porcelain)" ]; then
-        git_status_dirty='%F{green}*'
-    else
-        unset git_status_dirty
-    fi
-
-    if [ "$(git stash list)" ]; then
-        git_status_stash="%F{yellow}▲"
-    else
-        unset git_status_stash
-    fi
-
-    git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
-    git_branch="${git_branch#refs/heads/}"
-
-    if [ "${#git_branch}" -ge 24 ]; then
-        git_branch="${git_branch:0:21}..."
-    fi
-
-    git_branch="${git_branch:-no branch}"
-
-    git_prompt=" %F{blue}[%F{253}${git_branch}${git_status_dirty}${git_status_stash}%F{blue}]%f"
-
-}
-
-precmd() {
-    # Checks the last exit code
-    last_exit_code
-    # Set optional git part of prompt.
-    setup_git_prompt
-}
-
-# Prompt
-setopt prompt_subst
-PROMPT='%F{green}%n%f@%F{magenta}%m%f:%F{blue}%B%1~%b%f${git_prompt} %(?:%F{green}%B%#%b%f:%F{red}%B%#%b%f) '
-RPROMPT='$exit_code_prompt'
+eval "$(starship init zsh)"
 
 #Plugs
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null

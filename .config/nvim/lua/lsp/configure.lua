@@ -1,4 +1,4 @@
-local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+local signs = { Error = "", Warning = "", Hint = "", Information = "" }
 
 for type, icon in pairs(signs) do
   local hl = "LspDiagnosticsSign" .. type

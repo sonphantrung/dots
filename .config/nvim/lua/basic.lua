@@ -44,7 +44,11 @@ o.wildignore = [[
 *.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 *.swp,.lock,.DS_Store,._*
 ]]
-cmd('colo everforest')
+vim.g.tokyonight_transparent_sidebar = true
+vim.g.tokyonight_transparent = true
+cmd[['
+colo tokyonight
+']]
 
 -- coq.nvim
 vim.g.coq_settings = { auto_start = 'shut-up' }

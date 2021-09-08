@@ -1,9 +1,10 @@
+local color=require('statusline.colors')
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'everforest',
-    section_separators = {'', ''},
-    component_separators = {'', ''},
+    theme = 'tokyonight',
+    section_separators = {'', ''},
+    component_separators = {'|', '|'},
     disabled_filetypes = {}
   },
   sections = {
@@ -12,10 +13,10 @@ require'lualine'.setup {
         'branch',
         {
         'diff',
-        color_added = { fg = '#a7c080' }, -- changes diff's added foreground color
-        color_modified = { fg ='#d9bb80' }, -- changes diff's modified foreground color
-        color_removed = { fg ='#e68183' }, -- changes diff's removed foreground color
-        symbols = {added = ' ', modified = '柳 ', removed = ' '},
+        color_added = { fg = color.green }, -- changes diff's added foreground color
+        color_modified = { fg = color.yellow }, -- changes diff's modified foreground color
+        color_removed = { fg = color.red }, -- changes diff's removed foreground color
+        symbols = {added = ' ', modified = '柳', removed = ' '},
         },
     {
       'diagnostics',
@@ -26,10 +27,10 @@ require'lualine'.setup {
       -- displays diagnostics from defined severity
       sections = {'error', 'warn', 'info', 'hint'},
       -- all colors are in format #rrggbb
-      color_error = { fg ='#e68183' }, -- changes diagnostic's error foreground color
-      color_warn = { fg ='#d9bb80' }, -- changes diagnostic's warn foreground color
-      color_info = nil, -- Changes diagnostic's info foreground color
-      color_hint = nil, -- Changes diagnostic's hint foreground color
+      color_error = { fg = color.red }, -- changes diagnostic's error foreground color
+      color_warn = { fg = color.yellow }, -- changes diagnostic's warn foreground color
+      color_info = { fg = color.blue }, -- Changes diagnostic's info foreground color
+      color_hint = { fg = color.green }, -- Changes diagnostic's hint foreground color
       symbols = { error = " ", warning = " ", hint = " ", information = " " }
     },
 },
@@ -51,12 +52,12 @@ require'lualine'.setup {
     return msg
   end,
   icon = ' LSP:',
-  color = {fg = '#ffffff', gui = 'bold'}
+  color = {fg = color.white, gui = 'bold'}
     }
 },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_z = {'location'},
   },
   inactive_sections = {
     lualine_a = {},

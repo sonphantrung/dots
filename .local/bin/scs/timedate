@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 case $BUTTON in
     1) $TERMINAL -e calcurse;;
     3) notify-send " Date and time module" "Shows current time and date.
@@ -8,4 +7,3 @@ case $BUTTON in
 esac
 
 echo " $(date +"%d/%m/%y (%a) %H:%M")"
-

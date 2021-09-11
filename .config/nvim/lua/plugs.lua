@@ -7,6 +7,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup({function(use)
+	use "lewis6991/impatient.nvim"
 	use "wbthomason/packer.nvim";
 	use "antoinemadec/FixCursorHold.nvim";
 	use "junegunn/goyo.vim";
@@ -18,22 +19,18 @@ return require('packer').startup({function(use)
 	use "tpope/vim-surround";
 	use {"iamcco/markdown-preview.nvim", run = 'cd app && yarn install'};
 	use "PotatoesMaster/i3-vim-syntax";
-	use "nvim-treesitter/nvim-treesitter";
+	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
 	use "kyazdani42/nvim-web-devicons";
 	use "romgrk/barbar.nvim";
 	use "kyazdani42/nvim-tree.lua";
 	use "neovim/nvim-lspconfig";
-	use { 'ms-jpq/coq_nvim', branch = 'coq', run = ':COQdeps' };
-	use { 'ms-jpq/coq.artifacts', branch = 'artifacts' };
+	use { 'ms-jpq/coq_nvim', branch = 'coq', run = ':COQdeps' , requires = {{ 'ms-jpq/coq.artifacts', branch = 'artifacts' }}};
 	use "ChristianChiarulli/nvcode-color-schemes.vim";
 	use "sainnhe/everforest";
-	use "folke/tokyonight.nvim"
-	use "nvim-telescope/telescope-media-files.nvim";
-	use "nvim-telescope/telescope.nvim";
-	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' };
+	use "folke/tokyonight.nvim";
+	use {"nvim-telescope/telescope.nvim", requires = {"nvim-telescope/telescope-media-files.nvim", {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }}};
 	use "nvim-lua/plenary.nvim";
-	use "liuchengxu/vim-which-key";
-	use "AckslD/nvim-whichkey-setup.lua";
+	use {"liuchengxu/vim-which-key", requires = "AckslD/nvim-whichkey-setup.lua"};
 	use "glepnir/dashboard-nvim";
 	use "shadmansaleh/lualine.nvim";
 end,

@@ -1,3 +1,4 @@
+require('impatient')
 require('plugs')
 require('basic')
 require('hexo')

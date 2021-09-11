@@ -12,25 +12,30 @@ require("whichkey_setup").config{
 }
 
 local keymap = {
-    w = {':w!<CR>', 'save file'}, -- set a single command and text
     j = 'split args', -- only set a text for an already configured keymap
     ['<CR>'] = {'@q', 'macro q'}, -- setting a special key
+    w = {
+		name = '+windows';
+		w = {'<Cmd>w<CR>', 'save file'};
+		v = {'<Cmd>vs<CR>', 'vsplit'};
+		h = {'<Cmd>sp<CR>', 'split'};
+	},
     f = { -- set a nested structure
         name = '+find',
-        b = {'Telescope buffers<CR>', 'buffers'},
-        h = {'Telescope help_tags<CR>', 'help tags'},
+        b = {'<Cmd>Telescope buffers<CR>', 'buffers'},
+        h = {'<Cmd>Telescope help_tags<CR>', 'help tags'},
         c = {
             name = '+commands',
-            c = {'Telescope commands<CR>', 'commands'},
-            h = {'Telescope command_history<CR>', 'history'},
+            c = {'<Cmd>Telescope commands<CR>', 'commands'},
+            h = {'<Cmd>Telescope command_history<CR>', 'history'},
         },
         q = {'<Cmd>Telescope quickfix<CR>', 'quickfix'},
         g = {
             name = '+git',
-            g = {'Telescope git_commits<CR>', 'commits'},
-            c = {'Telescope git_bcommits<CR>', 'bcommits'},
-            b = {'Telescope git_branches<CR>', 'branches'},
-            s = {'Telescope git_status<CR>', 'status'},
+            g = {'<Cmd>Telescope git_commits<CR>', 'commits'},
+            c = {'<Cmd>Telescope git_bcommits<CR>', 'bcommits'},
+            b = {'<Cmd>Telescope git_branches<CR>', 'branches'},
+            s = {'<Cmd>Telescope git_status<CR>', 'status'},
         },
     }
 }

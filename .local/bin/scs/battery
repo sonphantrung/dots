@@ -24,4 +24,4 @@ elif [ "$BATT" -gt "20" ]; then
 else
     BATICON="^C1^ ^d^"
 fi
-echo "$BATICON $BATT%"
+echo "$BATICON$BATT%"

@@ -7,4 +7,4 @@ esac
 SSID="$(nmcli -t -f name connection show --active)"
 [ "$(echo $SSID | cut -d ' ' -f1)" = "Wired" ] && NETICON="^C2^ﯱ ^d^" || NETICON="^C2^直 ^d^"
 
-[ -z "$SSID" ] && echo "^C1^ ^d^ Disconnected" || echo "$NETICON $SSID"
+[ -z "$SSID" ] && echo "^C1^ ^d^Disconnected" || echo "$NETICON$SSID"

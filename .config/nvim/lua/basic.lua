@@ -49,6 +49,3 @@ vim.g.tokyonight_transparent = true
 cmd[['
 colo tokyonight
 ']]
-
--- coq.nvim
-vim.g.coq_settings = { auto_start = 'shut-up' }

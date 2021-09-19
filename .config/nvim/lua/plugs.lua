@@ -23,8 +23,17 @@ return require('packer').startup({function(use)
 	use "kyazdani42/nvim-web-devicons";
 	use "romgrk/barbar.nvim";
 	use "kyazdani42/nvim-tree.lua";
-	use "neovim/nvim-lspconfig";
-	use { 'ms-jpq/coq_nvim', branch = 'coq', run = ':COQdeps' , requires = {{ 'ms-jpq/coq.artifacts', branch = 'artifacts' }}};
+--	use { 'ms-jpq/coq_nvim', branch = 'coq', run = ':COQdeps' , requires = {{ 'ms-jpq/coq.artifacts', branch = 'artifacts' }}};
+	use 'neovim/nvim-lspconfig'
+	use {'hrsh7th/nvim-cmp', requires = {
+	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-vsnip',
+	'ray-x/cmp-treesitter'
+	}}
+	use 'hrsh7th/vim-vsnip'
+	use 'rafamadriz/friendly-snippets'
+	use 'onsails/lspkind-nvim'
 	use "ChristianChiarulli/nvcode-color-schemes.vim";
 	use "sainnhe/everforest";
 	use "folke/tokyonight.nvim";

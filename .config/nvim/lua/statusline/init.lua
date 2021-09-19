@@ -3,8 +3,8 @@ require'lualine'.setup {
   options = {
     icons_enabled = true,
     theme = 'tokyonight',
-    section_separators = {'', ''},
-    component_separators = {'|', '|'},
+    section_separators = {left = '', right =''},
+    component_separators = {left = '|', right ='|'},
     disabled_filetypes = {}
   },
   sections = {
@@ -13,9 +13,11 @@ require'lualine'.setup {
         'branch',
         {
         'diff',
-        color_added = { fg = color.green }, -- changes diff's added foreground color
-        color_modified = { fg = color.yellow }, -- changes diff's modified foreground color
-        color_removed = { fg = color.red }, -- changes diff's removed foreground color
+		diff_color = {
+			added = { fg = color.green }, -- changes diff's added foreground color
+			modified = { fg = color.yellow },-- changes diff's modified foreground color
+			removed = { fg = color.red }, -- changes diff's removed foreground color
+		};
         symbols = {added = ' ', modified = '柳', removed = ' '},
         },
     {
@@ -27,10 +29,12 @@ require'lualine'.setup {
       -- displays diagnostics from defined severity
       sections = {'error', 'warn', 'info', 'hint'},
       -- all colors are in format #rrggbb
-      color_error = { fg = color.red }, -- changes diagnostic's error foreground color
-      color_warn = { fg = color.yellow }, -- changes diagnostic's warn foreground color
-      color_info = { fg = color.blue }, -- Changes diagnostic's info foreground color
-      color_hint = { fg = color.green }, -- Changes diagnostic's hint foreground color
+	  diagnostics_color = {
+      error = { fg = color.red }, -- changes diagnostic's error foreground color
+      warn = { fg = color.yellow }, -- changes diagnostic's warn foreground color
+      info = { fg = color.blue }, -- Changes diagnostic's info foreground color
+      hint = { fg = color.green }, -- Changes diagnostic's hint foreground color
+  },
       symbols = { error = " ", warning = " ", hint = " ", information = " " }
     },
 },

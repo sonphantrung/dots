@@ -1,3 +1,2 @@
-local coq = require "coq" -- add this
-
-require('lspconfig').bashls.setup(coq.lsp_ensure_capabilities{ on_attach = require('maps').on_attach })
+require('lspconfig').bashls.setup{ on_attach = require('maps').on_attach,
+capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())}

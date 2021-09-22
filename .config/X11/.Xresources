@@ -1,37 +1,20 @@
 ! Muh custom colorscheme
-!! special
 !*.foreground:   #d0ddd4
 !*.background:   #151515
-!
-!! black
 !*.color0:       #080808
 !*.color8:       #0e0e0e
-!
-!! red
 !*.color1:       #c13434
 !*.color9:       #c13939
-!
-!! green
 !*.color2:       #646a2f
 !*.color10:      #73813a
-!
-!! yellow
 !*.color3:       #c97941
 !*.color11:      #c28a59
-!
-!! blue
 !*.color4:       #495c6d
 !*.color12:      #6892b6
-!
-!! magenta
 !*.color5:       #6d4f77
 !*.color13:      #b062c7
-!
-!! cyan
 !*.color6:       #5e8d87
 !*.color14:      #8abeb7
-!
-!! white
 !*.color7:       #d7dcd9
 !*.color15:      #dae1ea
 ! everforest
@@ -54,22 +37,42 @@
 !*.color14:      #87c095
 !*.color7:       #d8caac
 !*.color15:      #d8caac
-! TokyoNight colors for Xresources
-*background: #1a1b26
-*foreground: #c0caf5
-*color0: #15161E
-*color1: #f7768e
-*color2: #9ece6a
-*color3: #e0af68
-*color4: #7aa2f7
-*color5: #bb9af7
-*color6: #7dcfff
-*color7: #a9b1d6
-*color8: #414868
-*color9: #f7768e
-*color10: #9ece6a
-*color11: #e0af68
-*color12: #7aa2f7
-*color13: #bb9af7
-*color14: #7dcfff
-*color15: #c0caf5
+! Nord
+*.foreground:   #d8dee9
+*.background:   #2e3440
+*.cursorColor:  #d8dee9
+*.color0:       #3b4252
+*.color8:       #4c566a
+*.color1:       #bf616a
+*.color9:       #bf616a
+*.color2:       #a3be8c
+*.color10:      #a3be8c
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
+*.color4:       #81a1c1
+*.color12:      #81a1c1
+*.color5:       #b48ead
+*.color13:      #b48ead
+*.color6:       #88c0d0
+*.color14:      #8fbcbb
+*.color7:       #e5e9f0
+*.color15:      #eceff4
+!! TokyoNight colors for Xresources
+!*background: #1a1b26
+!*foreground: #c0caf5
+!*color0: #15161E
+!*color1: #f7768e
+!*color2: #9ece6a
+!*color3: #e0af68
+!*color4: #7aa2f7
+!*color5: #bb9af7
+!*color6: #7dcfff
+!*color7: #a9b1d6
+!*color8: #414868
+!*color9: #f7768e
+!*color10: #9ece6a
+!*color11: #e0af68
+!*color12: #7aa2f7
+!*color13: #bb9af7
+!*color14: #7dcfff
+!*color15: #c0caf5

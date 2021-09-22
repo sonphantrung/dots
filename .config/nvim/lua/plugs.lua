@@ -31,9 +31,10 @@ return require('packer').startup({function(use)
 	'hrsh7th/cmp-vsnip',
 	'ray-x/cmp-treesitter'
 	}}
-	use 'hrsh7th/vim-vsnip'
-	use 'rafamadriz/friendly-snippets'
-	use 'onsails/lspkind-nvim'
+	use 'hrsh7th/vim-vsnip';
+	use 'rafamadriz/friendly-snippets';
+	use 'onsails/lspkind-nvim';
+	use "xiyaowong/nvim-transparent";
 	use "ChristianChiarulli/nvcode-color-schemes.vim";
 	use "sainnhe/everforest";
 	use "folke/tokyonight.nvim";

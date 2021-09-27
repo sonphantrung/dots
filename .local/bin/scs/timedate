@@ -6,4 +6,4 @@ case $BUTTON in
 - Click to open calcurse." ;;
 esac
 
-echo " $(date +"%d/%m/%y (%a) %H:%M")"
+echo " $(date +"%d/%m/%y (%a) %H:%M")"

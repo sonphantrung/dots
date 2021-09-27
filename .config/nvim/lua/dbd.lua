@@ -9,26 +9,28 @@ vim.g.dashboard_custom_section = {
    g = { description = { "  Load Last Session         SPC s l" }, command = "SessionLoad" },
 }
 vim.g.dashboard_custom_header = {
-    '',
-    '',
-    '        ⢀⣴⡾⠃⠄⠄⠄⠄⠄⠈⠺⠟⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣶⣤⡀  ',
-    '      ⢀⣴⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣷ ',
-    '     ⣴⣿⡿⡟⡼⢹⣷⢲⡶⣖⣾⣶⢄⠄⠄⠄⠄⠄⢀⣼⣿⢿⣿⣿⣿⣿⣿⣿⣿ ',
-    '    ⣾⣿⡟⣾⡸⢠⡿⢳⡿⠍⣼⣿⢏⣿⣷⢄⡀⠄⢠⣾⢻⣿⣸⣿⣿⣿⣿⣿⣿⣿ ',
-    '  ⣡⣿⣿⡟⡼⡁⠁⣰⠂⡾⠉⢨⣿⠃⣿⡿⠍⣾⣟⢤⣿⢇⣿⢇⣿⣿⢿⣿⣿⣿⣿⣿ ',
-    ' ⣱⣿⣿⡟⡐⣰⣧⡷⣿⣴⣧⣤⣼⣯⢸⡿⠁⣰⠟⢀⣼⠏⣲⠏⢸⣿⡟⣿⣿⣿⣿⣿⣿ ',
-    ' ⣿⣿⡟⠁⠄⠟⣁⠄⢡⣿⣿⣿⣿⣿⣿⣦⣼⢟⢀⡼⠃⡹⠃⡀⢸⡿⢸⣿⣿⣿⣿⣿⡟ ',
-    ' ⣿⣿⠃⠄⢀⣾⠋⠓⢰⣿⣿⣿⣿⣿⣿⠿⣿⣿⣾⣅⢔⣕⡇⡇⡼⢁⣿⣿⣿⣿⣿⣿⢣ ',
-    ' ⣿⡟⠄⠄⣾⣇⠷⣢⣿⣿⣿⣿⣿⣿⣿⣭⣀⡈⠙⢿⣿⣿⡇⡧⢁⣾⣿⣿⣿⣿⣿⢏⣾ ',
-    ' ⣿⡇⠄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢻⠇⠄⠄⢿⣿⡇⢡⣾⣿⣿⣿⣿⣿⣏⣼⣿ ',
-    ' ⣿⣷⢰⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⢰⣧⣀⡄⢀⠘⡿⣰⣿⣿⣿⣿⣿⣿⠟⣼⣿⣿ ',
-    ' ⢹⣿⢸⣿⣿⠟⠻⢿⣿⣿⣿⣿⣿⣿⣿⣶⣭⣉⣤⣿⢈⣼⣿⣿⣿⣿⣿⣿⠏⣾⣹⣿⣿ ',
-    ' ⢸⠇⡜⣿⡟⠄⠄⠄⠈⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟⣱⣻⣿⣿⣿⣿⣿⠟⠁⢳⠃⣿⣿⣿ ',
-    '  ⣰⡗⠹⣿⣄⠄⠄⠄⢀⣿⣿⣿⣿⣿⣿⠟⣅⣥⣿⣿⣿⣿⠿⠋  ⣾⡌⢠⣿⡿⠃ ',
-    ' ⠜⠋⢠⣷⢻⣿⣿⣶⣾⣿⣿⣿⣿⠿⣛⣥⣾⣿⠿⠟⠛⠉            ',
-    '',
-    '',
+    "",
+	"                  .',;:::::;,'.               ";
+	"              .';::dxdxxddolll'll'            ";
+	"           .,cok00OxkkkdxkKX0kl:::c;.         ";
+	"          ,cxkdcx0l,kOl;xNx,oON0olllc,        ";
+	"        .:xxlOc:dddOo0XXodddxO;kNklll:,.      ";
+	"      .'oOoOdxkNNx;lKWK'KWWNdo:dlX0llc;:.     ";
+	"    ';'oklX0NxWXc.clKWK,:WWKoOlld;XOlllc:     ";
+	"  ,cl,lOlOlx;cO:k,cckkdlckKN'olxWxcNdll:;.    ";
+	" .llllO:N;dx00KXxXWWWWNOxK0kx:l:WN:0Kllllc'   ";
+	"   ::oo0X:WWc..oWWWWWWWWWNkkXWX;WWklNllllll,  ";
+	"    ,d:W0lXKo;;xWNWWWWWWW:..'WW:WWX;Wollllll' ";
+	"    'cdWN;O00XWWWoOdxOxWWXxoOKX:WWN;Wlccc::   ";
+	"     'OWx:;xNNWWWWWWWWWWWWX0KOc0WWN:X;;:;     ";
+	"      OXO'oOd0WX0WWWWWWWWWWNXo:dNWOdxlll.     ";
+	"      dNollod;:oklOdxoXxxl0xoklNOW:xlll'      ";
+	"      'NkOckXNKOxdlxdc'dxdoxc:ddKd:c::'       ";
+	"       .Xo;..  x0XXOl0:XX0x .,d0l:oldOd       ";
+	"          ;.             ...'    co;          ";
+	"";
   }
+
 vim.g.dashboard_custom_footer = {
     " Vim is the best",
 }

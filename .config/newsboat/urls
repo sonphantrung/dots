@@ -1,9 +1,10 @@
-~~Blogposts~~
+"~~Blogposts And News~~"
 http://lukesmith.xyz/rss.xml
 https://www.archlinux.org/feeds/news/ "tech"
-~~PeerTube~~
+https://artixlinux.org/feed.php
+"~~PeerTube~~"
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
-~~YouTube~~
+"~~YouTube(tehc, mostly)~~"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCott96qGP5ADmsB_yNQMvDA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg
@@ -12,3 +13,11 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCxwcmRAmBRzZMNS37dCgmHA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCCIHOP7e271SIumQgyl6XBQ
+"~~Vtubers(Hololive)~~"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCoSrY_IQQVpmIRZ9Xf-y93g
+https://www.youtube.com/feeds/videos.xml?channel_id=UCL_qhgtOy0dy1Agp8vkySQg
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHsx4Hqa-1ORjQTh9TYDhww
+https://www.youtube.com/feeds/videos.xml?channel_id=UCyl1z3jo3XHR1riLFKG5UAg
+"~~Vtubers(NijiGen)~~"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCYxDbNevCyirkU2T00gb68A
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5RSxmHP5c4pU9Og1Pxx4wg

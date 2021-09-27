@@ -18,6 +18,8 @@ return require('packer').startup({function(use)
 	use { "RRethy/vim-hexokinase", run = 'make hexokinase' };
 	use "tpope/vim-surround";
 	use {"iamcco/markdown-preview.nvim", run = 'cd app && yarn install'};
+	use "kovetskiy/sxhkd-vim";
+	use "elkowar/yuck.vim";
 	use "PotatoesMaster/i3-vim-syntax";
 	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
 	use "kyazdani42/nvim-web-devicons";
@@ -36,6 +38,7 @@ return require('packer').startup({function(use)
 	use 'onsails/lspkind-nvim';
 	use "xiyaowong/nvim-transparent";
 	use "ChristianChiarulli/nvcode-color-schemes.vim";
+	use "RRethy/nvim-base16";
 	use "sainnhe/everforest";
 	use "folke/tokyonight.nvim";
 	use {"nvim-telescope/telescope.nvim", requires = {"nvim-telescope/telescope-media-files.nvim", {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }}};

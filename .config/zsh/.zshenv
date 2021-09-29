@@ -1,8 +1,8 @@
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=dbus
-export QT_IM_MODULE=ibus # Get Ibus To Work
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 export EDITOR="nvim"
 export TERM="st-256color"

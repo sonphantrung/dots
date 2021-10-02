@@ -44,6 +44,7 @@ fi
 IFS=$SAVEIFS
 
 # Aliases
+alias sxiv='nsxiv' # Sxiv is now unmaintained
 alias dr='dragon-drag-and-drop -a -x' # Neva Use Any GuiFm to do drag & drop anymore
 alias d='devour' # Swallowin'
 alias ls='exa' # my preferred listing
@@ -66,10 +67,10 @@ alias pacsyu='doas pacman -Syyu'                 # update only standard pkgs
 alias parusua="paru -Sua --noconfirm"              # update only AUR pkgs
 alias parusyu="paru -Syu --noconfirm"              # update standard pkgs and AUR pkgs
 alias unlock="doas rm /var/lib/pacman/db.lck"    # remove pacman lock
-alias mirror="doas reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="doas reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="doas reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="doas reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+alias mirror="doas reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist-arch"
+alias mirrord="doas reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist-arch"
+alias mirrors="doas reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist-arch"
+alias mirrora="doas reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist-arch"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'

@@ -37,7 +37,7 @@ return require('packer').startup({function(use)
 	use 'rafamadriz/friendly-snippets';
 	use 'onsails/lspkind-nvim';
 	use "xiyaowong/nvim-transparent";
-	use "ChristianChiarulli/nvcode-color-schemes.vim";
+	use "LunarVim/Colorschemes";
 	use "RRethy/nvim-base16";
 	use "sainnhe/everforest";
 	use "folke/tokyonight.nvim";

@@ -14,6 +14,4 @@ dwmblocks &
 # Caps lock sucks, disable it
 xmodmap -e "keysym Caps_Lock = " &
 xset r rate "300" "50" &
-while :; do
-    ssh-agent dwm && break || continue
-done
+ssh-agent dwm

@@ -48,7 +48,4 @@ vim.g.tokyonight_transparent_sidebar = true
 vim.g.tokyonight_transparent = true
 cmd[['
 colo base16-nord
-hi BufferCurrentMod guifg=#EBCB8B
-hi BufferInactiveMod guifg=#EBCB8B
-hi BufferVisibleMod guifg=#EBCB8B
 ']]

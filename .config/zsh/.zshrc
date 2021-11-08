@@ -90,62 +90,63 @@ bindkey '^x^e' edit-command-line
 # Aliases
 for f in ~/.config/shellconfig/*; do source "$f"; done
 
-# Old prompt
-#last_exit_code() {
-#    exit_code="$?"
-#    if [ "$exit_code" != 0 ]; then
-#        exit_code_prompt="%F{red}$exit_code%f"
-#    else
-#        unset exit_code_prompt
-#    fi
-#    }
-#
-#setup_git_prompt() {
-#    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-#        unset git_prompt
-#        return 0
-#    fi
-#
-#    local git_status_dirty git_status_stash git_branch
-#
-#    if [ "$(git --no-optional-locks status --untracked-files='no' --porcelain)" ]; then
-#        git_status_dirty='%F{green}*'
-#    else
-#        unset git_status_dirty
-#    fi
-#
-#    if [ "$(git stash list)" ]; then
-#        git_status_stash="%F{yellow}▲"
-#    else
-#        unset git_status_stash
-#    fi
-#
-#    git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
-#    git_branch="${git_branch#refs/heads/}"
-#
-#    if [ "${#git_branch}" -ge 24 ]; then
-#        git_branch="${git_branch:0:21}..."
-#    fi
-#
-#    git_branch="${git_branch:-no branch}"
-#
-#    git_prompt=" %F{blue}[%F{253}${git_branch}${git_status_dirty}${git_status_stash}%F{blue}]%f"
-#
-#}
-#
-#precmd() {
-#    # Checks the last exit code
-#    last_exit_code
-#    # Set optional git part of prompt.
-#    setup_git_prompt
-#}
-#
-## Prompt
-#setopt prompt_subst
-#PROMPT='%F{green}%n%f@%F{magenta}%m%f:%F{blue}%B%1~%b%f${git_prompt} %(?:%F{green}%B%#%b%f:%F{red}%B%#%b%f) '
-#RPROMPT='$exit_code_prompt'
+# Old prompt(or not)
+last_exit_code() {
+    exit_code="$?"
+    if [ "$exit_code" != 0 ]; then
+        exit_code_prompt=" %F{red}$exit_code%f"
+    else
+        unset exit_code_prompt
+    fi
+    }
 
-eval "$(starship init zsh)"
+setup_git_prompt() {
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        unset git_prompt
+        return 0
+    fi
+
+    local git_status_dirty git_status_stash git_branch
+
+    if [ "$(git --no-optional-locks status --untracked-files='no' --porcelain)" ]; then
+        git_status_dirty='%F{green}*'
+    else
+        unset git_status_dirty
+    fi
+
+    if [ "$(git stash list)" ]; then
+        git_status_stash="%F{magenta}▲"
+    else
+        unset git_status_stash
+    fi
+
+    git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
+    git_branch="${git_branch#refs/heads/}"
+
+    if [ "${#git_branch}" -ge 24 ]; then
+        git_branch="${git_branch:0:21}..."
+    fi
+
+    git_branch="${git_branch:-no branch}"
+
+    git_prompt=" %F{blue}%F{253}${git_branch}${git_status_dirty}${git_status_stash}%F{blue}%f"
+
+}
+
+precmd() {
+    # Checks the last exit code
+    last_exit_code
+    # Set optional git part of prompt.
+    setup_git_prompt
+}
+
+# Prompt
+setopt prompt_subst
+PROMPT='%(?:%F{green}%B┌%b%f:%F{red}%B┌%b%f)%F{magenta}%B[%f%F{magenta}%n%f@%F{magenta}%m%f%F{magenta}%B]%f%F{magenta}%B─[%F{blue}%B%~%b%f%F{magenta}%B]%f
+%(?:%F{green}%B└╼%b%f:%F{red}%B└╼%b%f) '
+RPROMPT='${git_prompt}$exit_code_prompt'
+
+#eval "$(starship init zsh)"
 
 #Plugs
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null

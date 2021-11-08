@@ -21,6 +21,10 @@ return require('packer').startup({function(use)
 	use "kovetskiy/sxhkd-vim";
 	use "elkowar/yuck.vim";
 	use "PotatoesMaster/i3-vim-syntax";
+	use {'kristijanhusak/orgmode.nvim', config = function()
+	        require('orgmode').setup{}
+	end
+	}
 	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
 	use "kyazdani42/nvim-web-devicons";
 	use "romgrk/barbar.nvim";
@@ -45,7 +49,7 @@ return require('packer').startup({function(use)
 	use "nvim-lua/plenary.nvim";
 	use {"liuchengxu/vim-which-key", requires = "AckslD/nvim-whichkey-setup.lua"};
 	use "glepnir/dashboard-nvim";
-	use "shadmansaleh/lualine.nvim";
+	use "nvim-lualine/lualine.nvim";
 end,
 config = {
   display = {

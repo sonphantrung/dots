@@ -86,6 +86,31 @@ And this quickly deletes a line.
 (global-set-key (kbd "<f6>") 'eshell)
 (global-set-key (kbd "<f8>") 'magit)
 #+end_src
+** Following window splits
+#+BEGIN_SRC emacs-lisp
+  (defun split-and-follow-horizontally ()
+    (interactive)
+    (split-window-below)
+    (balance-windows)
+    (other-window 1))
+  (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
+
+  (defun split-and-follow-vertically ()
+    (interactive)
+    (split-window-right)
+    (balance-windows)
+    (other-window 1))
+  (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+#+END_SRC
+** close-all-buffers
+This can be invoked using =C-M-s-k=. This keybinding makes sure you don't hit it unless you really want to.
+#+BEGIN_SRC emacs-lisp
+  (defun close-all-buffers ()
+    "Kill all buffers without regard for their origin."
+    (interactive)
+    (mapc 'kill-buffer (buffer-list)))
+  (global-set-key (kbd "C-M-s-k") 'close-all-buffers)
+#+END_SRC
 * Customization
 ** Theming
  #+BEGIN_SRC emacs-lisp
@@ -112,7 +137,7 @@ And this quickly deletes a line.
    ;; Global settings (defaults)
    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
    doom-themes-enable-italic t) ; if nil, italics is universally disabled
-   (load-theme 'doom-dark+ t)
+   (load-theme 'doom-nord t)
    ;; treemacs
    (setq doom-themes-treemacs-theme "doom-atom")
    (doom-themes-treemacs-config)

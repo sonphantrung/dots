@@ -1,5 +1,8 @@
 #!/bin/sh
 
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/pipewire-media-session &
 picom --experimental-backends &
 xrdb ~/.config/X11/.Xresources &
 #xcompmgr &

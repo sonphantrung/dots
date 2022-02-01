@@ -1,11 +1,11 @@
 #!/bin/sh
 
-export ENV=$HOME/.config/ksh/.kshrc
-export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
+#export ENV=$HOME/.config/ksh/.kshrc
+export PATH="$PATH:$HOME/.local/cdda-dir/current:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=dbus
-export QT_IM_MODULE=ibus # Get Ibus To Work
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -38,9 +38,13 @@ export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
 export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export ELECTRUMDIR="${XDG_DATA_HOME:-$HOME/.local/share}/electrum"
+export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
+export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
+export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
+export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-# Using Neovim as a manpager
-export MANPAGER='nvim +Man!'
+# "bat" as manpager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # This is the list for lf icons:
 export LF_ICONS="\
@@ -208,6 +212,6 @@ ex=:\
 *.nix=:\
 "
 
-if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep $(awk '/exec/ {print $2}' /home/son/.config/X11/.xinitrc) || startx /home/son/.config/X11/.xinitrc
+if [ "$(tty)" = "/dev/tty1" ]; then
+	pgrep "dwm" || startx ~/.config/X11/.xinitrc
 fi

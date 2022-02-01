@@ -1,11 +1,11 @@
 {
-    "version": "1.2.1",
+    "version": "1.4.0",
     "addonlistControls": {
         "plugin": {
             "view": "grid"
         }
     },
-    "emoteVersion": "v1.2.1",
+    "emoteVersion": "v1.4.0",
     "drawerStates": {
         "settings": {
             "window": true

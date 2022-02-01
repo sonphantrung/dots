@@ -1,5 +1,5 @@
 {
-    "FreeEmojis": true,
+    "FreeEmojis": false,
     "ShowHiddenChannels": true,
     "CreationDate": true,
     "BetterRoleColors": true,
@@ -19,6 +19,6 @@
     "BiggerStreamPreview": true,
     "BlurNSFW": true,
     "CallTimeCounter": true,
-    "Freemoji": false,
+    "Freemoji": true,
     "NotificationSounds": true
 }

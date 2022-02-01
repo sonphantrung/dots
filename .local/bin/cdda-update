@@ -1,0 +1,103 @@
+#!/bin/bash
+
+# Copyright none.  Do what you want with it.
+# Version 1.2, Sat Jan  8 04:58:12 PM EST 2022
+
+# OVERVIEW:
+# ---------
+#
+# This script fetches the most recent experimental version from github and
+#   installs it.  Save games from the previous version are copied over.
+#   Archives of the six most recent versions are kept, in case there are killer
+#   bugs and you have to roll back manually.
+
+
+# REQUIREMENTS:
+# -------------
+#
+# The textmode Lynx web browser must be installed in order for this
+#   script to work.
+
+
+# INSTALLATION:
+# -------------
+#
+# Place this script somewhere in your path (I like to use ~/bin/, but suit
+#   yourself).  Change CDDA_WORKING_DIR below to something that suits your
+#   particular system.
+
+
+# CONFIGURATION:
+# --------------
+#
+# Set this to your CDDA working directory.  This directory will contain
+#   archives of the last six experimental versions you've had installed (so
+#   that you can manually roll back if there are killer bugs).  The previously
+#   installed version will be in a directory called "old", and the most
+#   recently installed version will be in a directory called "new".
+# If you change this, you will also need to change it in the "cdda" launch
+#   script.
+CDDA_WORKING_DIR=~/.local/cdda-dir
+
+
+###############################################################################
+
+# Use Lynx to dump the experimental version download URLs that match the
+#   architecture we want.  Sort them, then prune off all but the last (newest)
+#   entry.
+# Then extract the filename we'll be working with from the URL.
+# Then extract the version we'll be working with from the filename.
+URL=$(lynx --dump https://cataclysmdda.org/experimental/ | grep "https://github.com/CleverRaven/Cataclysm-DDA/releases/download/cdda-experimental-" | grep cdda-linux-tiles-x64 | cut -d. -f2- | sort -u | tail -n1)
+FILE=$(basename $URL)
+VERSION=$(echo $FILE | cut -d- -f5- | cut -d. -f1)
+
+# Create the working directory if it doesn't exist, and enter it.
+if ! [ -e $CDDA_WORKING_DIR ]; then
+	mkdir $CDDA_WORKING_DIR
+fi
+cd $CDDA_WORKING_DIR
+
+# Exit if there is no new version available.
+if [ -e $FILE ]; then
+	echo No new version available.
+	exit 0
+fi
+
+echo Installing new version $VERSION.  One moment...
+
+# Fetch new version.
+wget -q $URL
+
+# Back up old version.
+rm -rf old 2>/dev/null
+mv -f current old 2>/dev/null
+
+# Extract new version into current/.
+mkdir current
+cd current
+tar --strip-components=1 -xzf ../$FILE
+cd ..
+
+# Copy old saves over.
+cp -af old/save* current/ 2>/dev/null
+cp -af old/prerestore-save.tar.gz current/ 2>/dev/null
+
+# Copy old config over.
+cp -af old/config/ current/config/ 2>/dev/null
+
+# Copy old templates over.
+cp -af old/templates current/ 2>/dev/null
+
+# Copy fonts over.
+cp -af old/font current/ 2>/dev/null
+
+# Copy soundtracks over.
+cp -af old/sound current/ 2>/dev/null
+
+# Copy mods over.
+[[ -d old/mods ]] && cp -af old/mods current/ 2>/dev/null
+
+# Prune old archives until there are only six left.
+while [ $(ls cdda-linux-tiles-x64-*.tar.gz | sort -u | wc -l) -gt 6 ]; do
+	rm -f $(ls cdda-linux-tiles-x64-*.tar.gz | sort -u | head -n1)
+done

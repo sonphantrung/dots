@@ -1,4 +1,4 @@
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:$HOME/.local/cdda-dir/current:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -36,8 +36,9 @@ export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-# Using Neovim as a manpager
-export MANPAGER='nvim +Man!'
+# "bat" as manpager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 
 # This is the list for lf icons:
 export LF_ICONS="\

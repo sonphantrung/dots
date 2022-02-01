@@ -1,6 +1,14 @@
 {
     "currentVersionInfo": {
-        "version": "1.5.6",
+        "version": "1.7.1",
         "hasShownChangelog": true
+    },
+    "settings": {
+        "sendDirectly": false,
+        "split": false,
+        "emojiSize": 48,
+        "removeGrayscale": "always",
+        "missingEmbedPerms": "showDialog",
+        "external": "showDialog"
     }
 }

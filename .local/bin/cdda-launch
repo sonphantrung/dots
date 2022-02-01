@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# Copyright none.  Do what you want with it.
+# Version 1.0, Fri Sep 24 12:28:09 PM EDT 2021
+
+# OVERVIEW:
+# ---------
+#
+# This script handles save game backups before launching CDDA.  The user is
+#   prompted as to whether or not they would like to restore the save backup
+#   from the last launch.  If 'N', then the save game backups are rotated and
+#   the current save/ directory is backed up, before the game is launched.  If
+#   'Y', then the current save/ directory is backed up to
+#   'prerestore-save.tar.gz', deleted, and the previously backed up save
+#   archive is extracted, before the game is launched.
+# The default is to not restore.
+# Ten rolling archives of the save/ directory are kept, so that you can
+#   manually roll back farther if needed.
+
+
+# REQUIREMENTS:
+# -------------
+#
+# You must install CDDA with the 'cdda-update' script before this one will
+#   work.
+
+
+# INSTALLATION:
+# -------------
+#
+# Place this script somewhere in your path (I like to use ~/bin/, but suit
+#   yourself).  Change CDDA_WORKING_DIR below to something that suits your
+#   particular system.
+
+
+# CONFIGURATION:
+# --------------
+#
+# Set this to your CDDA working directory from the "cdda-update" script.  If
+#   you change this, you will also need to change it there.
+CDDA_WORKING_DIR=~/.local/cdda-dir
+#
+# Set this to 'Y' if you want this script to automatically install the newest
+#   experimental version before launching.  The 'cdda-update' script must be
+#   in your path for this to work.
+AUTO_UPDATE=y
+
+
+###############################################################################
+
+# Auto update.
+if [ "x$AUTO_UPDATE" == "xy" ] || [ "x$AUTO_UPDATE" == "xY" ]; then
+	cdda-update
+fi
+
+# Change to working dir and prompt for restore.
+cd $CDDA_WORKING_DIR/current
+read -p "Restore (y/N)? " restore
+
+if [ "x$restore" == "xy" ] || [ "x$restore" == "xY" ]; then
+	# Back up the current save/ and restore the most recent one.
+	rm -f prerestore-save.tar.gz
+	tar -czf prerestore-save.tar.gz save
+	rm -rf save
+	tar -xzf save-1.tar.gz
+elif [ -e save ]; then
+	# Rotate saves and back up the current save/.
+	mv -f save-8.tar.gz save-9.tar.gz 2>/dev/null
+	mv -f save-7.tar.gz save-8.tar.gz 2>/dev/null
+	mv -f save-6.tar.gz save-7.tar.gz 2>/dev/null
+	mv -f save-5.tar.gz save-6.tar.gz 2>/dev/null
+	mv -f save-4.tar.gz save-5.tar.gz 2>/dev/null
+	mv -f save-3.tar.gz save-4.tar.gz 2>/dev/null
+	mv -f save-2.tar.gz save-3.tar.gz 2>/dev/null
+	mv -f save-1.tar.gz save-2.tar.gz 2>/dev/null
+	tar -czf save-1.tar.gz save
+fi
+
+# Start CDDA.
+./cataclysm-launcher

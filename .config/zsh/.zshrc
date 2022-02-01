@@ -1,25 +1,20 @@
 # My Zsh Config (Ditch Oh-my-zsh now!)
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+#[[ $- != *i* ]] && return
 
 
 # The ufetch script
-ufetch-artix
+ufetch-arch
 
 # Enable colors and change prompt:
 autoload -U colors && colors
 
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.cache/histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd		# Automatically cd into typed directory.
-stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt correct # AutoCorrection
-
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/phantrungson/.zshrc'
+stty stop undef		# Disable ctrl-s to freeze terminal.
 
 # Tab completion
 autoload -Uz compinit
@@ -139,6 +134,9 @@ precmd() {
     # Set optional git part of prompt.
     setup_git_prompt
 }
+
+# Aliases
+for f in ~/.config/shellconfig/*; do source "$f"; done
 
 # Prompt
 setopt prompt_subst

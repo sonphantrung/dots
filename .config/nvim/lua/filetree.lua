@@ -1,51 +1,4 @@
--- Dictionary of buffer option names mapped to a list of option values that
--- indicates to the window picker that the buffer's window should not be
--- selectable.
-vim.g.nvim_tree_show_icons = {
-   folders = 1,
-   folder_arrows= 1,
-   files = 1,
-   git = 1,
-}
-
---If 0, do not show the icons for one of 'git' 'folder' and 'files'
---1 by default, notice that if 'files' is 1, it will only display
---if nvim-web-devicons is installed and on your runtimepath.
---if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
---but this will not work when you set indent_markers (because of UI conflict)
---
--- default will show icon by default if no icon is provided
--- default shows no icon by default
-vim.g.nvim_tree_icons = {
-   default = "",
-   symlink = "",
-   git = {
-      deleted = "",
-      ignored = "◌",
-      renamed = "➜",
-      staged = "✓",
-      unmerged = "",
-      unstaged = "✗",
-      untracked = "★",
-   },
-   folder = {
-      arrow_open = "",
-      arrow_closed = "",
-      default = "",
-      empty = "", -- 
-      empty_open = "",
-      open = "",
-      symlink = "",
-      symlink_open = "",
-   },
-  lsp = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-   },
-}
-require'nvim-tree'.setup {
+require('nvim-tree').setup({
   -- disables netrw completely
   disable_netrw       = true,
   -- hijack netrw window on startup
@@ -54,15 +7,9 @@ require'nvim-tree'.setup {
   open_on_setup       = true,
   -- will not open on setup if the filetype is in this list
   ignore_ft_on_setup  = {},
-  -- closes neovim automatically when the tree is the last **WINDOW** in the view
-  auto_close          = false,
   -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
   open_on_tab         = false,
   -- hijacks new directory buffers when they are opened.
-  update_to_buf_dir   = {
-	enable = true,
-	auto_open = true,
-},
   -- hijack the cursor in the tree to put it at the start of the filename
   hijack_cursor       = false,
   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
@@ -70,6 +17,45 @@ require'nvim-tree'.setup {
   -- show lsp diagnostics in the signcolumn
   diagnostics = {
 	enable = true
+  },
+  renderer = {
+	icons = {
+	 glyphs = {
+      default = "",
+      symlink = "",
+      git = {
+         deleted = "",
+         ignored = "◌",
+         renamed = "➜",
+         staged = "✓",
+         unmerged = "",
+         unstaged = "✗",
+         untracked = "★",
+      },
+      folder = {
+         arrow_open = "",
+         arrow_closed = "",
+         default = "",
+         empty = "", -- 
+         empty_open = "",
+         open = "",
+         symlink = "",
+         symlink_open = "",
+      },
+--      lsp = {
+--          hint = "",
+--          info = "",
+--          warning = "",
+--          error = "",
+--       },
+  	  },
+	 show = {
+       folder = true,
+       folder_arrow = true,
+       file = true,
+       git = true,
+	 }
+    }
   },
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
@@ -89,14 +75,17 @@ require'nvim-tree'.setup {
     -- the command arguments as a list
     args = {}
   },
-
+  actions = {
+    open_file = {
+      resize_window = true,
+    },
+   },
   view = {
     -- width of the window, can be either a number (columns) or a string in `%`
     width = 30,
     -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
     side = 'left',
     -- if true the tree will resize itself after opening a file
-    auto_resize = false,
     mappings = {
       -- custom only false will merge the list with the default mappings
       -- if true, it will only use your list to set the mappings
@@ -105,4 +94,4 @@ require'nvim-tree'.setup {
       list = {}
     }
   }
-}
+})

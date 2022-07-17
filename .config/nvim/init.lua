@@ -1,5 +1,5 @@
 require('plugs')
-require('impatient')
+--require('impatient')
 require('basic')
 require('hexo')
 require('utils')

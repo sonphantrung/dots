@@ -6,7 +6,7 @@ vis.events.subscribe(vis.events.INIT, function()
 	vis:command('set autoindent')
 	vis:command('set expandtab')
 	vis:command('set tabwidth 4')
-	vis:command('set theme base16-nord')
+	--vis:command('set theme base16-nord')
 	vis:command('set ignorecase on')
 end)
 

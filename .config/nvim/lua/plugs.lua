@@ -23,6 +23,7 @@ return require('packer').startup({function(use)
 	use "PotatoesMaster/i3-vim-syntax";
 	use {'kristijanhusak/orgmode.nvim', config = function()
 	        require('orgmode').setup{}
+			require('orgmodeconf')
 	end
 	}
 	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
@@ -48,7 +49,7 @@ return require('packer').startup({function(use)
 	use {"nvim-telescope/telescope.nvim", requires = {"nvim-telescope/telescope-media-files.nvim", {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }}};
 	use "nvim-lua/plenary.nvim";
 	use {"liuchengxu/vim-which-key", requires = "AckslD/nvim-whichkey-setup.lua"};
-	use "glepnir/dashboard-nvim";
+--	use "glepnir/dashboard-nvim";
 	use "nvim-lualine/lualine.nvim";
 end,
 config = {

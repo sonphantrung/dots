@@ -1,5 +1,6 @@
 #!/bin/sh
 
+alias config='git --git-dir=$HOME/.local/share/repos/dots.git --work-tree=$HOME'
 alias g='git'
 
 alias gch='git checkout'

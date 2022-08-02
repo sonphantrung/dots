@@ -31,7 +31,16 @@ return require('packer').startup({function(use)
 	use "romgrk/barbar.nvim";
 	use "kyazdani42/nvim-tree.lua";
 --	use { 'ms-jpq/coq_nvim', branch = 'coq', run = ':COQdeps' , requires = {{ 'ms-jpq/coq.artifacts', branch = 'artifacts' }}};
-	use 'neovim/nvim-lspconfig'
+	use { 'neovim/nvim-lspconfig', config = function()
+		require('lsp.cmpe')
+		require('lsp.bash')
+		require('lsp.lua')
+		require('lsp.python')
+		require('lsp.go')
+		require('lsp.c')
+		require('lsp.configure')
+	end
+	};
 	use {'hrsh7th/nvim-cmp', requires = {
 	'hrsh7th/cmp-nvim-lsp',
 	'hrsh7th/cmp-buffer',
@@ -47,6 +56,14 @@ return require('packer').startup({function(use)
 	use "sainnhe/everforest";
 	use "folke/tokyonight.nvim";
 	use {"nvim-telescope/telescope.nvim", requires = {"nvim-telescope/telescope-media-files.nvim", {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }}};
+	use {
+    "williamboman/mason.nvim",
+    requires = { "williamboman/mason-lspconfig.nvim" },
+	config = function ()
+		require("mason").setup()
+		require("mason-lspconfig").setup()
+	end
+	}
 	use "nvim-lua/plenary.nvim";
 	use {"liuchengxu/vim-which-key", requires = "AckslD/nvim-whichkey-setup.lua"};
 --	use "glepnir/dashboard-nvim";

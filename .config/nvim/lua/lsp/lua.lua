@@ -1,11 +1,11 @@
 -- Btw, I use Arch
 UTIL = require('lspconfig.util')
 
-SUMNEKO_ROOT_PATH = "/usr/share/lua-language-server"
-SUMNEKO_BINARY = "/usr/bin/lua-language-server"
+--SUMNEKO_ROOT_PATH = "/usr/share/lua-language-server"
+--SUMNEKO_BINARY = "/usr/bin/lua-language-server"
 
 require'lspconfig'.sumneko_lua.setup ({
-  cmd = { SUMNEKO_BINARY, "-E", SUMNEKO_ROOT_PATH .. '/main.lua' },
+  cmd = { "lua-language-server" },
   settings = {
     Lua = {
       runtime = {

@@ -2,7 +2,7 @@ local color=require('color.colors')
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'nord',
+    theme = 'iceberg',
     section_separators = {left = '', right =''},
     component_separators = {left = '|', right ='|'},
     disabled_filetypes = {}
@@ -18,7 +18,7 @@ require'lualine'.setup {
 			modified = { fg = color.yellow },-- changes diff's modified foreground color
 			removed = { fg = color.red }, -- changes diff's removed foreground color
 		};
-        symbols = {added = ' ', modified = '柳', removed = ' '},
+        symbols = {added = ' ', modified = '柳 ', removed = ' '},
         },
     {
       'diagnostics',

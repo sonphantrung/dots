@@ -53,6 +53,7 @@ return require('packer').startup({function(use)
 	use "xiyaowong/nvim-transparent";
 	use "LunarVim/Colorschemes";
 	use "RRethy/nvim-base16";
+	use "cocopon/iceberg.vim";
 	use "sainnhe/everforest";
 	use "folke/tokyonight.nvim";
 	use {"nvim-telescope/telescope.nvim", requires = {"nvim-telescope/telescope-media-files.nvim", {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }}};

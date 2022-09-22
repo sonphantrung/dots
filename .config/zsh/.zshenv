@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/.local/cdda-dir/current:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:$HOME/.nimble/bin:$HOME/.local/cdda-dir/current:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx

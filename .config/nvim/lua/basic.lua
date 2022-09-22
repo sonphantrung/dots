@@ -47,5 +47,5 @@ o.wildignore = [[
 vim.g.tokyonight_transparent_sidebar = true
 vim.g.tokyonight_transparent = true
 cmd[['
-colo base16-nord
+colo iceberg
 ']]

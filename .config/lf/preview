@@ -10,7 +10,7 @@ preview() {
 	EOF
 }
 
-lf-ueberzug-cleaner # clean active preview
+#lf-ueberzug-cleaner # clean active preview
 
 file="$1"; shift
 case "$(basename "$file" | tr '[:upper:]' '[:lower:]')" in

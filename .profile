@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#export ENV=$HOME/.config/ksh/.kshrc
+export ENV=$HOME/.config/ksh/.kshrc
 export PATH="$PATH:$HOME/.local/cdda-dir/current:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
 
 export GTK_IM_MODULE=fcitx
@@ -44,6 +44,7 @@ export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 # "bat" as manpager
+export BAT_THEME="Nord"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # This is the list for lf icons:
@@ -212,6 +213,6 @@ ex=:\
 *.nix=:\
 "
 
-if [ "$(tty)" = "/dev/tty1" ]; then
+if [ "$(tty)" = "/dev/ttyv0" ]; then
 	pgrep "dwm" || startx ~/.config/X11/.xinitrc
 fi

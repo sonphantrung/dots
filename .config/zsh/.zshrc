@@ -4,7 +4,7 @@
 
 
 # The ufetch script
-ufetch-arch
+ufetch-freebsd
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -124,7 +124,7 @@ setup_git_prompt() {
 
     git_branch="${git_branch:-no branch}"
 
-    git_prompt=" %F{blue}%F{253}${git_branch}${git_status_dirty}${git_status_stash}%F{blue}%f"
+    git_prompt=" %F{blue}%f${git_branch}${git_status_dirty}${git_status_stash}%F{blue}%f"
 
 }
 
@@ -140,13 +140,13 @@ for f in ~/.config/shellconfig/*; do source "$f"; done
 
 # Prompt
 setopt prompt_subst
-PROMPT='%(?:%F{green}%B┌%b%f:%F{red}%B┌%b%f)%F{magenta}%B[%f%F{magenta}%n%f@%F{magenta}%m%f%F{magenta}%B]%f%F{magenta}%B─[%F{blue}%B%~%b%f%F{magenta}%B]%f
+PROMPT='%(?:%F{green}%B┌%b%f:%F{red}%B┌%b%f)%F{blue}%B[%f%F{blue}%n%f@%F{blue}%m%f%F{blue}%B]%f%F{blue}%B─[%F{blue}%B%~%b%f%F{blue}%B]%f
 %(?:%F{green}%B└╼%b%f:%F{red}%B└╼%b%f) '
 RPROMPT='${git_prompt}$exit_code_prompt'
 
 #eval "$(starship init zsh)"
 
 #Plugs
-source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/local/share/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/local/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null

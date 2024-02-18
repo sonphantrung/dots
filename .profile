@@ -3,9 +3,12 @@
 export ENV=$HOME/.config/ksh/.kshrc
 export PATH="$PATH:$HOME/.local/cdda-dir/current:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
+export XIM=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export XIM_PROGRAM="ibus-daemon"
+export XIM_ARGS="--daemonize --xim"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -44,7 +47,7 @@ export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 # "bat" as manpager
-export BAT_THEME="Nord"
+export BAT_THEME="base16"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # This is the list for lf icons:

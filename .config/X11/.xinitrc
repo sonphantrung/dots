@@ -10,7 +10,8 @@ unclutter &
 dunst &
 #setwallp &
 nitrogen --restore &
-musicpd &
+musicpd
+mpdas &
 clipmenud &
 #dwmblocks &
 slstatus &

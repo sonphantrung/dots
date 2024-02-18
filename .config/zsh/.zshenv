@@ -1,8 +1,11 @@
-export PATH="$PATH:$HOME/.nimble/bin:$HOME/.local/cdda-dir/current:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:$HOME/.nimble/bin:$HOME/.local/cdda-dir/current:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
+export XIM=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export XIM_PROGRAM="ibus-daemon"
+export XIM_ARGS="--daemonize --xim"
 
 export EDITOR="nvim"
 export TERM="st-256color"
@@ -20,6 +23,7 @@ export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/X11/.xinitrc"
 export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
+export WINE_i386_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/i386-wine-pkg"
 export KODI_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/kodi"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
@@ -37,8 +41,8 @@ export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 # "bat" as manpager
+export BAT_THEME="base16"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
 
 # This is the list for lf icons:
 export LF_ICONS="\

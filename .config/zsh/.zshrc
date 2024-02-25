@@ -2,7 +2,6 @@
 # If not running interactively, don't do anything
 #[[ $- != *i* ]] && return
 
-
 # The ufetch script
 ufetch-freebsd
 
@@ -93,7 +92,7 @@ last_exit_code() {
     else
         unset exit_code_prompt
     fi
-    }
+}
 
 setup_git_prompt() {
     if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -139,12 +138,12 @@ precmd() {
 for f in ~/.config/shellconfig/*; do source "$f"; done
 
 # Prompt
-setopt prompt_subst
-PROMPT='%(?:%F{green}%B┌%b%f:%F{red}%B┌%b%f)%F{blue}%B[%f%F{blue}%n%f@%F{blue}%m%f%F{blue}%B]%f%F{blue}%B─[%F{blue}%B%~%b%f%F{blue}%B]%f
-%(?:%F{green}%B└╼%b%f:%F{red}%B└╼%b%f) '
-RPROMPT='${git_prompt}$exit_code_prompt'
+#setopt prompt_subst
+#PROMPT='%(?:%F{green}%B┌%b%f:%F{red}%B┌%b%f)%F{blue}%B[%f%F{blue}%n%f@%F{blue}%m%f%F{blue}%B]%f%F{blue}%B─[%F{blue}%B%~%b%f%F{blue}%B]%f
+#%(?:%F{green}%B└╼%b%f:%F{red}%B└╼%b%f) '
+#RPROMPT='${git_prompt}$exit_code_prompt'
 
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 #Plugs
 source /usr/local/share/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null

@@ -16,7 +16,32 @@ case ${1#-} in
         ;;
     *)
         case $(uname) in
-            OpenBSD|FreeBSD)
+			FreeBSD)
+				case ${1#-} in
+					i)
+						mixer vol.mute=0
+						mixer vol.volume=+0.05
+						;;
+					d)
+						mixer vol.mute=0
+						mixer vol.volume=-0.05
+						;;
+					s)
+						mixer vol.mute=0
+						mixer vol.volume=0."$2"
+						;;
+					m)
+						mixer vol.mute=1
+						;;
+					u)
+						mixer vol.mute=0
+						;;
+					*)
+						mixer vol.volume
+						;;
+				esac
+				;;
+            OpenBSD)
                 case ${1#-} in
                     i)
                         sndioctl -q output.mute=0

@@ -1,11 +1,9 @@
-export PATH="$PATH:$HOME/.nimble/bin:$HOME/.local/cdda-dir/current:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
+export PATH="$PATH:$HOME/.config/rofi/scripts:$HOME/.nimble/bin:$HOME/.local/cdda-dir/current:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
+export XDG_RUNTIME_DIR="/var/run/user/$(id -u)"
 
-export XIM=ibus
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
-export XIM_PROGRAM="ibus-daemon"
-export XIM_ARGS="--daemonize --xim"
 
 export EDITOR="nvim"
 export TERM="st-256color"

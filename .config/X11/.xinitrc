@@ -4,7 +4,7 @@
 #/usr/bin/pipewire-pulse &
 #/usr/bin/pipewire-media-session &
 picom &
-xrdb ~/.config/X11/.Xresources
+xrdb -merge ~/.config/X11/.Xresources
 #xcompmgr &
 unclutter &
 dunst &
@@ -19,4 +19,6 @@ slstatus &
 # Caps lock sucks, disable it
 xmodmap -e "keysym Caps_Lock = " &
 xset r rate "300" "50" &
+#ibus-daemon &
+dbus-update-activation-environment --all &
 exec dwm

@@ -31,25 +31,25 @@ return require('packer').startup({function(use)
 	use "romgrk/barbar.nvim";
 	use "kyazdani42/nvim-tree.lua";
 --	use { 'ms-jpq/coq_nvim', branch = 'coq', run = ':COQdeps' , requires = {{ 'ms-jpq/coq.artifacts', branch = 'artifacts' }}};
---	use { 'neovim/nvim-lspconfig', config = function()
---		require('lsp.cmpe')
---		require('lsp.bash')
---		require('lsp.lua')
---		require('lsp.python')
---		require('lsp.go')
---		require('lsp.c')
---		require('lsp.configure')
---	end
---	};
---	use {'hrsh7th/nvim-cmp', requires = {
---	'hrsh7th/cmp-nvim-lsp',
---	'hrsh7th/cmp-buffer',
---	'hrsh7th/cmp-vsnip',
---	'ray-x/cmp-treesitter'
---	}}
---	use 'hrsh7th/vim-vsnip';
---	use 'rafamadriz/friendly-snippets';
---	use 'onsails/lspkind-nvim';
+	use { 'neovim/nvim-lspconfig', config = function()
+		require('lsp.cmpe')
+		require('lsp.bash')
+		require('lsp.lua')
+		require('lsp.python')
+		require('lsp.go')
+		require('lsp.c')
+		require('lsp.configure')
+	end
+	};
+	use {'hrsh7th/nvim-cmp', requires = {
+	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-vsnip',
+	'ray-x/cmp-treesitter'
+	}}
+	use 'hrsh7th/vim-vsnip';
+	use 'rafamadriz/friendly-snippets';
+	use 'onsails/lspkind-nvim';
 	use "xiyaowong/nvim-transparent";
 	use "LunarVim/Colorschemes";
 	use "RRethy/nvim-base16";

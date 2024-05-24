@@ -1,7 +1,16 @@
 #!/bin/sh
-BATT="$(cat /sys/class/power_supply/BAT1/capacity)"
-CHARGING="$(cat /sys/class/power_supply/BAT1/status)"
-if [ "$CHARGING" = "Charging" ]; then
+case "$(uname)" in
+	Linux)
+		BATT="$(cat /sys/class/power_supply/BAT1/capacity)"
+		CHARGING="$(cat /sys/class/power_supply/BAT1/status)"
+	;;
+	FreeBSD)
+		BATT="$(sysctl -n hw.acpi.battery.life)"
+		CHARGING="$(sysctl -n hw.acpi.battery.state)"
+	;;
+esac
+
+if [ "$CHARGING" = "Charging" ] || [ "$CHARGING" = "0" ] || [ "$CHARGING" = "1" ]; then
     BATICON="^C2^ ^d^"
 elif [ "$BATT" = "100" ]; then
     BATICON=" "

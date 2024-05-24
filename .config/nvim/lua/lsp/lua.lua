@@ -4,7 +4,7 @@ UTIL = require('lspconfig.util')
 --SUMNEKO_ROOT_PATH = "/usr/share/lua-language-server"
 --SUMNEKO_BINARY = "/usr/bin/lua-language-server"
 
-require'lspconfig'.sumneko_lua.setup ({
+require'lspconfig'.lua_ls.setup ({
   cmd = { "lua-language-server" },
   settings = {
     Lua = {
@@ -27,5 +27,5 @@ require'lspconfig'.sumneko_lua.setup ({
     },
   },
   on_attach = require('lsp.configure').on_attach,
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 })

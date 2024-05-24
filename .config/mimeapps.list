@@ -17,9 +17,10 @@ x-scheme-handler/mid=userapp-Thunderbird-U071I2.desktop;
 [Default Applications]
 video/x-matroska=mpv.desktop;
 video/mp4=mpv.desktop;
-image/gif=nsxiv.desktop
-image/png=nsxiv.desktop;
-image/jpeg=nsxiv.desktop;
+video/webm=mpv.desktop;
+image/gif=imv.desktop
+image/png=imv.desktop;
+image/jpeg=imv.desktop;
 application/json=editor.desktop
 application/pdf=org.pwmt.zathura.desktop;
 text/html=userapp-Firefox-HWUMJ2.desktop

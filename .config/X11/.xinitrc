@@ -8,8 +8,8 @@ xrdb -merge ~/.config/X11/.Xresources
 #xcompmgr &
 unclutter &
 dunst &
-#setwallp &
-nitrogen --restore &
+setwallp &
+#nitrogen --restore &
 musicpd
 mpdas &
 clipmenud &
@@ -20,5 +20,4 @@ slstatus &
 xmodmap -e "keysym Caps_Lock = " &
 xset r rate "300" "50" &
 #ibus-daemon &
-dbus-update-activation-environment --all &
-exec dwm
+exec ck-launch-session dbus-launch --exit-with-session dwm

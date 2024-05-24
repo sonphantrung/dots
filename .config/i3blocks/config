@@ -5,7 +5,7 @@
 #
 #     https://vivien.github.io/i3blocks
 
-command=~/.scs/$BLOCK_NAME
+command=~/.local/bin/scs/$BLOCK_NAME
 # Global properties
 separator=true
 separator_block_width=15
@@ -15,5 +15,6 @@ interval=once
 signal=10
 
 [date]
+command=date +"%d/%m/%y (%a) %H:%M"
 interval=30
-color=#428B95
+color=#739D99

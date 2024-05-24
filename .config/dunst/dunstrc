@@ -9,6 +9,7 @@
     transparency = 25
     font = Monospace 12
     format = "<b>%s</b>\n%b"
+	icon_path = "/usr/local/share/icons/ePapirus/16x16/status/:/usr/local/share/icons/ePapirus/16x16/devices/"
 
 [urgency_low]
     background = "#3B4252"

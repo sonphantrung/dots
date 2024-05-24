@@ -1,4 +1,4 @@
-# I3 config file 
+# I3 config file
 #
 
 # #---Basic Definitions---# #
@@ -6,14 +6,23 @@
 set $mod Mod4
 # #---Gaps---# #
 #
-hide_edge_borders none
-gaps inner 4
-gaps outer 4
-for_window [class="^.*"] border pixel 1
+#hide_edge_borders none
+#gaps inner 4
+#gaps outer 4
+#for_window [class="^.*"] border pixel 1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Caskaydia Cove Nerd Font 10
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #114b5f #2f3e46 #FCFCFC #2e9ef4   #F3E9D2
+client.focused_inactive #77867f #5f676a #FCFCFC #484e50   #5f676a
+client.unfocused        #77867f #5a5353 #6d6a75 #292d2e   #5a5353
+client.urgent           #2f343a #ba1200 #FCFCFC #ba1200   #ba1200
+client.placeholder      #000000 #0b0a07 #FCFCFC #000000   #0b0a07
+
+client.background       #FCFCFC
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -22,20 +31,23 @@ font pango:monospace 8
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-exec --no-startup-id nm-applet
-exec --no-startup-id xcompmgr
-exec --no-startup-id mpd
+exec --no-startup-id picom -b
+exec --no-startup-id musicpd
+exec --no-startup-id mpdas
 exec --no-startup-id clipmenud
+exec --no-startup-id xrdb -merge ~/.config/X11/.Xresources
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id xmodmap -e "keysym Caps_Lock = "
+exec --no-startup-id xfce4-panel --disable-wm-check
 
-# Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioMute		exec --no-startup-id pulsemixer --toggle-mute && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume	exec --no-startup-id pulsemixer --change-volume -5 && pkill -RTMIN+10 i3blocks
-bindsym Shift+XF86AudioLowerVolume	exec --no-startup-id pulsemixer --change-volume -10 && pkill -RTMIN+10 i3blocks
-bindsym Control+XF86AudioLowerVolume	exec --no-startup-id pulsemixer --change-volume -1 && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume	exec --no-startup-id pulsemixer --change-volume +5 && pkill -RTMIN+10 i3blocks
-bindsym Shift+XF86AudioRaiseVolume	exec --no-startup-id pulsemixer --change-volume +10 && pkill -RTMIN+10 i3blocks
-bindsym Control+XF86AudioRaiseVolume	exec --no-startup-id pulsemixer --change-volume +1 && pkill -RTMIN+10 i3blocks
+# Use mixer to adjust volume in OSS (FreeBSD)
+bindsym XF86AudioMute		exec --no-startup-id mixer vol.mute=^
+bindsym XF86AudioLowerVolume	exec --no-startup-id vol d 5
+bindsym Shift+XF86AudioLowerVolume 		exec --no-startup-id vol d 10
+bindsym Control+XF86AudioLowerVolume	exec --no-startup-id vol d 1
+bindsym XF86AudioRaiseVolume	exec --no-startup-id vol i 5
+bindsym Shift+XF86AudioRaiseVolume	exec --no-startup-id vol i 10
+bindsym Control+XF86AudioRaiseVolume	exec --no-startup-id vol i 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -49,9 +61,9 @@ bindsym $mod+Shift+q kill
 bindsym Mod1+Shift+c exec clipmenu
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -c -l 20 -bw 2 -vrtf -p "Run:"
 # Rofi for .desktop files
-bindsym Mod1+d exec --no-startup-id rofi -show drun -show-icons
+bindsym Mod1+d exec --no-startup-id xfce4-appfinder
 
 # change focus
 bindsym $mod+j focus down

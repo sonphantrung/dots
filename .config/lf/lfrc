@@ -2,8 +2,10 @@ set icons true
 set hidden true
 set icons true
 set ignorecase true
-set previewer ~/.config/lf/preview
-set cleaner ~/.config/lf/cleaner
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
 
 # Custom Functions
 cmd open ${{

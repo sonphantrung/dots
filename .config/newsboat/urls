@@ -2,6 +2,16 @@
 http://lukesmith.xyz/rss.xml
 https://www.archlinux.org/feeds/news/
 https://artixlinux.org/feed.php
+https://suckless.org/atom.xml
+https://www.freebsd.org/news/feed.xml
+https://www.freebsd.org/security/feed.xml
+https://www.netbsd.org/changes/rss-netbsd.xml
+"~~VnExpress~~"
+https://vnexpress.net/rss/tin-moi-nhat.rss
+https://vnexpress.net/rss/tin-noi-bat.rss
+https://vnexpress.net/rss/tin-xem-nhieu.rss
+https://vnexpress.net/rss/the-thao.rss
+https://vnexpress.net/rss/thoi-su.rss
 "~~PeerTube~~"
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
 "~~YouTube(tehc, mostly)~~"
@@ -13,7 +23,8 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCxwcmRAmBRzZMNS37dCgmHA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCCIHOP7e271SIumQgyl6XBQ
-"~~Vtubers(Hololive EN)~~"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC05XpvbHZUQOfA6xk4dlmcw
+"~~VTubers(Hololive EN)~~"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCoSrY_IQQVpmIRZ9Xf-y93g
 https://www.youtube.com/feeds/videos.xml?channel_id=UCL_qhgtOy0dy1Agp8vkySQg
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHsx4Hqa-1ORjQTh9TYDhww
@@ -25,6 +36,10 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCO_aKKYxn4tvrqPjcTzZ6EQ
 https://www.youtube.com/feeds/videos.xml?channel_id=UCmbs8T6MWqUHP1tIQvSgKrg
 https://www.youtube.com/feeds/videos.xml?channel_id=UC3n5uGu18FoCy23ggWWp8tA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCgmPnx-EEeOrZSg5Tiw7ZRQ
-"~~Vtubers(NijiGen)~~"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC_sFNM0z0MWm9A6WlKPuMMg
+https://www.youtube.com/feeds/videos.xml?channel_id=UCgnfPPb9JI3e9A4cXHnWbyg
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9p_lqQ0FEDz327Vgf5JwqA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCt9H_RpQzhxzlyBxFqrdHqA
+"~~VTubers(NijiGen)~~"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCYxDbNevCyirkU2T00gb68A
 https://www.youtube.com/feeds/videos.xml?channel_id=UC5RSxmHP5c4pU9Og1Pxx4wg

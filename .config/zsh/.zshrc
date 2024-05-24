@@ -54,7 +54,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 lfcd () {
     tmp="$(mktemp)"
     fid="$(mktemp)"
-    lf-ueberzug -command '$printf $id > '"$fid"'' -last-dir-path="$tmp" "$@"
+    lf -command '$printf $id > '"$fid"'' -last-dir-path="$tmp" "$@"
     id="$(cat "$fid")"
     archivemount_dir="/tmp/__lf_archivemount_$id"
     if [ -f "$archivemount_dir" ]; then
@@ -144,6 +144,7 @@ for f in ~/.config/shellconfig/*; do source "$f"; done
 #RPROMPT='${git_prompt}$exit_code_prompt'
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 #Plugs
 source /usr/local/share/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null

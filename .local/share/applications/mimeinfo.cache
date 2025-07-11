@@ -75,3 +75,5 @@ x-scheme-handler/ksowebstartupwps=wps-office-wps.desktop;
 x-scheme-handler/ksowpp=wps-office-wps.desktop;
 x-scheme-handler/ksowps=wps-office-wps.desktop;
 x-scheme-handler/ksowpscloudsvr=wps-office-wps.desktop;
+x-scheme-handler/steam=wine-protocol-steam.desktop;
+x-scheme-handler/steamlink=wine-protocol-steamlink.desktop;

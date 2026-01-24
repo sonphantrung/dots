@@ -17,7 +17,7 @@ return {
 			require('orgmodeconf')
 	end
 	},
-	 { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
+	 { "nvim-treesitter/nvim-treesitter" },
 	 { "kyazdani42/nvim-web-devicons" },
 	 { "romgrk/barbar.nvim" },
 	 { "kyazdani42/nvim-tree.lua" },

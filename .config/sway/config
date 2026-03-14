@@ -148,6 +148,8 @@ input "1739:32402:DELL0767:00_06CB:7E92_TouchPad" {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
+
+	assign [title="Championship Manager 01/02"] 7
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #

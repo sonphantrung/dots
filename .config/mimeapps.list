@@ -13,6 +13,8 @@ application/x-extension-xhtml=chromium-browser.desktop;userapp-Firefox-HWUMJ2.de
 application/x-extension-xht=chromium-browser.desktop;userapp-Firefox-HWUMJ2.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-U071I2.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-U071I2.desktop;
+text/plain=org.xfce.mousepad.desktop;
+application/xml=org.xfce.mousepad.desktop;
 
 [Default Applications]
 video/x-matroska=mpv.desktop;

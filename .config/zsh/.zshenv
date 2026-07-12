@@ -1,9 +1,9 @@
 export PATH="$PATH:$HOME/.config/rofi/scripts:$HOME/.nimble/bin:$HOME/.local/cdda-dir/current:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
 export XDG_RUNTIME_DIR="/var/run/user/$(id -u)"
 
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 export EDITOR="nvim"
 export TERM="xterm-256color"

@@ -20,4 +20,5 @@ slstatus &
 xmodmap -e "keysym Caps_Lock = " &
 xset r rate "300" "50" &
 #ibus-daemon &
-exec ck-launch-session dbus-launch --exit-with-session dwm
+#exec ck-launch-session "dbus-launch --exit-with-session dwm"
+exec dbus-launch --exit-with-session dwm

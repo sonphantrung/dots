@@ -31,10 +31,10 @@ case ${1#-} in
 						mixer vol.volume=0."$2"
 						;;
 					m)
-						mixer vol.mute=1
+						mixer vol.mute=on
 						;;
 					u)
-						mixer vol.mute=0
+						mixer vol.mute=off
 						;;
 					*)
 						mixer vol.volume

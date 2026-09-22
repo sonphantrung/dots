@@ -8,8 +8,8 @@ xrdb -merge ~/.config/X11/.Xresources
 #xcompmgr &
 unclutter &
 dunst &
-setwallp &
-#nitrogen --restore &
+#setwallp &
+nitrogen --restore &
 musicpd
 mpdas &
 clipmenud &

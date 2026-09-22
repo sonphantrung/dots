@@ -23,7 +23,9 @@ set $menu dmenu_path | dmenu -c -l 20 -bw 2 -vrtf -p "Run:" | xargs swaymsg exec
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/local/share/backgrounds/sway/)
-output * bg /usr/local/share/backgrounds/budgie/lake-sherburne.jpg fill
+
+#output * bg /usr/local/share/backgrounds/budgie/lake-sherburne.jpg fill
+
 #
 # Example configuration:
 #
@@ -75,6 +77,7 @@ input "1739:32402:DELL0767:00_06CB:7E92_TouchPad" {
 	exec --no-startup-id mpdas
 	exec --no-startup-id clipmenud
 	exec --no-startup-id xrdb -merge ~/.config/X11/.Xresources
+	exec --no-startup-id sway-wallpaper
 
 ### Key bindings
 #

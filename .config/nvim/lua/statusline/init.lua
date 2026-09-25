@@ -1,4 +1,4 @@
-local color=require('color.colors')
+local color=require('statusline.colors')
 require'lualine'.setup {
   options = {
     icons_enabled = true,

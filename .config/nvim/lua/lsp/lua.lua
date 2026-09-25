@@ -1,10 +1,11 @@
 -- Btw, I use Arch
 UTIL = require('lspconfig.util')
+vim.lsp.enable('lua_ls')
 
 --SUMNEKO_ROOT_PATH = "/usr/share/lua-language-server"
 --SUMNEKO_BINARY = "/usr/bin/lua-language-server"
 
-require'lspconfig'.lua_ls.setup ({
+vim.lsp.config('luals', {
   cmd = { "lua-language-server" },
   settings = {
     Lua = {
